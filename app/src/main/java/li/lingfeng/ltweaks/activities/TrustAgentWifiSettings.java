@@ -1,16 +1,7 @@
 package li.lingfeng.ltweaks.activities;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.net.wifi.WifiInfo;
-import android.os.Build;
-import android.provider.Settings;
 import android.util.Pair;
-import androidx.core.app.ActivityCompat;
 import li.lingfeng.ltweaks.prefs.Prefs;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.utils.NetUtils;
@@ -110,49 +101,5 @@ public class TrustAgentWifiSettings extends ListCheckActivity {
                     .putStringSet(R.string.key_trust_agent_wifi_aps, mTrustedAps)
                     .commit();
         }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // Android 8 开始需要位置信息权限
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 0);
-            }
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            boolean hasBackgroundPermission = checkSelfPermission(Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED;
-
-            if (hasBackgroundPermission) {
-                return;
-            }
-            // 1. 弹出自定义对话框，向用户解释为什么需要“始终允许”
-            showCustomRationaleDialog(TrustAgentWifiSettings.this, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // 2. 用户点击确定后，跳转到系统设置页
-                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                    Uri uri = Uri.fromParts("package", getPackageName(), null);
-                    intent.setData(uri);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                }
-            });
-        }
-    }
-
-    private static void showCustomRationaleDialog(TrustAgentWifiSettings context, DialogInterface.OnClickListener onConfirmListener) {
-        new AlertDialog.Builder(context)
-                .setTitle("“始终允许”位置信息权限")
-                .setMessage("需要“始终允许”的位置信息权限，才能在后台获取当前连接的 WLAN 信息，否则，可信代理将无法工作。\n\n在接下来的界面中选择：权限 -> 位置信息 -> 始终允许。")
-                .setPositiveButton("去设置", onConfirmListener)
-                .setNegativeButton("取消", (dialog, which) -> {
-                    dialog.dismiss();
-                    context.finish();
-                    // 这里可以处理用户拒绝后的逻辑（如提示功能无法使用）
-                })
-                .setCancelable(false) // 强制用户做出选择
-                .show();
     }
 }
