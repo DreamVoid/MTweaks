@@ -173,9 +173,13 @@ public class SystemPrefFragment extends BasePrefFragment {
                 Logger.stackTrace(e);
                 pref4g.setEnabled(false);
                 pref3g.setEnabled(false);
-                preference.setEnabled(false);
-                preference.setChecked(false);
-                preference.setSummary(R.string.not_supported);
+                try {
+                    preference.setEnabled(false);
+                    preference.setChecked(false);
+                    preference.setSummary(R.string.not_supported);
+                } catch (Throwable e2) {
+                    Logger.e("Failed to disable preference after network type error, " + e2);
+                }
             }
         }
     }
@@ -210,7 +214,7 @@ public class SystemPrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceClick(prefs = "key_trust_agent_wifi_aps")
+    @PreferenceClick(prefs = "key_google_smart_lock_with_wifi_aps")
     private void setSmartLockWifiList(Preference preference) {
         KeyguardManager keyguardManager = (KeyguardManager) getActivity().getSystemService(Context.KEYGUARD_SERVICE);
         if (keyguardManager.isKeyguardSecure()) {

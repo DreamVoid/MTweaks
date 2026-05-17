@@ -35,7 +35,8 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         loadAtActivityCreate = ClassNames.ACTIVITY)
 public class XposedTextActions extends XposedBase {
 
-    private static final String FLOATING_TOOLBAR = "com.android.internal.widget.FloatingToolbar";
+    private static final String FLOATING_TOOLBAR_OLD = "com.android.internal.widget.FloatingToolbar";
+    private static final String FLOATING_TOOLBAR_NEW = "com.android.internal.widget.floatingtoolbar.FloatingToolbar";
     private static final String EDITOR = "android.widget.Editor";
     private static final String EDITOR_TEXT_ACTION_HANDLER = "android.widget.Editor$ProcessTextIntentActionsHandler";
 
@@ -46,7 +47,15 @@ public class XposedTextActions extends XposedBase {
         }
 
         Prefs.instance().registerPreferenceChangeKey(R.string.key_text_actions_set);
-        findAndHookMethod(FLOATING_TOOLBAR, "getVisibleAndEnabledMenuItems", Menu.class, new XC_MethodHook() {
+        // FloatingToolbar class was moved to a sub-package in Android 14+
+        String floatingToolbarClass;
+        try {
+            XposedHelpers.findClass(FLOATING_TOOLBAR_OLD, null);
+            floatingToolbarClass = FLOATING_TOOLBAR_OLD;
+        } catch (Throwable e) {
+            floatingToolbarClass = FLOATING_TOOLBAR_NEW;
+        }
+        findAndHookMethod(floatingToolbarClass, "getVisibleAndEnabledMenuItems", Menu.class, new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 Set<String> savedItems = Prefs.instance().getStringSet(R.string.key_text_actions_set, null);

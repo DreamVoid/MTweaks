@@ -3,8 +3,12 @@ package li.lingfeng.ltweaks.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -139,6 +143,9 @@ public class ListCheckActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // ADDED FOR NEW ANDROID: Enable edge-to-edge display for modern devices
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         try {
             Constructor constructor = getDataProviderClass().getConstructor(ListCheckActivity.class);

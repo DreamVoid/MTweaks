@@ -251,11 +251,19 @@ public class BasePrefFragment extends PreferenceFragment
 
     protected void listenPreferenceChange(String key) {
         Preference preference = findPreference(key);
+        if (preference == null) {
+            Logger.e("Preference not found for key: " + key);
+            return;
+        }
         preference.setOnPreferenceChangeListener(this);
     }
 
     protected void listenPreferenceClick(String key) {
         Preference preference = findPreference(key);
+        if (preference == null) {
+            Logger.e("Preference not found for key: " + key);
+            return;
+        }
         preference.setOnPreferenceClickListener(this);
     }
 

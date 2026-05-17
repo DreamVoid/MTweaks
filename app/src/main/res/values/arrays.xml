@@ -5636,4 +5636,8 @@
         <item>223.255.236.0/22</item>
         <item>223.255.252.0/23</item>
     </string-array>
+    <string-array name="xposedscopes">
+        <item>android</item>
+        <item>com.android.settings</item>
+    </string-array>
 </resources>
