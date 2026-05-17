@@ -38,13 +38,13 @@ public class CommunicationPrefFragment extends BasePrefFragment {
         addPreferencesFromResource(R.xml.pref_communication);
     }
 
-    @PreferenceChange(prefs = R.string.key_wechat_use_incoming_ringtone, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_wechat_use_incoming_ringtone", refreshAtStart = true)
     private void enableWeChatIncomingRingtone(SwitchPreference preference, boolean enabled) {
         Preference setRingtonePref = findPreference(R.string.key_wechat_set_incoming_ringtone);
         setRingtonePref.setEnabled(enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_wechat_set_incoming_ringtone, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_wechat_set_incoming_ringtone", refreshAtStart = true)
     private void setWeChatIncomingRingtone(RingtonePreference preference, String path) {
         if (path.equals("")) {
             preference.setSummary("");
@@ -55,12 +55,12 @@ public class CommunicationPrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceChange(prefs = R.string.key_qq_clear_background, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_qq_clear_background", refreshAtStart = true)
     private void enableQQClearBackground(SwitchPreference preference, boolean enabled) {
         findPreference(R.string.key_qq_clear_background_path).setEnabled(enabled);
     }
 
-    @PreferenceClick(prefs = R.string.key_qq_clear_background_path)
+    @PreferenceClick(prefs = "key_qq_clear_background_path")
     private void setQQClearBackgroundPath(Preference preference) {
         PermissionUtils.requestPermissions(getActivity(), new PermissionUtils.ResultCallback() {
             @Override
@@ -111,7 +111,7 @@ public class CommunicationPrefFragment extends BasePrefFragment {
         return dir.getAbsolutePath() + "/ltweaks_qq_background";
     }
 
-    @PreferenceChange(prefs = R.string.key_qq_clear_background_path, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_qq_clear_background_path", refreshAtStart = true)
     private void refreshQQClearBackgroundPathSummary(Preference preference) {
         String filepath = getQQClearBackgroundPath();
         if (filepath == null) {

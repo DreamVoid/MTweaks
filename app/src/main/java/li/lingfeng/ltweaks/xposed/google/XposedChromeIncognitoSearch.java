@@ -36,7 +36,7 @@ import li.lingfeng.ltweaks.utils.Utils;
         PackageNames.CHROME_BETA,
         PackageNames.CHROME_DEV,
         PackageNames.CHROME_CANARY
-}, prefs = R.string.key_chrome_incognito_search, loadAtActivityCreate = ClassNames.ACTIVITY)
+}, prefs = "key_chrome_incognito_search", loadAtActivityCreate = ClassNames.ACTIVITY)
 public class XposedChromeIncognitoSearch extends XposedChromeBase {
 
     private static final String TAB = "org.chromium.chrome.browser.tab.Tab";

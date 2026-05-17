@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/9/4.
  */
-@XposedLoad(packages = PackageNames.WE_CHAT, prefs = R.string.key_system_share_qrcode_scan)
+@XposedLoad(packages = PackageNames.WE_CHAT, prefs = "key_system_share_qrcode_scan")
 public class XposedWeChatScanQr extends XposedBase {
 
     private static final String BASE_SCAN_UI = "com.tencent.mm.plugin.scanner.ui.BaseScanUI";

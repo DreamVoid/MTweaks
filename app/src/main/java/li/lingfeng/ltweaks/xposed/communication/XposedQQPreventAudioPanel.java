@@ -15,7 +15,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_prevent_audio_panel)
+}, prefs = "key_qq_prevent_audio_panel")
 public class XposedQQPreventAudioPanel extends XposedBase {
 
     private static final String CHAT_PIE = "com.tencent.mobileqq.activity.BaseChatPie";

@@ -7,7 +7,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -66,12 +66,12 @@ public class BasePrefFragment extends PreferenceFragment
                 continue;
             }
 
-            for (int pref : preferenceChange.prefs()) {
-                List<Method> changeMethods = mPrefChangeListeners.get(getString(pref));
+            for (String pref : preferenceChange.prefs()) {
+                List<Method> changeMethods = mPrefChangeListeners.get(pref);
                 if (changeMethods == null) {
                     changeMethods = new ArrayList<>();
                     changeMethods.add(method);
-                    mPrefChangeListeners.put(getString(pref), changeMethods);
+                    mPrefChangeListeners.put(pref, changeMethods);
                 }
                 listenPreferenceChange(pref);
 
@@ -117,12 +117,12 @@ public class BasePrefFragment extends PreferenceFragment
                 continue;
             }
 
-            for (int pref : preferenceClick.prefs()) {
-                List<Method> clickMethods = mPrefClickListeners.get(getString(pref));
+            for (String pref : preferenceClick.prefs()) {
+                List<Method> clickMethods = mPrefClickListeners.get(pref);
                 if (clickMethods == null) {
                     clickMethods = new ArrayList<>();
                     clickMethods.add(method);
-                    mPrefClickListeners.put(getString(pref), clickMethods);
+                    mPrefClickListeners.put(pref, clickMethods);
                 }
                 listenPreferenceClick(pref);
             }
@@ -137,12 +137,12 @@ public class BasePrefFragment extends PreferenceFragment
                 continue;
             }
 
-            for (int pref : preferenceLongClick.prefs()) {
-                List<Method> clickMethods = mPrefLongClickListeners.get(getString(pref));
+            for (String pref : preferenceLongClick.prefs()) {
+                List<Method> clickMethods = mPrefLongClickListeners.get(pref);
                 if (clickMethods == null) {
                     clickMethods = new ArrayList<>();
                     clickMethods.add(method);
-                    mPrefLongClickListeners.put(getString(pref), clickMethods);
+                    mPrefLongClickListeners.put(pref, clickMethods);
                 }
             }
         }
@@ -249,12 +249,12 @@ public class BasePrefFragment extends PreferenceFragment
         return (ListPreference) preference;
     }
 
-    protected void listenPreferenceChange(@StringRes int key) {
+    protected void listenPreferenceChange(String key) {
         Preference preference = findPreference(key);
         preference.setOnPreferenceChangeListener(this);
     }
 
-    protected void listenPreferenceClick(@StringRes int key) {
+    protected void listenPreferenceClick(String key) {
         Preference preference = findPreference(key);
         preference.setOnPreferenceClickListener(this);
     }

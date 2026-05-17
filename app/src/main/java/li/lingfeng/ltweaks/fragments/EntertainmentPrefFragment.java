@@ -28,22 +28,22 @@ public class EntertainmentPrefFragment extends BasePrefFragment {
                 ComponentUtils.getFullAliasName(ProcessTextActivity.class, "Bilibili"));
     }
 
-    @PreferenceChange(prefs = R.string.key_douban_movie_url)
+    @PreferenceChange(prefs = "key_douban_movie_url")
     private void enableDoubanMovieUrl(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(DoubanMovieActivity.class, enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_douban_movie_search)
+    @PreferenceChange(prefs = "key_douban_movie_search")
     private void enableDoubanMovieSearch(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(ComponentUtils.getFullAliasName(ProcessTextActivity.class, "DoubanMovie"), enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_bilibili_search)
+    @PreferenceChange(prefs = "key_bilibili_search")
     private void enableBilibiliSearch(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(ComponentUtils.getFullAliasName(ProcessTextActivity.class, "Bilibili"), enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_bilibili_open_link_in_app)
+    @PreferenceChange(prefs = "key_bilibili_open_link_in_app")
     private void enableBilibiliOpenLinkInApp(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(BilibiliActivity.class, enabled);
     }

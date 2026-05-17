@@ -35,7 +35,7 @@ import static li.lingfeng.ltweaks.utils.ContextUtils.getResId;
 /**
  * Created by smallville on 2017/1/19.
  */
-@XposedLoad(packages = PackageNames.GOOGLE, prefs = R.string.key_google_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.GOOGLE, prefs = "key_google_remove_bottom_bar")
 public class XposedGoogle extends XposedBase {
 
     private static final String MAIN_ACTIVITY = "com.google.android.apps.gsa.searchnow.SearchNowActivity";
@@ -59,7 +59,7 @@ public class XposedGoogle extends XposedBase {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Class cls = param.args[0].getClass();
-                if (cls != DrawerStruct.LayoutParams.class && cls.getName().startsWith("android.support.v4.widget.")) {
+                if (cls != DrawerStruct.LayoutParams.class && cls.getName().startsWith("androidx.core.widget.")) {
                     View view = (View) param.thisObject;
                     if (view.getContext() instanceof Activity) {
                         Activity activity = (Activity) view.getContext();

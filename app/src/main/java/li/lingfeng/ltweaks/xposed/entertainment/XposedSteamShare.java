@@ -23,7 +23,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/6/24.
  */
-@XposedLoad(packages = PackageNames.STEAM, prefs = R.string.key_steam_share_url)
+@XposedLoad(packages = PackageNames.STEAM, prefs = "key_steam_share_url")
 public class XposedSteamShare extends XposedSteam {
 
     @Override

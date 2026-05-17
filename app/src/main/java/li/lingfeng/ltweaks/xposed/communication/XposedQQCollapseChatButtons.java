@@ -39,7 +39,7 @@ import static li.lingfeng.ltweaks.utils.ContextUtils.dp2px;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_collapse_chat_buttons)
+}, prefs = "key_qq_collapse_chat_buttons")
 public class XposedQQCollapseChatButtons extends XposedBase {
 
     private static final String CHAT_LIST_VIEW = "com.tencent.mobileqq.bubble.ChatXListView";

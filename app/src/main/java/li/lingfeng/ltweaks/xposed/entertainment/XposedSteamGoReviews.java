@@ -11,7 +11,7 @@ import li.lingfeng.ltweaks.utils.ViewUtils;
 /**
  * Created by lilingfeng on 2017/7/4.
  */
-@XposedLoad(packages = PackageNames.STEAM, prefs = R.string.key_steam_go_reviews)
+@XposedLoad(packages = PackageNames.STEAM, prefs = "key_steam_go_reviews")
 public class XposedSteamGoReviews extends XposedSteam {
     @Override
     protected String newMenuName() {

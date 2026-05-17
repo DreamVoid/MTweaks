@@ -13,7 +13,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
  * Created by lilingfeng on 2017/12/14.
  */
 @XposedLoad(packages = PackageNames.ANDROID_SETTINGS,
-        prefs = R.string.key_app_info_app_ops,
+        prefs = "key_app_info_app_ops",
         loadPrefsInZygote = true)
 public class XposedAppInfoAppOps extends XposedAppInfo {
 

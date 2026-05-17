@@ -20,12 +20,12 @@ public class DonateFragment extends BasePrefFragment {
         addPreferencesFromResource(R.xml.pref_donate);
     }
 
-    @PreferenceClick(prefs = R.string.key_donate_alipay)
+    @PreferenceClick(prefs = "key_donate_alipay")
     private void donateWithAlipay(Preference preference) {
         AlipayDonate.donate(getActivity());
     }
 
-    @PreferenceClick(prefs = R.string.key_donate_wechat)
+    @PreferenceClick(prefs = "key_donate_wechat")
     private void donateWithWeChat(Preference preference) {
         WeChatDonate.donate(getActivity());
     }

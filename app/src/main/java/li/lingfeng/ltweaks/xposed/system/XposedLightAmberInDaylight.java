@@ -20,7 +20,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
  * Created by smallville on 2018/1/26.
  * https://github.com/aosp-mirror/platform_frameworks_base/blob/nougat-mr2.3-release/services/core/java/com/android/server/display/NightDisplayService.java
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_display_light_amber_in_daylight)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_display_light_amber_in_daylight")
 public class XposedLightAmberInDaylight extends XposedBase {
 
     private static final String NIGHT_DISPLAY_SERVICE = "com.android.server.display.NightDisplayService";

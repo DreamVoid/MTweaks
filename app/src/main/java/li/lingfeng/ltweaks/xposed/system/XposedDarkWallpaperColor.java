@@ -3,7 +3,7 @@ package li.lingfeng.ltweaks.xposed.system;
 import android.app.WallpaperColors;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import de.robv.android.xposed.XC_MethodHook;
 import li.lingfeng.ltweaks.R;
@@ -12,7 +12,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_display_dark_wallpaper_color)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_display_dark_wallpaper_color")
 public class XposedDarkWallpaperColor extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

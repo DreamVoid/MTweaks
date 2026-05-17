@@ -33,7 +33,7 @@ import static li.lingfeng.ltweaks.utils.ContextUtils.dp2px;
 /**
  * Created by lilingfeng on 2018/1/19.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_BOOKS, prefs = R.string.key_google_books_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.GOOGLE_BOOKS, prefs = "key_google_books_remove_bottom_bar")
 public class XposedGoogleBooksRemoveBottomBar extends XposedBase {
 
     private static final String HOME_ACTIVITY = "com.google.android.apps.play.books.app.HomeActivity";

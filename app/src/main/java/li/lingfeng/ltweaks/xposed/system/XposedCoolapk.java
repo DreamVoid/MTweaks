@@ -40,7 +40,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
  */
 @XposedLoad(
         packages = PackageNames.COOLAPK,
-        prefs = R.string.key_coolapk_remove_bottom_bar,
+        prefs = "key_coolapk_remove_bottom_bar",
         loadAtActivityCreate = ClassNames.ACTIVITY)
 public class XposedCoolapk extends XposedBase {
 

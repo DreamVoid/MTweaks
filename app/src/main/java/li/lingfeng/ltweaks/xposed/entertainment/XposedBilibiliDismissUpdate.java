@@ -10,7 +10,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 @XposedLoad(packages = {
         PackageNames.BILIBILI,
         PackageNames.BILIBILI_IN
-}, prefs = R.string.key_bilibili_dismiss_update)
+}, prefs = "key_bilibili_dismiss_update")
 public class XposedBilibiliDismissUpdate extends XposedBase {
 
     private static final String UPDATE_VER_INFO = "tv.danmaku.bili.update.BiliUpdateVerInfo";

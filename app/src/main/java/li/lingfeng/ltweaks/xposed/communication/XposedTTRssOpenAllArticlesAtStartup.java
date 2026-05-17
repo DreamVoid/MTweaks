@@ -13,7 +13,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/7/11.
  */
-@XposedLoad(packages = PackageNames.TT_RSS, prefs = R.string.key_ttrss_open_all_articles_at_startup)
+@XposedLoad(packages = PackageNames.TT_RSS, prefs = "key_ttrss_open_all_articles_at_startup")
 public class XposedTTRssOpenAllArticlesAtStartup extends XposedBase {
 
     private static final String MASTER_ACTIVITY = "org.fox.ttrss.MasterActivity";

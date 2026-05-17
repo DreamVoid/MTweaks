@@ -20,7 +20,7 @@ import li.lingfeng.ltweaks.utils.ContextUtils;
  * Created by lilingfeng on 2017/8/15.
  */
 @XposedLoad(packages = PackageNames.ANDROID_SETTINGS,
-            prefs = R.string.key_app_info_open_app_data_folder,
+            prefs = "key_app_info_open_app_data_folder",
             loadPrefsInZygote = true)
 public class XposedAppInfoGoAppData extends XposedAppInfo {
 

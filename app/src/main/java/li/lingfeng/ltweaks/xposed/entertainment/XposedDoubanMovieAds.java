@@ -11,7 +11,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/8/10.
  */
-@XposedLoad(packages = PackageNames.DOUBAN_MOVIE, prefs = R.string.key_douban_movie_remove_ads)
+@XposedLoad(packages = PackageNames.DOUBAN_MOVIE, prefs = "key_douban_movie_remove_ads")
 public class XposedDoubanMovieAds extends XposedBase {
 
     private static final String AD_SHOW_MANAGER = "com.douban.ad.AdShowManager";

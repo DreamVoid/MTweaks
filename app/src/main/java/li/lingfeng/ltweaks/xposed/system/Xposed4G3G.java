@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.utils.Logger;
  */
 @XposedLoad(packages = {
         PackageNames.ANDROID_SYSTEM_UI,
-        PackageNames.ANDROID_PHONE }, prefs = R.string.key_quick_settings_tile_4g3g)
+        PackageNames.ANDROID_PHONE }, prefs = "key_quick_settings_tile_4g3g")
 public class Xposed4G3G extends XposedTile {
 
     private static final String PHONE_FACTORY = "com.android.internal.telephony.PhoneFactory";

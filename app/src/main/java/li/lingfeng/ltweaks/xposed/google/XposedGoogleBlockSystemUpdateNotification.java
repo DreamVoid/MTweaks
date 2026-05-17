@@ -13,7 +13,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/1/10.
  */
-@XposedLoad(packages = PackageNames.GMS, prefs = R.string.key_google_block_system_update_notification)
+@XposedLoad(packages = PackageNames.GMS, prefs = "key_google_block_system_update_notification")
 public class XposedGoogleBlockSystemUpdateNotification extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

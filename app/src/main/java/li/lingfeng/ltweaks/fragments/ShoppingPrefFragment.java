@@ -29,12 +29,12 @@ public class ShoppingPrefFragment extends BasePrefFragment {
         uncheckPreferenceByDisabledComponent(R.string.key_suning_history, JDHistoryActivity.class);
     }
 
-    @PreferenceChange(prefs = R.string.key_jd_open_link_in_app)
+    @PreferenceChange(prefs = "key_jd_open_link_in_app")
     private void enableJdOpenLinkInApp(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(JDActivity.class, enabled);
     }
 
-    @PreferenceChange(prefs = { R.string.key_jd_history, R.string.key_suning_history })
+    @PreferenceChange(prefs = { "key_jd_history", "key_suning_history" })
     private void enableJdHistory(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(JDHistoryActivity.class, enabled);
         findSwitchPreference(R.string.key_jd_history).setChecked(enabled);

@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/1/4.
  */
-@XposedLoad(packages = PackageNames.TEXT_AIDE, prefs = R.string.key_text_aide_open_youdao)
+@XposedLoad(packages = PackageNames.TEXT_AIDE, prefs = "key_text_aide_open_youdao")
 public class XposedTextAide extends XposedBase {
 
     @Override

@@ -14,7 +14,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/10/11.
  */
-@XposedLoad(packages = PackageNames.JD, prefs = R.string.key_jd_basic_share_activity)
+@XposedLoad(packages = PackageNames.JD, prefs = "key_jd_basic_share_activity")
 public class XposedJdBasicShare extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

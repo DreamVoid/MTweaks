@@ -11,5 +11,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface ZygoteLoad {
-    int[] prefs();  // Always load if empty.
+    String[] prefs();  // Always load if empty.
 }

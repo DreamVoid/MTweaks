@@ -19,7 +19,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/12/14.
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_keys_long_press_back_to_kill)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_keys_long_press_back_to_kill")
 public class XposedLongPressBackToKill extends XposedBase {
 
     private static final String PHONE_WINDOW_MANAGER = "com.android.server.policy.PhoneWindowManager";

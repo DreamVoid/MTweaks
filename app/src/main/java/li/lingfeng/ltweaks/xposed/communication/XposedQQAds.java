@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_remove_ads)
+}, prefs = "key_qq_remove_ads")
 public class XposedQQAds extends XposedBase {
 
     private static final String sAdView = "com.tencent.mobileqq.widget.ADView";

@@ -34,7 +34,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_clear_background)
+}, prefs = "key_qq_clear_background")
 public class XposedQQChatBackground extends XposedBase {
 
     private static final String SPLASH_ACTIVITY = "com.tencent.mobileqq.activity.SplashActivity";

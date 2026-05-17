@@ -20,7 +20,7 @@ import li.lingfeng.ltweaks.xposed.XposedCommon;
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM,
         PackageNames.ANDROID
-}, prefs = R.string.key_qq_exit_directly_by_sharing)
+}, prefs = "key_qq_exit_directly_by_sharing")
 public class XposedQQDirectlyExitBySharing extends XposedCommon {
 
     private static final String FORWARD_RECENT_ACTIVITY = "com.tencent.mobileqq.activity.ForwardRecentActivity";

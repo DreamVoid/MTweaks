@@ -18,7 +18,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/1/21.
  */
-@XposedLoad(packages = PackageNames.WE_CHAT, prefs = R.string.key_wechat_use_incoming_ringtone)
+@XposedLoad(packages = PackageNames.WE_CHAT, prefs = "key_wechat_use_incoming_ringtone")
 public class XposedWeChatIncomingRingtone extends XposedBase {
     @Override
     public void handleLoadPackage() throws Throwable {

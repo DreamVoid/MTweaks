@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.utils.ViewUtils;
 import li.lingfeng.ltweaks.xposed.XposedCommon;
 
-@XposedLoad(packages = {}, prefs = R.string.key_debug_app_crash_info)
+@XposedLoad(packages = {}, prefs = "key_debug_app_crash_info")
 public class XposedAppCrashInfo extends XposedCommon {
 
     private static final String APP_ERRORS = "com.android.server.am.AppErrors";

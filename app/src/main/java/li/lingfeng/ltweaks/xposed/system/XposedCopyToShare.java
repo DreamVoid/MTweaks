@@ -18,7 +18,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/8/31.
  */
-@XposedLoad(packages = {}, prefs = R.string.key_system_share_copy_to_share)
+@XposedLoad(packages = {}, prefs = "key_system_share_copy_to_share")
 public class XposedCopyToShare extends XposedBase {
 
     private WeakReference<Activity> mActivityRef;

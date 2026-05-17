@@ -19,7 +19,7 @@ import li.lingfeng.ltweaks.utils.Logger;
  * Created by lilingfeng on 2017/11/29.
  */
 @XposedLoad(packages = PackageNames.ANDROID_SETTINGS,
-        prefs = R.string.key_app_info_allow_disable,
+        prefs = "key_app_info_allow_disable",
         loadPrefsInZygote = true)
 public class XposedAppInfoAllowDisable extends XposedAppInfo {
     @Override

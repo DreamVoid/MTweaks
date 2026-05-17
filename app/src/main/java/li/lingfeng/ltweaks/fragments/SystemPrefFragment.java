@@ -57,24 +57,24 @@ public class SystemPrefFragment extends BasePrefFragment {
         uncheckPreferenceByDisabledComponent(R.string.key_system_share_image_search, ImageSearchActivity.class);
     }
 
-    @PreferenceChange(prefs = R.string.key_text_aide_open_youdao)
+    @PreferenceChange(prefs = "key_text_aide_open_youdao")
     private void uninstallOldApp(Preference preference, boolean enabled) {
         if (enabled) {
             PackageUtils.tryUninstallPackage("li.lingfeng.textaide.youdao", "Text Aide with Youdao", getActivity());
         }
     }
 
-    @PreferenceChange(prefs = R.string.key_text_selectable_text)
+    @PreferenceChange(prefs = "key_text_selectable_text")
     private void enableSelectableText(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(SelectableTextActivity.class, enabled);
     }
 
-    @PreferenceClick(prefs = R.string.key_text_actions)
+    @PreferenceClick(prefs = "key_text_actions")
     private void manageTextActions(Preference preference) {
         ListCheckActivity.create(getActivity(), TextActionDataProvider.class);
     }
 
-    @PreferenceClick(prefs = R.string.key_youdao_quick_query_shortcut)
+    @PreferenceClick(prefs = "key_youdao_quick_query_shortcut")
     private void youdaoQuckQueryShortcut(Preference preference) {
         Context context = ContextUtils.createPackageContext(PackageNames.YOUDAO_DICT);
         Intent intent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
@@ -93,7 +93,7 @@ public class SystemPrefFragment extends BasePrefFragment {
         Toast.makeText(getActivity(), R.string.app_shortcut_is_created, Toast.LENGTH_SHORT).show();
     }
 
-    @PreferenceChange(prefs = R.string.key_system_share_qrcode_scan)
+    @PreferenceChange(prefs = "key_system_share_qrcode_scan")
     private void systemShareQrcodeScan(final SwitchPreference preference, boolean enabled) {
         if (enabled) {
             PermissionUtils.requestPermissions(getActivity(), new PermissionUtils.ResultCallback() {
@@ -111,7 +111,7 @@ public class SystemPrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceChange(prefs = R.string.key_system_share_image_search)
+    @PreferenceChange(prefs = "key_system_share_image_search")
     private void systemShareImageSearch(final SwitchPreference preference, boolean enabled) {
         if (enabled) {
             PermissionUtils.requestPermissions(getActivity(), new PermissionUtils.ResultCallback() {
@@ -129,17 +129,17 @@ public class SystemPrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceClick(prefs = R.string.key_system_share_filter)
+    @PreferenceClick(prefs = "key_system_share_filter")
     private void systemShareFilter(Preference preference) {
         ListCheckActivity.create(getActivity(), ShareFilterDataProvider.class);
     }
 
-    @PreferenceClick(prefs = R.string.key_prevent_running_set_list)
+    @PreferenceClick(prefs = "key_prevent_running_set_list")
     private void setPreventList(Preference preference) {
         ListCheckActivity.create(getActivity(), PreventListDataProvider.class);
     }
 
-    @PreferenceChange(prefs = R.string.key_shadowsocks_primary_dns, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_shadowsocks_primary_dns", refreshAtStart = true)
     private void setShadowsocksPrimaryDns(EditTextPreference preference, String value, Extra extra) {
         String[] dnsArray = StringUtils.split(value, ',');
         StringBuilder summary = new StringBuilder(getString(R.string.pref_shadowsocks_primary_dns_summary));
@@ -151,7 +151,7 @@ public class SystemPrefFragment extends BasePrefFragment {
         preference.setSummary(summary);
     }
 
-    @PreferenceChange(prefs = R.string.key_quick_settings_tile_4g3g, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_quick_settings_tile_4g3g", refreshAtStart = true)
     private void tile4G3G(SwitchPreference preference, boolean enabled, Extra extra) {
         ListPreference pref4g = findListPreference(R.string.key_quick_settings_tile_4g);
         ListPreference pref3g = findListPreference(R.string.key_quick_settings_tile_3g);
@@ -190,12 +190,12 @@ public class SystemPrefFragment extends BasePrefFragment {
         listPreference.setSummary("%s");
     }
 
-    @PreferenceChange(prefs = R.string.key_quick_settings_tile_set_preconfigured_brightness, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_quick_settings_tile_set_preconfigured_brightness", refreshAtStart = true)
     private void tileSetPreconfiguredBrightness(SwitchPreference preference, boolean enabled, Extra extra) {
         findPreference(R.string.key_quick_settings_tile_preconfigured_brightness).setEnabled(enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_quick_settings_tile_preconfigured_brightness, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_quick_settings_tile_preconfigured_brightness", refreshAtStart = true)
     private boolean tilePrecongiruedBrightness(EditTextPreference preference, String intValue, Extra extra) {
         if (intValue.isEmpty()) {
             preference.setSummary("");
@@ -210,7 +210,7 @@ public class SystemPrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceClick(prefs = R.string.key_trust_agent_wifi_aps)
+    @PreferenceClick(prefs = "key_trust_agent_wifi_aps")
     private void setSmartLockWifiList(Preference preference) {
         KeyguardManager keyguardManager = (KeyguardManager) getActivity().getSystemService(Context.KEYGUARD_SERVICE);
         if (keyguardManager.isKeyguardSecure()) {
@@ -233,18 +233,18 @@ public class SystemPrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceClick(prefs = R.string.key_solid_explorer_url_replacers)
+    @PreferenceClick(prefs = "key_solid_explorer_url_replacers")
     private void setupSolidExplorerUrlReplacer(Preference preference) {
         startActivity(new Intent(getActivity(), SolidExplorerUrlReplacerSettings.class));
     }
 
-    @PreferenceChange(prefs = R.string.key_lineage_os_live_display_time, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_lineage_os_live_display_time", refreshAtStart = true)
     private void customizeLineageOSLiveDisplayTime(SwitchPreference preference, boolean enabled) {
         enablePreference(R.string.key_lineage_os_live_display_time_sunrise, enabled);
         enablePreference(R.string.key_lineage_os_live_display_time_sunset, enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_display_min_brightness, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_display_min_brightness", refreshAtStart = true)
     private boolean setMinBrightness(EditTextPreference preference, String intValue, Extra extra) {
         if (extra.refreshAtStart) {
             PowerManager powerManager = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);

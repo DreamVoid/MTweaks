@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/6/24.
  */
-@XposedLoad(packages = PackageNames.STEAM, prefs = R.string.key_steam_database)
+@XposedLoad(packages = PackageNames.STEAM, prefs = "key_steam_database")
 public class XposedSteamDatabase extends XposedSteam {
 
     @Override

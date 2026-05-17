@@ -30,7 +30,7 @@ import static li.lingfeng.ltweaks.prefs.SharedPreferences.ACTION_PREF_CHANGE_PRE
 /**
  * Created by smallville on 2017/10/12.
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_lineage_os_live_display_time)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_lineage_os_live_display_time")
 public class XposedLiveDisplayTwilight extends XposedBase {
 
     private static final String TWILIGHT_TRACKER = "org.cyanogenmod.platform.internal.display.TwilightTracker";

@@ -21,7 +21,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/4/11.
  */
-@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = R.string.key_quick_settings_brightness_by_volume_buttons)
+@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = "key_quick_settings_brightness_by_volume_buttons")
 public class XposedVolumeButtonOnBrightness extends XposedBase {
 
     private static final String SYSTEM_BAR = Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1 ?
@@ -43,7 +43,7 @@ public class XposedVolumeButtonOnBrightness extends XposedBase {
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 try {
                     mBrightnessMirrorController = XposedHelpers.getObjectField(param.thisObject, "mBrightnessMirrorController");
-                } catch (Throwable _) {}
+                } catch (Throwable ignored) {}
                 mHandler = (Handler) XposedHelpers.getObjectField(param.thisObject, "mHandler");
 
                 Context context = (Context) XposedHelpers.getObjectField(param.thisObject, "mContext");

@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface ResLoad {
     String[] packages(); // Load for all packages if empty.
-    int[] prefs();  // Always load if empty.
+    String[] prefs();  // Always load if empty.
 }

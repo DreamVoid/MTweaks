@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
  * https://www.xda-developers.com/nav-bar-customization-was-hidden-in-stock-nougat-all-along-and-it-never-needed-root/
  * https://github.com/GravityBox/GravityBox/blob/158620e50e53bdc4957289957ca8bc984fb90b1e/src/com/ceco/nougat/gravitybox/ModNavigationBar.java
  */
-@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = R.string.key_nav_bar_input_cursor_control)
+@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = "key_nav_bar_input_cursor_control")
 public class XposedInputCursorNavControl extends XposedBase {
 
     private static final String NAV_BAR_VIEW = "com.android.systemui.statusbar.phone.NavigationBarView";

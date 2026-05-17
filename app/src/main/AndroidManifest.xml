@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="li.lingfeng.ltweaks">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -32,7 +31,7 @@
             android:authorities="li.lingfeng.ltweaks.mainpreferences"
             android:exported="true" />
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="li.lingfeng.ltweaks.fileProvider"
             android:grantUriPermissions="true"
             android:exported="false">
@@ -47,7 +46,8 @@
 			
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -57,6 +57,7 @@
 
         <activity
             android:name=".activities.BilibiliActivity"
+            android:exported="true"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog"
             android:label="Bilibili"
@@ -73,6 +74,7 @@
 
         <activity
             android:name=".activities.DoubanMovieActivity"
+            android:exported="true"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog"
             android:label="@string/douban_movie_app"
@@ -91,6 +93,7 @@
 
         <activity
             android:name=".activities.JDActivity"
+            android:exported="true"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog"
             android:label="@string/jd_app"
@@ -125,8 +128,7 @@
                 <data android:host="m.jd.com" android:pathPattern="/product/.*\\.html" android:scheme="https"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.JDHistoryActivity" android:excludeFromRecents="true"
+        <activity android:name=".activities.JDHistoryActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/jd_history"
             android:icon="@mipmap/ic_price_history"
             android:theme="@style/DialogActivityTheme"
@@ -138,8 +140,7 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.SelectableTextActivity" android:excludeFromRecents="true"
+        <activity android:name=".activities.SelectableTextActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/text_selectable"
             android:icon="@mipmap/ic_selectable_text"
             android:theme="@style/DialogActivityTheme"
@@ -152,7 +153,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.QrCodeActivity" android:excludeFromRecents="true"
+        <activity android:name=".activities.QrCodeActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/share_qrcode_scan"
             android:icon="@mipmap/ic_qrcode_scan"
             android:theme="@style/DialogActivityTheme"
@@ -165,7 +166,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ImageSearchActivity" android:excludeFromRecents="true"
+        <activity android:name=".activities.ImageSearchActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/share_image_search"
             android:icon="@mipmap/ic_image_search"
             android:theme="@style/DialogActivityTheme"
@@ -179,6 +180,7 @@
         </activity>
         <activity-alias
             android:name=".activities.GoogleImageSearchActivity"
+            android:exported="true"
             android:label="@string/share_image_google_search"
             android:targetActivity=".activities.ImageSearchActivity">
             <intent-filter>
@@ -189,6 +191,7 @@
         </activity-alias>
         <activity-alias
             android:name=".activities.TinEyeImageSearchActivity"
+            android:exported="true"
             android:label="@string/share_image_tineye_search"
             android:targetActivity=".activities.ImageSearchActivity">
             <intent-filter>
@@ -198,6 +201,7 @@
             </intent-filter>
         </activity-alias>
         <activity-alias
+            android:exported="true"
             android:name=".activities.IQDBImageSearchActivity"
             android:label="@string/share_image_iqdb_search"
             android:targetActivity=".activities.ImageSearchActivity">
@@ -215,6 +219,7 @@
             android:theme="@style/Theme.AppCompat.Dialog">
         </activity>
         <activity-alias
+            android:exported="true"
             android:name=".activities.DoubanMovieProcessTextActivity"
             android:targetActivity=".activities.ProcessTextActivity"
             android:label="@string/process_text_douban_movie"
@@ -226,6 +231,7 @@
             </intent-filter>
         </activity-alias>
         <activity-alias
+            android:exported="true"
             android:name=".activities.BilibiliProcessTextActivity"
             android:targetActivity=".activities.ProcessTextActivity"
             android:label="@string/process_text_bilibili"
@@ -236,8 +242,8 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity-alias>
-
         <activity android:name=".activities.ChromeIncognitoActivity"
+            android:exported="true"
             android:taskAffinity="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
             android:excludeFromRecents="true"
             android:label="@string/process_text_incognito_search"

@@ -55,9 +55,9 @@ public abstract class XposedBase implements IXposedHookLoadPackage {
                         Prefs.createRemotePreferences(activity.getApplicationContext());
                     }
                     List<String> enabledPrefs = new ArrayList<>();
-                    for (int pref : xposedLoad.prefs()) {
-                        if (Prefs.instance().getBoolean(pref, false)) {
-                            enabledPrefs.add(PrefKeys.getById(pref));
+                    for (String pref : xposedLoad.prefs()) {
+                        if (!pref.isEmpty() && Prefs.instance().getBoolean(pref, false)) {
+                            enabledPrefs.add(pref);
                         }
                     }
 

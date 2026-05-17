@@ -28,7 +28,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/1/24.
  */
-@XposedLoad(packages = PackageNames.GALLERY, prefs = R.string.key_lineage_os_gallery_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.GALLERY, prefs = "key_lineage_os_gallery_remove_bottom_bar")
 public class XposedGalleryRemoveBottomBar extends XposedBase {
 
     private static final String GALLERY_ACTIVITY = "com.android.gallery3d.app.GalleryActivity";

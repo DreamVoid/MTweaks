@@ -29,7 +29,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/7/20.
  */
-@XposedLoad(packages = {}, prefs = R.string.key_selection_action_mode_original)
+@XposedLoad(packages = {}, prefs = "key_selection_action_mode_original")
 public class XposedOriginalSelectionActionMode extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

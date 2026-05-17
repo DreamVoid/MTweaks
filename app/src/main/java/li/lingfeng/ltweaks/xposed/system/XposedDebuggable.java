@@ -11,7 +11,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_debug_debuggable)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_debug_debuggable")
 public class XposedDebuggable extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

@@ -19,7 +19,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/12/25.
  */
-@XposedLoad(packages = { PackageNames.ANDROID_SYSTEM_UI, PackageNames.ANDROID }, prefs = R.string.key_recent_task_swipe_to_kill)
+@XposedLoad(packages = { PackageNames.ANDROID_SYSTEM_UI, PackageNames.ANDROID }, prefs = "key_recent_task_swipe_to_kill")
 public class XposedRecentTaskSwipeToKill extends XposedBase {
 
     private static final String SWIPE_HELPER = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N ?

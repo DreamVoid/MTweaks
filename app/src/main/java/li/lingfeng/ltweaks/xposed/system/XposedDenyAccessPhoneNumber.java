@@ -14,7 +14,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/1/25.
  */
-@XposedLoad(packages = {}, prefs = R.string.key_phone_deny_access_phone_number, excludedPackages = { PackageNames.ANDROID })
+@XposedLoad(packages = {}, prefs = "key_phone_deny_access_phone_number", excludedPackages = { PackageNames.ANDROID })
 public class XposedDenyAccessPhoneNumber extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

@@ -34,7 +34,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/1/4.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_PHOTOS, prefs = R.string.key_google_photos_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.GOOGLE_PHOTOS, prefs = "key_google_photos_remove_bottom_bar")
 public class XposedGooglePhotos extends XposedBase {
 
     Activity activity;

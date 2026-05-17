@@ -19,7 +19,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/11/9.
  */
-@XposedLoad(packages = {}, prefs = R.string.key_text_double_click_for_selectable)
+@XposedLoad(packages = {}, prefs = "key_text_double_click_for_selectable")
 public class XposedTextSelectable extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

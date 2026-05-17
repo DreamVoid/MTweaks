@@ -20,7 +20,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/5/14.
  */
-@XposedLoad(packages = PackageNames.TT_RSS, prefs = R.string.key_ttrss_refresh_menu)
+@XposedLoad(packages = PackageNames.TT_RSS, prefs = "key_ttrss_refresh_menu")
 public class XposedTTRssRefreshMenu extends XposedBase {
 
     private static final String MASTER_ACTIVITY = "org.fox.ttrss.MasterActivity";

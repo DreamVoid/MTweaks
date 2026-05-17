@@ -45,7 +45,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/8/24.
  */
-@XposedLoad(packages = PackageNames.WE_CHAT, prefs = R.string.key_wechat_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.WE_CHAT, prefs = "key_wechat_remove_bottom_bar")
 public class XposedWeChatRemoveBottomBar extends XposedBase {
 
     private static final String PERSIONAL_INFO = "com.tencent.mm.plugin.setting.ui.setting.SettingsPersonalInfoUI";

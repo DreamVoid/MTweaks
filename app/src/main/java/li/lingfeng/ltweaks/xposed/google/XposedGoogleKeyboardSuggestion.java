@@ -19,7 +19,7 @@ import static android.text.InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
 /**
  * Created by lilingfeng on 2017/7/27.
  */
-@XposedLoad(packages = PackageNames.GOOGLE, prefs = R.string.key_google_keyboard_suggestion)
+@XposedLoad(packages = PackageNames.GOOGLE, prefs = "key_google_keyboard_suggestion")
 public class XposedGoogleKeyboardSuggestion extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

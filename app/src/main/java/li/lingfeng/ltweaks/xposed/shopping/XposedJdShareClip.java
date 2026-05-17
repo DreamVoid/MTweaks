@@ -7,7 +7,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 /**
  * Created by smallville on 2017/5/31.
  */
-@XposedLoad(packages = PackageNames.JD, prefs = R.string.key_jd_share_item)
+@XposedLoad(packages = PackageNames.JD, prefs = "key_jd_share_item")
 public class XposedJdShareClip extends XposedShareClip {
 
     private static final String ITEM_ACTIVITY = "com.jd.lib.productdetail.ProductDetailActivity";

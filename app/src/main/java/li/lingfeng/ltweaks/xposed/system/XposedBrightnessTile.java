@@ -10,7 +10,7 @@ import li.lingfeng.ltweaks.prefs.Prefs;
 import li.lingfeng.ltweaks.utils.ContextUtils;
 import li.lingfeng.ltweaks.utils.Logger;
 
-@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = R.string.key_quick_settings_tile_set_preconfigured_brightness)
+@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = "key_quick_settings_tile_set_preconfigured_brightness")
 public class XposedBrightnessTile extends XposedTile {
     @Override
     protected int getPriority() {

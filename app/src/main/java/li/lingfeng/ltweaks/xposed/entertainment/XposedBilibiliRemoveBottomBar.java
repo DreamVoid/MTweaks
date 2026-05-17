@@ -43,7 +43,7 @@ import static li.lingfeng.ltweaks.utils.ContextUtils.dp2px;
 @XposedLoad(packages = {
         PackageNames.BILIBILI,
         PackageNames.BILIBILI_IN
-}, prefs = R.string.key_bilibili_remove_bottom_bar)
+}, prefs = "key_bilibili_remove_bottom_bar")
 public class XposedBilibiliRemoveBottomBar extends XposedBase {
 
     private static final String MAIN_ACTIVITY = "tv.danmaku.bili.MainActivityV2";

@@ -24,7 +24,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2016/12/19.
  */
-@XposedLoad(packages = PackageNames.SMZDM, prefs = R.string.key_smzdm_open_link_in_jd_app)
+@XposedLoad(packages = PackageNames.SMZDM, prefs = "key_smzdm_open_link_in_jd_app")
 public class XposedSmzdm extends XposedBase {
 
     private Activity mInnerBrowser;

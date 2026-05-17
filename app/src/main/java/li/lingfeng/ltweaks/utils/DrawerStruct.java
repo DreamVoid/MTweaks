@@ -1,7 +1,7 @@
 package li.lingfeng.ltweaks.utils;
 
 import android.app.Activity;
-import android.support.v4.widget.DrawerLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 

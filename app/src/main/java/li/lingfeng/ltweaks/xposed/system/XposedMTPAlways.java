@@ -7,7 +7,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_debug_mtp_always)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_debug_mtp_always")
 public class XposedMTPAlways extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

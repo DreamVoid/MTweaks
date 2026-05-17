@@ -11,9 +11,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -122,65 +122,52 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.menu_about:
-            {
-                showAbout();
-                return true;
+        if (id == R.id.menu_about) {
+            showAbout();
+            return true;
+        } else if (id == R.id.menu_save_log) {
+            File file = saveLog();
+            if (file != null) {
+                ViewUtils.showDialog(this, getString(R.string.app_save_log_ok, file.getAbsolutePath()));
+            } else {
+                Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
             }
-            case R.id.menu_save_log:
-            {
-                File file = saveLog();
-                if (file != null) {
-                    ViewUtils.showDialog(this, getString(R.string.app_save_log_ok, file.getAbsolutePath()));
+            return true;
+        } else if (id == R.id.menu_open_log) {
+            File file = saveLog();
+            if (file != null) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".fileProvider", file);
+                    intent.setDataAndType(uri, "text/plain");
                 } else {
-                    Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
+                    intent.setDataAndType(Uri.fromFile(file), "text/plain");
                 }
-                return true;
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
             }
-            case R.id.menu_open_log:
-            {
-                File file = saveLog();
-                if (file != null) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                        Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".fileProvider", file);
-                        intent.setDataAndType(uri, "text/plain");
-                    } else {
-                        intent.setDataAndType(Uri.fromFile(file), "text/plain");
-                    }
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
-                }
-                return true;
+            return true;
+        } else if (id == R.id.menu_send_mail) {
+            File file = saveLog();
+            if (file != null) {
+                sendLogWithMail(file);
+            } else {
+                Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
             }
-            case R.id.menu_send_mail:
-            {
-                File file = saveLog();
-                if (file != null) {
-                    sendLogWithMail(file);
-                } else {
-                    Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
-                }
-                return true;
+            return true;
+        } else if (id == R.id.menu_send_to) {
+            File file = saveLog();
+            if (file != null) {
+                sendLogTo(file);
+            } else {
+                Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
             }
-            case R.id.menu_send_to:
-            {
-                File file = saveLog();
-                if (file != null) {
-                    sendLogTo(file);
-                } else {
-                    Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            }
-            case R.id.menu_submit_issue:
-            {
-                ContextUtils.startBrowser(this, "https://github.com/bluesky139/LTweaks/issues");
-                return true;
-            }
+            return true;
+        } else if (id == R.id.menu_submit_issue) {
+            ContextUtils.startBrowser(this, "https://github.com/bluesky139/LTweaks/issues");
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

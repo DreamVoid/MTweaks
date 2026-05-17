@@ -29,9 +29,9 @@ public class GooglePrefFragment extends BasePrefFragment {
     }
 
     @PreferenceChange(prefs = {
-            R.string.key_google_plus_remove_bottom_bar,
-            R.string.key_google_photos_remove_bottom_bar,
-            R.string.key_google_play_view_in_coolapk
+            "key_google_plus_remove_bottom_bar",
+            "key_google_photos_remove_bottom_bar",
+            "key_google_play_view_in_coolapk"
     })
     private void uninstallOldApp(Preference preference, boolean enabled) {
         if (!enabled) {
@@ -56,7 +56,7 @@ public class GooglePrefFragment extends BasePrefFragment {
         PackageUtils.tryUninstallPackage(packageName, appName, getActivity());
     }
 
-    @PreferenceChange(prefs = R.string.key_google_plus_remove_bottom_bar, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_google_plus_remove_bottom_bar", refreshAtStart = true)
     private void setGooglePlusNewPostsPosition(Preference preference, boolean enabled) {
         SwitchPreference newPostsPreference = findSwitchPreference(R.string.key_google_plus_top_right_refresh);
         if (!enabled) {
@@ -67,12 +67,12 @@ public class GooglePrefFragment extends BasePrefFragment {
         }
     }
 
-    @PreferenceChange(prefs = R.string.key_chrome_incognito_search)
+    @PreferenceChange(prefs = "key_chrome_incognito_search")
     private void enableChromeIncognitoSearch(Preference preference, boolean enabled) {
         ComponentUtils.enableComponent(ChromeIncognitoActivity.class, enabled);
     }
 
-    @PreferenceChange(prefs = R.string.key_youtube_set_quality, refreshAtStart = true)
+    @PreferenceChange(prefs = "key_youtube_set_quality", refreshAtStart = true)
     private void setYoutubeQuality(ListPreference preference, String intValue) {
         int index = ArrayUtils.indexOf(getResources().getStringArray(R.array.youtube_quality_int), intValue);
         preference.setSummary(getResources().getStringArray(R.array.youtube_quality_string)[index]);

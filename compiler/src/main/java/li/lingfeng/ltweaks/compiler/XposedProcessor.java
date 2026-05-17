@@ -64,10 +64,19 @@ public class XposedProcessor extends AbstractProcessor {
         }
 
         try {
-            Iterator<TypeElement> iterator = (Iterator<TypeElement>) annotations.iterator();
-            TypeElement resTypeElement = iterator.next();
-            TypeElement xposedTypeElement = iterator.next();
-            TypeElement zygoteTypeElement = iterator.next();
+            TypeElement resTypeElement = null;
+            TypeElement xposedTypeElement = null;
+            TypeElement zygoteTypeElement = null;
+            for (TypeElement annotation : annotations) {
+                String name = annotation.getQualifiedName().toString();
+                if (name.equals("li.lingfeng.ltweaks.lib.ResLoad")) {
+                    resTypeElement = annotation;
+                } else if (name.equals("li.lingfeng.ltweaks.lib.XposedLoad")) {
+                    xposedTypeElement = annotation;
+                } else if (name.equals("li.lingfeng.ltweaks.lib.ZygoteLoad")) {
+                    zygoteTypeElement = annotation;
+                }
+            }
             generateXposedLoader(xposedTypeElement, zygoteTypeElement, resTypeElement, env);
             generatePrefKeys();
         } catch (Exception e) {
@@ -81,7 +90,7 @@ public class XposedProcessor extends AbstractProcessor {
         String genFilePath = genFile.toUri().toString();
         mMessager.printMessage(Diagnostic.Kind.NOTE, "XposedProcessor is generating " + genFilePath);
         Writer writer = genFile.openWriter();
-        mAppPath = genFilePath.substring(0, genFilePath.lastIndexOf("/build/generated/source/apt/"));
+        mAppPath = genFilePath.substring(0, genFilePath.lastIndexOf("/build/generated/"));
         mMessager.printMessage(Diagnostic.Kind.NOTE, "XposedProcessor mAppPath = " + mAppPath);
 
         writer.write("package li.lingfeng.ltweaks.xposed;\n\n");
@@ -173,21 +182,67 @@ public class XposedProcessor extends AbstractProcessor {
         Map<Integer, String> ids = new HashMap<>();  // int id -> string name, read from R.java
         Map<String, String> keys = new HashMap<>();  // string name -> string value, read from pref_keys.xml
 
-        // Read R.java to get string id -> string name
-        TypeElement rElement = processingEnv.getElementUtils().getTypeElement("li.lingfeng.ltweaks.R");
-        List<TypeElement> inners = ElementFilter.typesIn(rElement.getEnclosedElements());
-        TypeElement stringElement = inners.stream().filter(o -> o.getSimpleName().toString().equals("string")).iterator().next();
-        List<VariableElement> idElements = ElementFilter.fieldsIn(stringElement.getEnclosedElements());
-        for (VariableElement idElement : idElements) {
-            if (!idElement.getSimpleName().toString().startsWith("key_")) {
-                continue;
+        // Read R.java source file to get string id -> string name
+        // (AGP 8+ no longer generates final R class fields, so element API won't have constant values)
+        String rPath = mAppPath + "/build/generated/not_namespaced_r_class_sources/selfUseDebug/generateSelfUseDebugRFile/out/li/lingfeng/ltweaks/R.java";
+        // Remove file:// or file:/// prefix
+        while (rPath.startsWith("file:")) {
+            rPath = rPath.substring("file:".length());
+        }
+        // Remove leading slashes for Windows paths like /D:/...
+        while (rPath.startsWith("/")) {
+            rPath = rPath.substring(1);
+        }
+        java.io.File rFile = new java.io.File(rPath);
+        if (rFile.exists()) {
+            String rContent = new String(java.nio.file.Files.readAllBytes(rFile.toPath()));
+            java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("public static int (key_\\w+)\\s*=\\s*(\\d+);");
+            java.util.regex.Matcher matcher = pattern.matcher(rContent);
+            while (matcher.find()) {
+                String name = matcher.group(1);
+                int id = Integer.parseInt(matcher.group(2));
+                mMessager.printMessage(Diagnostic.Kind.NOTE, "R.string." + name + " -> " + String.format("0x%x", id));
+                ids.put(id, name);
             }
-            mMessager.printMessage(Diagnostic.Kind.NOTE, "R.string." + idElement.getSimpleName() + " -> " + String.format("0x%x", idElement.getConstantValue()));
-            ids.put((int) idElement.getConstantValue(), idElement.getSimpleName().toString());
+        } else {
+            mMessager.printMessage(Diagnostic.Kind.WARNING, "R.java not found at " + rPath + ", trying alternative paths...");
+            // Try alternative paths for different build configurations
+            String[] altPaths = {
+                mAppPath + "/build/generated/r/selfUseDebug/li/lingfeng/ltweaks/R.java",
+                mAppPath.substring(0, mAppPath.lastIndexOf("/app")) + "/app/build/generated/not_namespaced_r_class_sources/selfUseDebug/generateSelfUseDebugRFile/out/li/lingfeng/ltweaks/R.java",
+                mAppPath + "/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/li/lingfeng/ltweaks/R.java"
+            };
+            for (String altPath : altPaths) {
+                while (altPath.startsWith("file:")) {
+                    altPath = altPath.substring("file:".length());
+                }
+                while (altPath.startsWith("/")) {
+                    altPath = altPath.substring(1);
+                }
+                java.io.File altFile = new java.io.File(altPath);
+                if (altFile.exists()) {
+                    String rContent = new String(java.nio.file.Files.readAllBytes(altFile.toPath()));
+                    java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("public static int (key_\\w+)\\s*=\\s*(\\d+);");
+                    java.util.regex.Matcher matcher = pattern.matcher(rContent);
+                    while (matcher.find()) {
+                        String name = matcher.group(1);
+                        int id = Integer.parseInt(matcher.group(2));
+                        mMessager.printMessage(Diagnostic.Kind.NOTE, "R.string." + name + " -> " + String.format("0x%x", id));
+                        ids.put(id, name);
+                    }
+                    break;
+                }
+            }
         }
 
         // Read pref_keys.xml to get string name -> string value
         String xmlPath = mAppPath + "/src/main/res/values/pref_keys.xml";
+        while (xmlPath.startsWith("file:")) {
+            xmlPath = xmlPath.substring("file:".length());
+        }
+        while (xmlPath.startsWith("/")) {
+            xmlPath = xmlPath.substring(1);
+        }
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlPath);
         NodeList nodes = document.getDocumentElement().getChildNodes();
         for (int i = 0; i < nodes.getLength(); ++i) {

@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.utils.Shell;
 /**
  * Created by lilingfeng on 2017/6/26.
  */
-@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = R.string.key_quick_settings_tile_adb_wireless)
+@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = "key_quick_settings_tile_adb_wireless")
 public class XposedAdbWireless extends XposedTile {
 
     @Override

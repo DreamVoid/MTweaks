@@ -15,7 +15,7 @@ import li.lingfeng.ltweaks.utils.ViewUtils;
 /**
  * Created by lilingfeng on 2017/7/4.
  */
-@XposedLoad(packages = PackageNames.STEAM, prefs = R.string.key_steam_go_top)
+@XposedLoad(packages = PackageNames.STEAM, prefs = "key_steam_go_top")
 public class XposedSteamGoTop extends XposedSteam {
     @Override
     protected String newMenuName() {

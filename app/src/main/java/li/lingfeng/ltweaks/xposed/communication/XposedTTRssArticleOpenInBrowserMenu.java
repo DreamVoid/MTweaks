@@ -21,7 +21,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/5/13.
  */
-@XposedLoad(packages = PackageNames.TT_RSS, prefs = R.string.key_ttrss_open_link_in_browser_menu)
+@XposedLoad(packages = PackageNames.TT_RSS, prefs = "key_ttrss_open_link_in_browser_menu")
 public class XposedTTRssArticleOpenInBrowserMenu extends XposedBase {
 
     private static final String ONLINE_ACTIVITY = "org.fox.ttrss.OnlineActivity";

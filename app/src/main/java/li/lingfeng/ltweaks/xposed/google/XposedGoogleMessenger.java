@@ -14,7 +14,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/1/7.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_MESSENGER, prefs = R.string.key_google_messenger_disable_direct_share)
+@XposedLoad(packages = PackageNames.GOOGLE_MESSENGER, prefs = "key_google_messenger_disable_direct_share")
 public class XposedGoogleMessenger extends XposedBase {
     @Override
     public void handleLoadPackage() throws Throwable {

@@ -18,7 +18,7 @@ import li.lingfeng.ltweaks.xposed.XposedCommon;
 /**
  * Created by smallville on 2017/5/31.
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_douban_movie_url)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_douban_movie_url")
 public class XposedDoubanMovieUrl extends XposedCommon {
     @Override
     protected void handleLoadPackage() throws Throwable {

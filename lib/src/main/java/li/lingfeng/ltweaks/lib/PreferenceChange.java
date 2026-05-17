@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface PreferenceChange {
-    int[] prefs();
+    String[] prefs();
     boolean refreshAtStart() default false;
 }

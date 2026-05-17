@@ -27,7 +27,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/1/5.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_PLAY, prefs = R.string.key_google_play_view_in_coolapk)
+@XposedLoad(packages = PackageNames.GOOGLE_PLAY, prefs = "key_google_play_view_in_coolapk")
 public class XposedGooglePlay extends XposedBase {
 
     private static String MENU_COOLAPK;

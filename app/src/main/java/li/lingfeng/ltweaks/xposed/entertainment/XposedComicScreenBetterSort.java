@@ -14,7 +14,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = PackageNames.COMIC_SCREEN, prefs = R.string.key_comic_screen_better_sort)
+@XposedLoad(packages = PackageNames.COMIC_SCREEN, prefs = "key_comic_screen_better_sort")
 public class XposedComicScreenBetterSort extends XposedBase {
 
     private XC_MethodHook.Unhook mCollectionsSortHook;

@@ -18,7 +18,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_dismiss_contacts_enabler)
+}, prefs = "key_qq_dismiss_contacts_enabler")
 public class XposedQQContacts extends XposedBase {
 
     private static final String sPhoneFrameActivity = "com.tencent.mobileqq.activity.phone.PhoneFrameActivity";

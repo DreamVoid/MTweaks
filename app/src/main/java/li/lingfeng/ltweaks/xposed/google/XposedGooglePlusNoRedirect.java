@@ -17,7 +17,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/7/10.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_PLUS, prefs = R.string.key_google_plus_no_redirect)
+@XposedLoad(packages = PackageNames.GOOGLE_PLUS, prefs = "key_google_plus_no_redirect")
 public class XposedGooglePlusNoRedirect extends XposedBase {
 
     private static final Pattern sUrlReg = Pattern.compile("^https?://plus\\.url\\.google\\.com/url\\?q=(.+)$");

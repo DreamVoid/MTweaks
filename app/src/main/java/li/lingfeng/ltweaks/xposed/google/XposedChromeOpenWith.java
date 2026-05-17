@@ -28,7 +28,7 @@ import li.lingfeng.ltweaks.utils.Logger;
         PackageNames.CHROME_CANARY,
         PackageNames.ANDROID,
         PackageNames.ANDROID_SYSTEM
-}, prefs = R.string.key_chrome_open_with)
+}, prefs = "key_chrome_open_with")
 public class XposedChromeOpenWith extends XposedChromeBase {
 
     private static final String CHOOSER_ACTIVITY = "com.android.internal.app.ChooserActivity";

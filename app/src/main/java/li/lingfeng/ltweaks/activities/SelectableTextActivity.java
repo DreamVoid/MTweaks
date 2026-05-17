@@ -5,8 +5,8 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -54,18 +54,15 @@ public class SelectableTextActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.copy:
-                ClipboardManager clipManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                clipManager.setPrimaryClip(ClipData.newPlainText(null, mEditView.getText()));
-                break;
-            case R.id.share:
-                ShareUtils.shareText(this, mEditView.getText().toString());
-                break;
-            case R.id.edit:
-                mEditView.setVisibility(View.VISIBLE);
-                mTextView.setVisibility(View.GONE);
-                break;
+        int id = v.getId();
+        if (id == R.id.copy) {
+            ClipboardManager clipManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            clipManager.setPrimaryClip(ClipData.newPlainText(null, mEditView.getText()));
+        } else if (id == R.id.share) {
+            ShareUtils.shareText(this, mEditView.getText().toString());
+        } else if (id == R.id.edit) {
+            mEditView.setVisibility(View.VISIBLE);
+            mTextView.setVisibility(View.GONE);
         }
     }
 }

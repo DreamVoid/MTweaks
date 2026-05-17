@@ -28,7 +28,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/8/9.
  */
-@XposedLoad(packages = PackageNames.YOUTUBE, prefs = R.string.key_youtube_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.YOUTUBE, prefs = "key_youtube_remove_bottom_bar")
 public class XposedYoutubeRemoveBottomBar extends XposedBase {
 
     private static final String MAIN_ACTIVITY = "com.google.android.apps.youtube.app.WatchWhileActivity";

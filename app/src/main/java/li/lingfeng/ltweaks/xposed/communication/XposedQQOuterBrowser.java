@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_outer_browser)
+}, prefs = "key_qq_outer_browser")
 public class XposedQQOuterBrowser extends XposedBase {
 
     private static final String BROWSER_DELEGATED_ACTIVITY = "com.tencent.mobileqq.activity.QQBrowserDelegationActivity";

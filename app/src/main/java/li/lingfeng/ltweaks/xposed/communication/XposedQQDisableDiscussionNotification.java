@@ -19,7 +19,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_disable_discussion_notification)
+}, prefs = "key_qq_disable_discussion_notification")
 public class XposedQQDisableDiscussionNotification extends XposedBase {
 
     private static final String PROCESSOR_OBSERVER = "com.tencent.mobileqq.app.message.ProcessorObserver";

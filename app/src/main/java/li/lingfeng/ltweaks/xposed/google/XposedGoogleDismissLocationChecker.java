@@ -13,7 +13,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/6/3.
  */
-@XposedLoad(packages = PackageNames.GMS, prefs = R.string.key_google_dismiss_location_checker)
+@XposedLoad(packages = PackageNames.GMS, prefs = "key_google_dismiss_location_checker")
 public class XposedGoogleDismissLocationChecker extends XposedBase {
 
     private static final String LOCATION_CHECKER_ACTIVITY = "com.google.android.location.settings.LocationSettingsCheckerActivity";

@@ -24,7 +24,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 @XposedLoad(packages = {
         PackageNames.BILIBILI,
         PackageNames.BILIBILI_IN
-}, prefs = R.string.key_bilibili_expand_desc)
+}, prefs = "key_bilibili_expand_desc")
 public class XposedBilibiliExpandDesc extends XposedBase {
 
     private static final String VIDEO_DETAILS_ACTIVITY = "tv.danmaku.bili.ui.video.VideoDetailsActivity";

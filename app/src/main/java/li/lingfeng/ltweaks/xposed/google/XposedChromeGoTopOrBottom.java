@@ -17,7 +17,7 @@ import li.lingfeng.ltweaks.utils.ContextUtils;
         PackageNames.CHROME_BETA,
         PackageNames.CHROME_DEV,
         PackageNames.CHROME_CANARY
-}, prefs = R.string.key_chrome_go_top_or_bottom, loadAtActivityCreate = ClassNames.ACTIVITY)
+}, prefs = "key_chrome_go_top_or_bottom", loadAtActivityCreate = ClassNames.ACTIVITY)
 public class XposedChromeGoTopOrBottom extends XposedChromeBase {
 
     @Override

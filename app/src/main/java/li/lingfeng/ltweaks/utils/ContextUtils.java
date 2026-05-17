@@ -14,10 +14,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Binder;
-import android.support.annotation.ArrayRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
+import androidx.annotation.ArrayRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 import android.util.TypedValue;
 import android.widget.Toast;
 

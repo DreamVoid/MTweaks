@@ -18,7 +18,7 @@ import li.lingfeng.ltweaks.utils.Logger;
  * Created by lilingfeng on 2017/8/16.
  */
 @XposedLoad(packages = PackageNames.ANDROID_SETTINGS,
-            prefs = R.string.key_app_info_go_market,
+            prefs = "key_app_info_go_market",
             loadPrefsInZygote = true)
 public class XposedAppInfoGoMarket extends XposedAppInfo {
 

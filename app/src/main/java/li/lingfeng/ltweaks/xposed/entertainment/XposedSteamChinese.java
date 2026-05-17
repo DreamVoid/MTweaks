@@ -10,7 +10,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/8/25.
  */
-@XposedLoad(packages = PackageNames.STEAM, prefs = R.string.key_steam_chinese)
+@XposedLoad(packages = PackageNames.STEAM, prefs = "key_steam_chinese")
 public class XposedSteamChinese extends XposedBase {
 
     private static final String USER_ACCOUNT_INFO = "com.valvesoftware.android.steam.community.LoggedInUserAccountInfo";

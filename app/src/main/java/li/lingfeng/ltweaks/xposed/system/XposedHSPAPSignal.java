@@ -18,8 +18,8 @@ import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.Xposed;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = R.string.key_display_hspap_signal)
-@ResLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = R.string.key_display_hspap_signal)
+@XposedLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = "key_display_hspap_signal")
+@ResLoad(packages = PackageNames.ANDROID_SYSTEM_UI, prefs = "key_display_hspap_signal")
 public class XposedHSPAPSignal extends XposedBase implements IXposedHookInitPackageResources {
 
     private static final String MOBILE_SIGNAL_CONTROLLER = "com.android.systemui.statusbar.policy.MobileSignalController";

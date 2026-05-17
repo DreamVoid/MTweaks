@@ -1,6 +1,6 @@
 package li.lingfeng.ltweaks.activities;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

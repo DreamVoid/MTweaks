@@ -15,7 +15,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/4/26.
  */
-@XposedLoad(packages = {}, prefs = R.string.key_web_search_to_browser, excludedPackages = PackageNames.ANDROID)
+@XposedLoad(packages = {}, prefs = "key_web_search_to_browser", excludedPackages = PackageNames.ANDROID)
 public class XposedWebSearchToBrowser extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

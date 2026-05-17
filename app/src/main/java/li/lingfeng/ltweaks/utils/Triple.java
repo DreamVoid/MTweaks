@@ -1,6 +1,6 @@
 package li.lingfeng.ltweaks.utils;
 
-import com.google.common.base.Objects;
+import java.util.Objects;
 
 /**
  * Created by sv on 18-2-14.
@@ -23,8 +23,8 @@ public class Triple<F, S, T> {
             return false;
         }
         Triple t = (Triple) obj;
-        return Objects.equal(t.first, first) && Objects.equal(t.second, second)
-                && Objects.equal(t.third, third);
+        return Objects.equals(t.first, first) && Objects.equals(t.second, second)
+                && Objects.equals(t.third, third);
     }
 
     @Override

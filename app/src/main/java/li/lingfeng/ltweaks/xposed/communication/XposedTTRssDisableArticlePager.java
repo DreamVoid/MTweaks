@@ -17,7 +17,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/5/13.
  */
-@XposedLoad(packages = PackageNames.TT_RSS, prefs = R.string.key_ttrss_disable_article_pager)
+@XposedLoad(packages = PackageNames.TT_RSS, prefs = "key_ttrss_disable_article_pager")
 public class XposedTTRssDisableArticlePager extends XposedBase {
 
     private static final String ARTICLE_PAGER = "org.fox.ttrss.ArticlePager";

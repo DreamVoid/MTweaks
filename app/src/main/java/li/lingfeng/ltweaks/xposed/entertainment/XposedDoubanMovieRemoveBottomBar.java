@@ -27,7 +27,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/7/27.
  */
-@XposedLoad(packages = PackageNames.DOUBAN_MOVIE, prefs = R.string.key_douban_movie_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.DOUBAN_MOVIE, prefs = "key_douban_movie_remove_bottom_bar")
 public class XposedDoubanMovieRemoveBottomBar extends XposedBase {
 
     private static final String MAIN_ACTIVITY = "com.douban.movie.activity.MainActivity";

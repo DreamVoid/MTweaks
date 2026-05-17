@@ -104,9 +104,9 @@ public abstract class Xposed implements IXposedHookZygoteInit, IXposedHookLoadPa
         for (Class<?> cls : mZygoteModules) {
             try {
                 ZygoteLoad zygoteLoad = cls.getAnnotation(ZygoteLoad.class);
-                List<Integer> enabledPrefs = new ArrayList<>();
-                for (int pref : zygoteLoad.prefs()) {
-                    if (Prefs.instance().getBoolean(pref, false)) {
+                List<String> enabledPrefs = new ArrayList<>();
+                for (String pref : zygoteLoad.prefs()) {
+                    if (!pref.isEmpty() && Prefs.instance().getBoolean(pref, false)) {
                         enabledPrefs.add(pref);
                     }
                 }
@@ -143,10 +143,10 @@ public abstract class Xposed implements IXposedHookZygoteInit, IXposedHookLoadPa
                     Prefs.useZygotePreferences();
                 }
 
-                List<Integer> enabledPrefs = new ArrayList<>();
+                List<String> enabledPrefs = new ArrayList<>();
                 if (xposedLoad.loadAtActivityCreate().isEmpty()) {
-                    for (int pref : xposedLoad.prefs()) {
-                        if (Prefs.instance().getBoolean(pref, false)) {
+                    for (String pref : xposedLoad.prefs()) {
+                        if (!pref.isEmpty() && Prefs.instance().getBoolean(pref, false)) {
                             enabledPrefs.add(pref);
                         }
                     }
@@ -191,9 +191,9 @@ public abstract class Xposed implements IXposedHookZygoteInit, IXposedHookLoadPa
         for (Class<?> cls : resModules) {
             try {
                 ResLoad resLoad = cls.getAnnotation(ResLoad.class);
-                List<Integer> enabledPrefs = new ArrayList<>();
-                for (int pref : resLoad.prefs()) {
-                    if (Prefs.instance().getBoolean(pref, false)) {
+                List<String> enabledPrefs = new ArrayList<>();
+                for (String pref : resLoad.prefs()) {
+                    if (!pref.isEmpty() && Prefs.instance().getBoolean(pref, false)) {
                         enabledPrefs.add(pref);
                     }
                 }

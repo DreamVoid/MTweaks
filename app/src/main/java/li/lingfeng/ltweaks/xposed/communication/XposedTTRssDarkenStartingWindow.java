@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/7/10.
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_ttrss_darken)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_ttrss_darken")
 public class XposedTTRssDarkenStartingWindow extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

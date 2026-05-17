@@ -1,6 +1,6 @@
 package li.lingfeng.ltweaks.utils;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.util.Pair;
 import android.util.Patterns;
 import android.util.SparseArray;

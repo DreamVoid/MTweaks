@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/4/27.
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = R.string.key_bilibili_darken)
+@XposedLoad(packages = PackageNames.ANDROID, prefs = "key_bilibili_darken")
 public class XposedBilibiliDarkenStartingWindow extends XposedBase {
 
     @Override

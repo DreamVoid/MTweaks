@@ -7,7 +7,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.widget.Toast;
 
 import java.util.List;
@@ -25,7 +25,7 @@ import li.lingfeng.ltweaks.utils.PackageUtils;
 import li.lingfeng.ltweaks.utils.Shell;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = PackageNames.SHADOWSOCKS, prefs = R.string.key_shadowsocks_transproxy)
+@XposedLoad(packages = PackageNames.SHADOWSOCKS, prefs = "key_shadowsocks_transproxy")
 public class XposedShadowsocksTransproxy extends XposedBase {
 
     private static final String TRANSPROXY_SERVICE = "com.github.shadowsocks.bg.TransproxyService";

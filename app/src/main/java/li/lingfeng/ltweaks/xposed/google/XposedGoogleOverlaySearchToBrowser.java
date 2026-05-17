@@ -19,7 +19,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2018/4/19.
  */
-@XposedLoad(packages = PackageNames.GOOGLE, prefs = R.string.key_google_overlay_search_to_browser)
+@XposedLoad(packages = PackageNames.GOOGLE, prefs = "key_google_overlay_search_to_browser")
 public class XposedGoogleOverlaySearchToBrowser extends XposedBase {
 
     private static final String QUERY_ENTRY_ACTIVITY = "com.google.android.apps.gsa.queryentry.QueryEntryActivity";

@@ -18,7 +18,7 @@ import li.lingfeng.ltweaks.utils.ContextUtils;
         PackageNames.CHROME_BETA,
         PackageNames.CHROME_DEV,
         PackageNames.CHROME_CANARY
-}, prefs = R.string.key_chrome_google_cache, loadAtActivityCreate = ClassNames.ACTIVITY)
+}, prefs = "key_chrome_google_cache", loadAtActivityCreate = ClassNames.ACTIVITY)
 public class XposedChromeCache extends XposedChromeBase {
 
 

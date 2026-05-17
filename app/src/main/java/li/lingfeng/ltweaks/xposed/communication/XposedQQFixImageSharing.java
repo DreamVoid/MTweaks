@@ -24,7 +24,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_fix_image_sharing)
+}, prefs = "key_qq_fix_image_sharing")
 public class XposedQQFixImageSharing extends XposedBase {
 
     private static final String FORWARD_OPERATIONS = "com.tencent.mobileqq.activity.ForwardOperations";

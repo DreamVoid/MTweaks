@@ -28,7 +28,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by smallville on 2017/6/14.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_PLUS, prefs = R.string.key_google_plus_hide_comment_edit)
+@XposedLoad(packages = PackageNames.GOOGLE_PLUS, prefs = "key_google_plus_hide_comment_edit")
 public class XposedGooglePlusComment extends XposedBase {
 
     private static final String sOneActivity = "com.google.android.apps.plus.stream.oneup.OneUpStreamActivity";

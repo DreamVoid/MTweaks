@@ -38,7 +38,7 @@ import static li.lingfeng.ltweaks.utils.ContextUtils.dp2px;
 /**
  * Created by smallville on 2017/1/4.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_PLUS, prefs = R.string.key_google_plus_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.GOOGLE_PLUS, prefs = "key_google_plus_remove_bottom_bar")
 public class XposedGooglePlus extends XposedBase {
 
     private static final String sActivityName = "com.google.android.apps.plus.home.TikTokHomeActivity";

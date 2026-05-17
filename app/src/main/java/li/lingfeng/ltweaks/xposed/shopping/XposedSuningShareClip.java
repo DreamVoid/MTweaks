@@ -7,7 +7,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 /**
  * Created by smallville on 2017/2/11.
  */
-@XposedLoad(packages = PackageNames.SUNING, prefs = R.string.key_suning_share_item)
+@XposedLoad(packages = PackageNames.SUNING, prefs = "key_suning_share_item")
 public class XposedSuningShareClip extends XposedShareClip {
 
     private static final String ITEM_ACTIVITY = "com.suning.mobile.ebuy.commodity.newgoodsdetail.NewGoodsDetailActivity";

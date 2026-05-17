@@ -14,7 +14,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 /**
  * Created by lilingfeng on 2017/11/28.
  */
-@XposedLoad(packages = PackageNames.PUSH_BULLET, prefs = R.string.key_push_bullet_share_to_all)
+@XposedLoad(packages = PackageNames.PUSH_BULLET, prefs = "key_push_bullet_share_to_all")
 public class XposedPushBulletShareToAll extends XposedBase {
 
     private static final String SHARE_ACTIVITY = "com.pushbullet.android.ui.ShareActivity";

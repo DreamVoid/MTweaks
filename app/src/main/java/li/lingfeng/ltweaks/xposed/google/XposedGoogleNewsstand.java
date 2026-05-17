@@ -30,7 +30,7 @@ import static li.lingfeng.ltweaks.utils.ContextUtils.getResId;
 /**
  * Created by smallville on 2017/1/21.
  */
-@XposedLoad(packages = PackageNames.GOOGLE_NEWSSTAND, prefs = R.string.key_google_newsstand_remove_bottom_bar)
+@XposedLoad(packages = PackageNames.GOOGLE_NEWSSTAND, prefs = "key_google_newsstand_remove_bottom_bar")
 public class XposedGoogleNewsstand extends XposedBase {
 
     private Activity mActivity;
@@ -138,7 +138,7 @@ public class XposedGoogleNewsstand extends XposedBase {
         Logger.i("mTabList is created.");
 
         mDrawer = mActivity.findViewById(idDrawer);
-        Class<?> clsDrawerLayout = XposedHelpers.findClass("android.support.v4.widget.DrawerLayout", lpparam.classLoader);
+        Class<?> clsDrawerLayout = XposedHelpers.findClass("androidx.drawerlayout.widget.DrawerLayout", lpparam.classLoader);
         mMethodCloseDrawers = clsDrawerLayout.getDeclaredMethod("closeDrawers");
     }
 

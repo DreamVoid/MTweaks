@@ -22,7 +22,7 @@ import li.lingfeng.ltweaks.xposed.XposedCommon;
         PackageNames.ANDROID,
         PackageNames.BILIBILI,
         PackageNames.BILIBILI_IN
-}, prefs = R.string.key_bilibili_search)
+}, prefs = "key_bilibili_search")
 public class XposedBilibiliSearch extends XposedCommon {
     @Override
     protected void handleLoadPackage() throws Throwable {

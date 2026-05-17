@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
         PackageNames.QQ,
         PackageNames.QQ_INTERNATIONAL,
         PackageNames.TIM
-}, prefs = R.string.key_qq_hide_weak_net_toast)
+}, prefs = "key_qq_hide_weak_net_toast")
 public class XposedQQHideWeakNetToast extends XposedBase {
     @Override
     protected void handleLoadPackage() throws Throwable {

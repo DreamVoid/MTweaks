@@ -36,7 +36,7 @@ import okhttp3.Response;
         PackageNames.CHROME_BETA,
         PackageNames.CHROME_DEV,
         PackageNames.CHROME_CANARY
-}, prefs = R.string.key_chrome_ip_info, loadAtActivityCreate = ClassNames.ACTIVITY)
+}, prefs = "key_chrome_ip_info", loadAtActivityCreate = ClassNames.ACTIVITY)
 public class XposedChromeIPInfo extends XposedChromeBase {
 
     @Override

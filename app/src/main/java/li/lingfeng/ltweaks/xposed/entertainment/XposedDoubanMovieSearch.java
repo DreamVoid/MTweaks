@@ -27,7 +27,7 @@ import li.lingfeng.ltweaks.xposed.XposedCommon;
 /**
  * Created by lilingfeng on 2017/6/30.
  */
-@XposedLoad(packages = { PackageNames.ANDROID, PackageNames.DOUBAN_MOVIE }, prefs = R.string.key_douban_movie_search)
+@XposedLoad(packages = { PackageNames.ANDROID, PackageNames.DOUBAN_MOVIE }, prefs = "key_douban_movie_search")
 public class XposedDoubanMovieSearch extends XposedCommon {
 
     private static final String SEARCH_SUGGESTION_ADAPTER = "com.douban.frodo.search.adapter.SearchSuggestionAdapter";

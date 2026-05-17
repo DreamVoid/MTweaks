@@ -16,7 +16,7 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.XposedBase;
 
-@XposedLoad(packages = {}, prefs = R.string.key_text_long_press_to_copy, excludedPackages = {
+@XposedLoad(packages = {}, prefs = "key_text_long_press_to_copy", excludedPackages = {
         PackageNames.ANDROID, PackageNames.ANDROID_SYSTEM_UI
 })
 public class XposedTextLongPressToCopy extends XposedBase {

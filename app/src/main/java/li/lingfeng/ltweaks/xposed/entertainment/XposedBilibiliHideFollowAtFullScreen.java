@@ -17,7 +17,7 @@ import li.lingfeng.ltweaks.xposed.XposedBase;
 @XposedLoad(packages = {
         PackageNames.BILIBILI,
         PackageNames.BILIBILI_IN
-}, prefs = R.string.key_bilibili_hide_follow_at_full_screen)
+}, prefs = "key_bilibili_hide_follow_at_full_screen")
 public class XposedBilibiliHideFollowAtFullScreen extends XposedBase {
 
     private static final String VIDEO_DETAILS_ACTIVITY = "tv.danmaku.bili.ui.video.VideoDetailsActivity";
