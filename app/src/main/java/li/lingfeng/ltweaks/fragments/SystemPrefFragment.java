@@ -23,6 +23,7 @@ import li.lingfeng.ltweaks.lib.PreferenceClick;
 import li.lingfeng.ltweaks.prefs.ActivityRequestCode;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.*;
+import me.dreamvoid.mtweaks.activities.WLANTrustAgentActivity;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -213,7 +214,7 @@ public class SystemPrefFragment extends BasePrefFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ActivityRequestCode.KEYGUARD) {
             if (resultCode == Activity.RESULT_OK) {
-                Intent intent = new Intent(getActivity(), TrustAgentWifiSettings.class);
+                Intent intent = new Intent(getActivity(), WLANTrustAgentActivity.class);
                 getActivity().startActivity(intent);
             }
         } else {

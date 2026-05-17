@@ -1,302 +1,388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:tools="http://schemas.android.com/tools"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.PROVIDE_TRUST_AGENT"
-                     tools:ignore="ProtectedPermissions"/>
-
-    <!-- 核心：必须的定位权限（Android 10+ 必须是 FINE_LOCATION） -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+            android:name="android.permission.PROVIDE_TRUST_AGENT"
+            tools:ignore="ProtectedPermissions"/> <!-- 核心：必须的定位权限（Android 10+ 必须是 FINE_LOCATION） -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 
     <application
-        android:name="me.dreamvoid.mtweaks.MyApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-		<meta-data
-            android:name="xposedmodule"
-            android:value="true" />
+            android:name=".MyApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
         <meta-data
-            android:name="xposeddescription"
-            android:value="@string/app_summary" />
+                android:name="xposedmodule"
+                android:value="true"/>
         <meta-data
-            android:name="xposedminversion"
-            android:value="30" />
+                android:name="xposeddescription"
+                android:value="@string/app_summary"/>
+        <meta-data
+                android:name="xposedminversion"
+                android:value="30"/>
         <meta-data
                 android:name="xposedscope"
-                android:resource="@array/xposedscopes" />
-        
+                android:resource="@array/xposedscopes"/>
+
         <provider
-            android:name="li.lingfeng.ltweaks.services.MainPreferenceProvider"
-            android:authorities="li.lingfeng.ltweaks.mainpreferences"
-            android:exported="true" />
+                android:name="li.lingfeng.ltweaks.services.MainPreferenceProvider"
+                android:authorities="li.lingfeng.ltweaks.mainpreferences"
+                android:exported="true"/>
         <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="li.lingfeng.ltweaks.fileProvider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="li.lingfeng.ltweaks.fileProvider"
+                android:exported="false"
+                android:grantUriPermissions="true">
             <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
         </provider>
         <provider
-            android:name="li.lingfeng.ltweaks.services.ResourceProvider"
-            android:authorities="li.lingfeng.ltweaks.resourceProvider"
-            android:exported="true" />
-			
-        <activity
-            android:name="me.dreamvoid.mtweaks.SettingsActivity"
-            android:label="@string/app_name"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="li.lingfeng.ltweaks.activities.ListCheckActivity" />
+                android:name="li.lingfeng.ltweaks.services.ResourceProvider"
+                android:authorities="li.lingfeng.ltweaks.resourceProvider"
+                android:exported="true"/>
 
         <activity
-            android:name="li.lingfeng.ltweaks.activities.BilibiliActivity"
-            android:exported="true"
-            android:excludeFromRecents="true"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            android:label="Bilibili"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.BilibiliActivity"
-            android:enabled="false">
+                android:name=".SettingsActivity"
+                android:exported="true"
+                android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="m.bilibili.com" android:pathPattern="/video/av.*\\.html" android:scheme="http"/>
-                <data android:host="m.bilibili.com" android:pathPattern="/video/av.*\\.html" android:scheme="https"/>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <activity android:name="li.lingfeng.ltweaks.activities.ListCheckActivity"/>
         <activity
-            android:name="li.lingfeng.ltweaks.activities.DoubanMovieActivity"
-            android:exported="true"
-            android:excludeFromRecents="true"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            android:label="@string/douban_movie_app"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.DoubanMovieActivity"
-            android:enabled="false">
+                android:name="li.lingfeng.ltweaks.activities.BilibiliActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:label="Bilibili"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.BilibiliActivity"
+                android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="m.douban.com" android:scheme="http"/>
-                <data android:host="m.douban.com" android:scheme="https"/>
-                <data android:host="movie.douban.com" android:scheme="http"/>
-                <data android:host="movie.douban.com" android:scheme="https"/>
+
+                <data
+                        android:host="m.bilibili.com"
+                        android:pathPattern="/video/av.*\\.html"
+                        android:scheme="http"/>
+                <data
+                        android:host="m.bilibili.com"
+                        android:pathPattern="/video/av.*\\.html"
+                        android:scheme="https"/>
             </intent-filter>
         </activity>
-
         <activity
-            android:name="li.lingfeng.ltweaks.activities.JDActivity"
-            android:exported="true"
-            android:excludeFromRecents="true"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            android:label="@string/jd_app"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.JDActivity"
-            android:enabled="false">
+                android:name="li.lingfeng.ltweaks.activities.DoubanMovieActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:label="@string/douban_movie_app"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.DoubanMovieActivity"
+                android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="item.jd.com" android:pathPattern="/.*\\.html" android:scheme="http"/>
-                <data android:host="item.jd.com" android:pathPattern="/.*\\.html" android:scheme="https"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="re.jd.com" android:pathPattern="/cps/item/.*\\.html" android:scheme="http"/>
-                <data android:host="re.jd.com" android:pathPattern="/cps/item/.*\\.html" android:scheme="https"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="item.m.jd.com" android:pathPattern="/product/.*\\.html" android:scheme="http"/>
-                <data android:host="item.m.jd.com" android:pathPattern="/product/.*\\.html" android:scheme="https"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="m.jd.com" android:pathPattern="/product/.*\\.html" android:scheme="http"/>
-                <data android:host="m.jd.com" android:pathPattern="/product/.*\\.html" android:scheme="https"/>
+
+                <data
+                        android:host="m.douban.com"
+                        android:scheme="http"/>
+                <data
+                        android:host="m.douban.com"
+                        android:scheme="https"/>
+                <data
+                        android:host="movie.douban.com"
+                        android:scheme="http"/>
+                <data
+                        android:host="movie.douban.com"
+                        android:scheme="https"/>
             </intent-filter>
         </activity>
-        <activity android:name="li.lingfeng.ltweaks.activities.JDHistoryActivity" android:exported="true" android:excludeFromRecents="true"
-            android:label="@string/jd_history"
-            android:icon="@mipmap/ic_price_history"
-            android:theme="@style/DialogActivityTheme"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.JDHistoryActivity"
-            android:enabled="false">
+        <activity
+                android:name="li.lingfeng.ltweaks.activities.JDActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:label="@string/jd_app"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.JDActivity"
+                android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="item.jd.com"
+                        android:pathPattern="/.*\\.html"
+                        android:scheme="http"/>
+                <data
+                        android:host="item.jd.com"
+                        android:pathPattern="/.*\\.html"
+                        android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="re.jd.com"
+                        android:pathPattern="/cps/item/.*\\.html"
+                        android:scheme="http"/>
+                <data
+                        android:host="re.jd.com"
+                        android:pathPattern="/cps/item/.*\\.html"
+                        android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="item.m.jd.com"
+                        android:pathPattern="/product/.*\\.html"
+                        android:scheme="http"/>
+                <data
+                        android:host="item.m.jd.com"
+                        android:pathPattern="/product/.*\\.html"
+                        android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                        android:host="m.jd.com"
+                        android:pathPattern="/product/.*\\.html"
+                        android:scheme="http"/>
+                <data
+                        android:host="m.jd.com"
+                        android:pathPattern="/product/.*\\.html"
+                        android:scheme="https"/>
             </intent-filter>
         </activity>
-        <activity android:name="li.lingfeng.ltweaks.activities.SelectableTextActivity" android:exported="true" android:excludeFromRecents="true"
-            android:label="@string/text_selectable"
-            android:icon="@mipmap/ic_selectable_text"
-            android:theme="@style/DialogActivityTheme"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.SelectableTextActivity"
-            android:enabled="false">
+        <activity
+                android:name="li.lingfeng.ltweaks.activities.JDHistoryActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:icon="@mipmap/ic_price_history"
+                android:label="@string/jd_history"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.JDHistoryActivity"
+                android:theme="@style/DialogActivityTheme">
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="li.lingfeng.ltweaks.activities.SelectableTextActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:icon="@mipmap/ic_selectable_text"
+                android:label="@string/text_selectable"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.SelectableTextActivity"
+                android:theme="@style/DialogActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="li.lingfeng.ltweaks.activities.QrCodeActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:icon="@mipmap/ic_qrcode_scan"
+                android:label="@string/share_qrcode_scan"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.QrCodeActivity"
+                android:theme="@style/DialogActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="li.lingfeng.ltweaks.activities.ImageSearchActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:icon="@mipmap/ic_image_search"
+                android:label="@string/share_image_search"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.ImageSearchActivity"
+                android:theme="@style/DialogActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
             </intent-filter>
         </activity>
 
-        <activity android:name="li.lingfeng.ltweaks.activities.QrCodeActivity" android:exported="true" android:excludeFromRecents="true"
-            android:label="@string/share_qrcode_scan"
-            android:icon="@mipmap/ic_qrcode_scan"
-            android:theme="@style/DialogActivityTheme"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.QrCodeActivity"
-            android:enabled="false">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name="li.lingfeng.ltweaks.activities.ImageSearchActivity" android:exported="true" android:excludeFromRecents="true"
-            android:label="@string/share_image_search"
-            android:icon="@mipmap/ic_image_search"
-            android:theme="@style/DialogActivityTheme"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.ImageSearchActivity"
-            android:enabled="false">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
-            </intent-filter>
-        </activity>
         <activity-alias
-            android:name="li.lingfeng.ltweaks.activities.GoogleImageSearchActivity"
-            android:exported="true"
-            android:label="@string/share_image_google_search"
-            android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
+                android:name="li.lingfeng.ltweaks.activities.IQDBImageSearchActivity"
+                android:exported="true"
+                android:label="@string/share_image_iqdb_search"
+                android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
             <intent-filter>
-                <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
+                <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
             </intent-filter>
         </activity-alias>
         <activity-alias
-            android:name="li.lingfeng.ltweaks.activities.TinEyeImageSearchActivity"
-            android:exported="true"
-            android:label="@string/share_image_tineye_search"
-            android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
+                android:name="li.lingfeng.ltweaks.activities.TinEyeImageSearchActivity"
+                android:exported="true"
+                android:label="@string/share_image_tineye_search"
+                android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
             <intent-filter>
-                <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
+                <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
             </intent-filter>
         </activity-alias>
         <activity-alias
-            android:exported="true"
-            android:name="li.lingfeng.ltweaks.activities.IQDBImageSearchActivity"
-            android:label="@string/share_image_iqdb_search"
-            android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
+                android:name="li.lingfeng.ltweaks.activities.GoogleImageSearchActivity"
+                android:exported="true"
+                android:label="@string/share_image_google_search"
+                android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
             <intent-filter>
-                <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
+                <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
             </intent-filter>
         </activity-alias>
 
         <activity
-            android:name="li.lingfeng.ltweaks.activities.ProcessTextActivity"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
-            android:excludeFromRecents="true"
-            android:theme="@style/Theme.AppCompat.Dialog">
+                android:name="li.lingfeng.ltweaks.activities.ProcessTextActivity"
+                android:excludeFromRecents="true"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
+                android:theme="@style/Theme.AppCompat.Dialog">
         </activity>
+
         <activity-alias
-            android:exported="true"
-            android:name="li.lingfeng.ltweaks.activities.DoubanMovieProcessTextActivity"
-            android:targetActivity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
-            android:label="@string/process_text_douban_movie"
-            android:enabled="false">
+                android:name="li.lingfeng.ltweaks.activities.BilibiliProcessTextActivity"
+                android:enabled="false"
+                android:exported="true"
+                android:label="@string/process_text_bilibili"
+                android:targetActivity="li.lingfeng.ltweaks.activities.ProcessTextActivity">
             <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity-alias>
         <activity-alias
-            android:exported="true"
-            android:name="li.lingfeng.ltweaks.activities.BilibiliProcessTextActivity"
-            android:targetActivity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
-            android:label="@string/process_text_bilibili"
-            android:enabled="false">
+                android:name="li.lingfeng.ltweaks.activities.DoubanMovieProcessTextActivity"
+                android:enabled="false"
+                android:exported="true"
+                android:label="@string/process_text_douban_movie"
+                android:targetActivity="li.lingfeng.ltweaks.activities.ProcessTextActivity">
             <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity-alias>
-        <activity android:name="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
-            android:exported="true"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
-            android:excludeFromRecents="true"
-            android:label="@string/process_text_incognito_search"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            android:enabled="false">
+
+        <activity
+                android:name="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
+                android:enabled="false"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:label="@string/process_text_incognito_search"
+                android:taskAffinity="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
+                android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
-                <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="li.lingfeng.ltweaks.ACTION_CHROME_INCOGNITO" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
+                <action android:name="li.lingfeng.ltweaks.ACTION_CHROME_INCOGNITO"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="me.dreamvoid.mtweaks.activities.WLANTrustAgentActivity"
+                android:excludeFromRecents="true"
+                android:exported="true"
+                android:label="@string/pref_trust_agent_wifi"
+                android:launchMode="singleInstance"
+                android:taskAffinity="me.dreamvoid.mtweaks.activities.WLANTrustAgentActivity"
+                android:theme="@style/AppThemeModern">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="li.lingfeng.ltweaks.activities.TrustAgentWifiSettings"
-            android:label="@string/pref_trust_agent_wifi"
-            android:exported="true"
-            android:launchMode="singleInstance"
-            android:excludeFromRecents="true"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.TrustAgentWifiSettings"
-            android:theme="@style/AppThemeModern">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
         <service
-            android:name="li.lingfeng.ltweaks.services.WifiTrustAgent"
-            android:label="@string/pref_trust_agent_wifi"
-            android:permission="android.permission.BIND_TRUST_AGENT"
-            android:exported="true">
+                android:name="li.lingfeng.ltweaks.services.WifiTrustAgent"
+                android:exported="true"
+                android:label="@string/pref_trust_agent_wifi"
+                android:permission="android.permission.BIND_TRUST_AGENT">
             <intent-filter>
-                <action android:name="android.service.trust.TrustAgentService" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.service.trust.TrustAgentService"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
-            <meta-data android:name="android.service.trust.trustagent"
-                android:resource="@xml/trust_agent_wifi"/>
+
+            <meta-data
+                    android:name="android.service.trust.trustagent"
+                    android:resource="@xml/trust_agent_wifi"/>
         </service>
 
-        <activity android:name="li.lingfeng.ltweaks.activities.SolidExplorerUrlReplacerSettings" />
+        <activity android:name="li.lingfeng.ltweaks.activities.SolidExplorerUrlReplacerSettings"/>
     </application>
 
 </manifest>

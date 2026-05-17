@@ -28,8 +28,6 @@ import java.util.Set;
  */
 
 public class TrustAgentWifiSettings extends ListCheckActivity {
-    private static Set<String> mTrustedAps;
-    private static List<ListCheckActivity.DataProvider.ListItem> mListItems;
 
     @Override
     protected Class<? extends ListCheckActivity.DataProvider> getDataProviderClass() {
@@ -38,12 +36,38 @@ public class TrustAgentWifiSettings extends ListCheckActivity {
 
     public static class DataProvider extends ListCheckActivity.DataProvider {
 
+        private Set<String> mTrustedAps;
+        private List<ListItem> mListItems;
+
         public DataProvider(ListCheckActivity activity) {
             super(activity);
             mTrustedAps = new HashSet<>(
                     Prefs.instance().getStringSet(R.string.key_trust_agent_wifi_aps, new HashSet<String>())
             );
+            mListItems = new ArrayList<>(mTrustedAps.size() + 1);
+            WifiInfo wifiInfo = NetUtils.getWifiInfo();
+            boolean hasCurrent = false;
+            for (String ap : mTrustedAps) {
+                final String[] s = Utils.splitByLastChar(ap, ',');
+                boolean isCurrent = (wifiInfo != null && StringUtils.strip(wifiInfo.getSSID(), "\"").equals(s[0]) && wifiInfo.getBSSID().equals(s[1]));
+                hasCurrent |= isCurrent;
+                ListItem item = createListItem(s[0], s[1], isCurrent, true);
+                mListItems.add(item);
+            }
+            if (wifiInfo != null && !hasCurrent) {
+                ListItem item = createListItem(StringUtils.strip(wifiInfo.getSSID(), "\""), wifiInfo.getBSSID(), true, false);
+                mListItems.add(item);
+            }
+        }
 
+        private ListItem createListItem(final String ssid, final String bssid, boolean isCurrent, boolean isChecked) {
+            ListItem item = new ListItem();
+            item.mData = new Pair<>(ssid, bssid);
+            item.mIcon = mActivity.getResources().getDrawable(R.drawable.ic_wifi);
+            item.mTitle = ssid + (isCurrent ? (" (" + mActivity.getString(R.string.current) + ")") : "");
+            item.mDescription = bssid;
+            item.mChecked = isChecked;
+            return item;
         }
 
         @Override
@@ -88,17 +112,6 @@ public class TrustAgentWifiSettings extends ListCheckActivity {
         }
     }
 
-
-    private ListCheckActivity.DataProvider.ListItem createListItem(final String ssid, final String bssid, boolean isCurrent, boolean isChecked) {
-        ListCheckActivity.DataProvider.ListItem item = new ListCheckActivity.DataProvider.ListItem();
-        item.mData = new Pair<>(ssid, bssid);
-        item.mIcon = this.getResources().getDrawable(R.drawable.ic_wifi);
-        item.mTitle = ssid + (isCurrent ? (" (" + getString(R.string.current) + ")") : "");
-        item.mDescription = bssid;
-        item.mChecked = isChecked;
-        return item;
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -112,20 +125,7 @@ public class TrustAgentWifiSettings extends ListCheckActivity {
             boolean hasBackgroundPermission = checkSelfPermission(Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED;
 
             if (hasBackgroundPermission) {
-                mListItems = new ArrayList<>(mTrustedAps.size() + 1);
-                WifiInfo wifiInfo = NetUtils.getWifiInfo();
-                boolean hasCurrent = false;
-                for (String ap : mTrustedAps) {
-                    final String[] s = Utils.splitByLastChar(ap, ',');
-                    boolean isCurrent = (wifiInfo != null && StringUtils.strip(wifiInfo.getSSID(), "\"").equals(s[0]) && wifiInfo.getBSSID().equals(s[1]));
-                    hasCurrent |= isCurrent;
-                    ListCheckActivity.DataProvider.ListItem item = createListItem(s[0], s[1], isCurrent, true);
-                    mListItems.add(item);
-                }
-                if (wifiInfo != null && !hasCurrent) {
-                    ListCheckActivity.DataProvider.ListItem item = createListItem(StringUtils.strip(wifiInfo.getSSID(), "\""), wifiInfo.getBSSID(), true, false);
-                    mListItems.add(item);
-                }
+                return;
             }
             // 1. 弹出自定义对话框，向用户解释为什么需要“始终允许”
             showCustomRationaleDialog(TrustAgentWifiSettings.this, new DialogInterface.OnClickListener() {

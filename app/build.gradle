@@ -33,6 +33,7 @@ android {
 
     buildFeatures {
         buildConfig = true
+        viewBinding true
     }
 
     compileOptions {
@@ -51,6 +52,7 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.1'
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
     implementation 'com.alibaba:fastjson:1.2.83'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     compileOnly files('lib/XposedBridgeApi-54.jar')
     implementation project(':lib')
     compileOnly project(':hiddenapi')
