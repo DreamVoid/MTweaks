@@ -277,7 +277,8 @@
             android:exported="true"
             android:launchMode="singleInstance"
             android:excludeFromRecents="true"
-            android:taskAffinity="li.lingfeng.ltweaks.activities.TrustAgentWifiSettings">
+            android:taskAffinity="li.lingfeng.ltweaks.activities.TrustAgentWifiSettings"
+            android:theme="@style/AppThemeModern">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

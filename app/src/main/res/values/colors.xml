@@ -5,4 +5,25 @@
     <color name="colorAccent">#FF4081</color>
 
 	<color name="jd_history_main_line">#55a4e1</color>
+
+    <color name="purple_200">#FFCDBEFF</color>
+    <color name="purple_500">#FF6750A4</color>
+    <color name="purple_700">#FF4F378B</color>
+    <color name="teal_200">#FF85D7D6</color>
+    <color name="teal_700">#FF00696B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="md_primary">#FF6750A4</color>
+    <color name="md_on_primary">#FFFFFFFF</color>
+    <color name="md_primary_container">#FFEADDFF</color>
+    <color name="md_on_primary_container">#FF21005D</color>
+    <color name="md_secondary">#FF625B71</color>
+    <color name="md_on_secondary">#FFFFFFFF</color>
+    <color name="md_secondary_container">#FFE8DEF8</color>
+    <color name="md_on_secondary_container">#FF1D192B</color>
+    <color name="md_tertiary">#FF7D5260</color>
+    <color name="md_on_tertiary">#FFFFFFFF</color>
+    <color name="md_surface">#FFFDF7FF</color>
+    <color name="md_surface_variant">#FFE7E0EC</color>
+    <color name="md_outline_variant">#FFC8C0D0</color>
 </resources>

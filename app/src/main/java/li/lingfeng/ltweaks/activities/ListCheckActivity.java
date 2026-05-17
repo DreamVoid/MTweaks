@@ -3,43 +3,28 @@ package li.lingfeng.ltweaks.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
+import android.view.*;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerTabStrip;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import androidx.viewpager.widget.PagerTabStrip;
+import androidx.viewpager.widget.ViewPager;
 import com.buildware.widget.indeterm.IndeterminateCheckBox;
-import com.buildware.widget.indeterm.IndeterminateCheckable;
-
+import li.lingfeng.ltweaks.utils.Logger;
+import li.lingfeng.ltweaks.utils.ViewUtils;
+import me.dreamvoid.mtweaks.R;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.lang.reflect.Constructor;
-
-import me.dreamvoid.mtweaks.R;
-import li.lingfeng.ltweaks.utils.Logger;
-import li.lingfeng.ltweaks.utils.ViewUtils;
 
 /**
  * Created by lilingfeng on 2017/6/23.
@@ -57,7 +42,7 @@ public class ListCheckActivity extends AppCompatActivity {
 
     public static abstract class DataProvider implements OnItemClickListener, OnCheckedChangeListener {
 
-        public class ListItem {
+        public static class ListItem {
             public Object mData;
             public Drawable mIcon;
             public CharSequence mTitle;
