@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.preference.EditTextPreference;
@@ -13,19 +12,8 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.widget.Toast;
-
-import org.apache.commons.lang3.StringUtils;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-
 import li.lingfeng.ltweaks.R;
-import li.lingfeng.ltweaks.activities.ImageSearchActivity;
-import li.lingfeng.ltweaks.activities.ListCheckActivity;
-import li.lingfeng.ltweaks.activities.QrCodeActivity;
-import li.lingfeng.ltweaks.activities.SelectableTextActivity;
-import li.lingfeng.ltweaks.activities.SolidExplorerUrlReplacerSettings;
-import li.lingfeng.ltweaks.activities.TrustAgentWifiSettings;
+import li.lingfeng.ltweaks.activities.*;
 import li.lingfeng.ltweaks.fragments.base.Extra;
 import li.lingfeng.ltweaks.fragments.sub.system.PreventListDataProvider;
 import li.lingfeng.ltweaks.fragments.sub.system.ShareFilterDataProvider;
@@ -33,13 +21,9 @@ import li.lingfeng.ltweaks.fragments.sub.system.TextActionDataProvider;
 import li.lingfeng.ltweaks.lib.PreferenceChange;
 import li.lingfeng.ltweaks.lib.PreferenceClick;
 import li.lingfeng.ltweaks.prefs.ActivityRequestCode;
-import li.lingfeng.ltweaks.prefs.ClassNames;
 import li.lingfeng.ltweaks.prefs.PackageNames;
-import li.lingfeng.ltweaks.utils.ComponentUtils;
-import li.lingfeng.ltweaks.utils.ContextUtils;
-import li.lingfeng.ltweaks.utils.Logger;
-import li.lingfeng.ltweaks.utils.PackageUtils;
-import li.lingfeng.ltweaks.utils.PermissionUtils;
+import li.lingfeng.ltweaks.utils.*;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by smallville on 2017/1/4.
@@ -52,9 +36,9 @@ public class SystemPrefFragment extends BasePrefFragment {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pref_system);
 
-        uncheckPreferenceByDisabledComponent(R.string.key_text_selectable_text, SelectableTextActivity.class);
-        uncheckPreferenceByDisabledComponent(R.string.key_system_share_qrcode_scan, QrCodeActivity.class);
-        uncheckPreferenceByDisabledComponent(R.string.key_system_share_image_search, ImageSearchActivity.class);
+        //uncheckPreferenceByDisabledComponent(R.string.key_text_selectable_text, SelectableTextActivity.class);
+        //uncheckPreferenceByDisabledComponent(R.string.key_system_share_qrcode_scan, QrCodeActivity.class);
+        //uncheckPreferenceByDisabledComponent(R.string.key_system_share_image_search, ImageSearchActivity.class);
     }
 
     @PreferenceChange(prefs = "key_text_aide_open_youdao")
@@ -158,30 +142,30 @@ public class SystemPrefFragment extends BasePrefFragment {
         pref4g.setEnabled(enabled);
         pref3g.setEnabled(enabled);
 
-        if (extra.refreshAtStart) {
-            Logger.d("Try get network types.");
-            try {
-                Context context = getActivity().createPackageContext(PackageNames.ANDROID_SETTINGS, Context.CONTEXT_IGNORE_SECURITY | Context.CONTEXT_INCLUDE_CODE);
-                Class cls = Class.forName(ClassNames.RADIO_INFO, true, context.getClassLoader());
-                Field field = cls.getDeclaredField("mPreferredNetworkLabels");
-                field.setAccessible(true);
-                String[] types = (String[]) field.get(Modifier.isStatic(field.getModifiers()) ? null : cls.newInstance());
-                setTypesForListPreference(types, pref4g);
-                setTypesForListPreference(types, pref3g);
-            } catch (Throwable e) {
-                Logger.e("Failed to get network types, " + e);
-                Logger.stackTrace(e);
-                pref4g.setEnabled(false);
-                pref3g.setEnabled(false);
-                try {
-                    preference.setEnabled(false);
-                    preference.setChecked(false);
-                    preference.setSummary(R.string.not_supported);
-                } catch (Throwable e2) {
-                    Logger.e("Failed to disable preference after network type error, " + e2);
-                }
-            }
-        }
+//        if (extra.refreshAtStart) {
+//            Logger.d("Try get network types.");
+//            try {
+//                Context context = getActivity().createPackageContext(PackageNames.ANDROID_SETTINGS, Context.CONTEXT_IGNORE_SECURITY | Context.CONTEXT_INCLUDE_CODE);
+//                Class cls = Class.forName(ClassNames.RADIO_INFO, true, context.getClassLoader());
+//                Field field = cls.getDeclaredField("mPreferredNetworkLabels");
+//                field.setAccessible(true);
+//                String[] types = (String[]) field.get(Modifier.isStatic(field.getModifiers()) ? null : cls.newInstance());
+//                setTypesForListPreference(types, pref4g);
+//                setTypesForListPreference(types, pref3g);
+//            } catch (Throwable e) {
+//                Logger.e("Failed to get network types, " + e);
+//                Logger.stackTrace(e);
+//                pref4g.setEnabled(false);
+//                pref3g.setEnabled(false);
+//                try {
+//                    preference.setEnabled(false);
+//                    preference.setChecked(false);
+//                    preference.setSummary(R.string.not_supported);
+//                } catch (Throwable e2) {
+//                    Logger.e("Failed to disable preference after network type error, " + e2);
+//                }
+//            }
+//        }
     }
 
     private void setTypesForListPreference(String[] types, ListPreference listPreference) {
