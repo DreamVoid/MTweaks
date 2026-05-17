@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.activities.JDHistoryActivity;
+import me.dreamvoid.mtweaks.MyApplication;
 
 /**
  * Created by smallville on 2017/2/1.

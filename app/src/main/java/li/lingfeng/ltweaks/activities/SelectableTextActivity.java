@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.utils.ShareUtils;
 
 /**

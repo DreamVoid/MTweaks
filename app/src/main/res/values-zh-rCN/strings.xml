@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">L 工具箱</string>
+    <string name="app_name">M 工具箱</string>
     <string name="app_summary">一些个人使用的小东西合集，主要针对应用，如果你喜欢，那就用去吧</string>
     <string name="app_about">关于</string>
     <string name="app_about_summary">
-\"L 工具箱\" 是个人使用的一些小东西合集，主要对应用，大部分功能都需要 Xposed 的支持.\n
+\"M 工具箱\" 是个人使用的一些小东西合集，主要对应用，大部分功能都需要 Xposed 的支持.\n
 \n
 在修改设置后，你需要重启应用或系统来使其生效.\n
 \n
-Open source on github: \n
-<a href="https://github.com/bluesky139/LTweaks">https://github.com/bluesky139/LTweaks</a>
+在 GitHub 上查看源码: \n
+<a href="https://github.com/DreamVoid/MTweaks">https://github.com/DreamVoid/MTweaks</a>
     </string>
     <string name="app_send_log">发送日志</string>
     <string name="app_send_log_error">发送日志出错.</string>

@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.HashSet;
 import java.util.Set;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.prefs.Prefs;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.utils.NetUtils;

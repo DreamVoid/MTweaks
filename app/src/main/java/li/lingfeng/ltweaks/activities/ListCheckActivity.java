@@ -37,7 +37,7 @@ import org.apache.commons.lang3.NotImplementedException;
 
 import java.lang.reflect.Constructor;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.utils.ViewUtils;
 

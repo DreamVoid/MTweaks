@@ -163,7 +163,7 @@ public abstract class XposedTile extends XposedBase {
     protected abstract String getTileDesc();
     protected abstract @DrawableRes int getTileIcon(boolean isOn);
     protected String getTileIconPackage() {
-        return PackageNames.L_TWEAKS;
+        return PackageNames.M_TWEAKS;
     }
     protected abstract void onSwitch(Context context, boolean isOn) throws Throwable;
     protected abstract void onLongClick(Context context) throws Throwable;

@@ -5,7 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.Preference;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.activities.JDActivity;
 import li.lingfeng.ltweaks.activities.JDHistoryActivity;
 import li.lingfeng.ltweaks.lib.PreferenceChange;

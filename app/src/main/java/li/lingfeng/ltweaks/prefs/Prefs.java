@@ -12,8 +12,8 @@ import java.io.File;
 import java.util.Set;
 
 import de.robv.android.xposed.XSharedPreferences;
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.MyApplication;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.utils.Logger;
 
 import static li.lingfeng.ltweaks.prefs.SharedPreferences.ACTION_PREF_CHANGE_PREFIX;
@@ -23,8 +23,8 @@ import static li.lingfeng.ltweaks.prefs.SharedPreferences.ACTION_PREF_CHANGE_PRE
  */
 
 public class Prefs {
-    private static final String M_PATH = "/data/data/" + PackageNames.L_TWEAKS + "/shared_prefs/" + PackageNames.L_TWEAKS + "_preferences.xml";
-    private static final String N_PATH = "/data/user_de/0/" + PackageNames.L_TWEAKS + "/shared_prefs/" + PackageNames.L_TWEAKS + "_preferences.xml";
+    private static final String M_PATH = "/data/data/" + PackageNames.M_TWEAKS + "/shared_prefs/" + PackageNames.M_TWEAKS + "_preferences.xml";
+    private static final String N_PATH = "/data/user_de/0/" + PackageNames.M_TWEAKS + "/shared_prefs/" + PackageNames.M_TWEAKS + "_preferences.xml";
     public static final String PATH = Build.VERSION.SDK_INT < Build.VERSION_CODES.N ? M_PATH : N_PATH;
     public static XSharedPreferences zygotePrefs;
     private static boolean sInitedAtActivityCreate = false;
@@ -33,7 +33,7 @@ public class Prefs {
     public static SharedPreferences instance() {
         if (instance_ == null) {
             if (MyApplication.instance() == null
-                    || !MyApplication.instance().getPackageName().equals(PackageNames.L_TWEAKS)) {
+                    || !MyApplication.instance().getPackageName().equals(PackageNames.M_TWEAKS)) {
                 instance_ = createXSharedPreferences();
             } else {
                 instance_ = createSharedPreferences();
@@ -116,7 +116,7 @@ public class Prefs {
         }
 
         // https://github.com/rovo89/XposedBridge/issues/206
-        File folder = new File("/data/user_de/0/" + PackageNames.L_TWEAKS);
+        File folder = new File("/data/user_de/0/" + PackageNames.M_TWEAKS);
         folder.setExecutable(true, false);
 
         final File mFile = new File(M_PATH);
@@ -177,7 +177,7 @@ public class Prefs {
             return;
         }
         String packageName = MyApplication.instance().getPackageName();
-        if (!packageName.equals(PackageNames.L_TWEAKS)) {
+        if (!packageName.equals(PackageNames.M_TWEAKS)) {
             return;
         }
         try {

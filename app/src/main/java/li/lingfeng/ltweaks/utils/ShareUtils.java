@@ -57,7 +57,7 @@ public class ShareUtils {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, text);
-        shareIntent.setClassName(PackageNames.L_TWEAKS, SelectableTextActivity.class.getName());
+        shareIntent.setClassName(PackageNames.M_TWEAKS, SelectableTextActivity.class.getName());
         context.startActivity(shareIntent);
     }
 }

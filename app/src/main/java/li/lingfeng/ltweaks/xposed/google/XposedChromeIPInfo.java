@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.ClassNames;
 import li.lingfeng.ltweaks.prefs.PackageNames;

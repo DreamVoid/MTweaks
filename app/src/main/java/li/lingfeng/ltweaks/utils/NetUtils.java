@@ -9,7 +9,7 @@ import android.net.wifi.WifiManager;
 
 import java.lang.reflect.Method;
 
-import li.lingfeng.ltweaks.MyApplication;
+import me.dreamvoid.mtweaks.MyApplication;
 import org.apache.commons.lang3.StringUtils;
 
 /**

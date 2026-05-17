@@ -10,12 +10,11 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import li.lingfeng.ltweaks.MyApplication;
+import me.dreamvoid.mtweaks.MyApplication;
 
 /**
  * Created by smallville on 2017/2/2.

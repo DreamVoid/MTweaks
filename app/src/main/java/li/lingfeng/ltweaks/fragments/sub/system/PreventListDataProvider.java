@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.activities.ListCheckActivity;
 import li.lingfeng.ltweaks.prefs.IntentActions;
 import li.lingfeng.ltweaks.prefs.PrefKeys;

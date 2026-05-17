@@ -3,7 +3,7 @@ package li.lingfeng.ltweaks.xposed.communication;
 import android.os.Bundle;
 
 import de.robv.android.xposed.XC_MethodHook;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.ContextUtils;

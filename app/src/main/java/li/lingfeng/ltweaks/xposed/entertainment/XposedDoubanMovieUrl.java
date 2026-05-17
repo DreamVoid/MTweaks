@@ -7,7 +7,7 @@ import android.content.pm.PackageParser;
 import java.lang.reflect.Field;
 
 import de.robv.android.xposed.XC_MethodHook;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.ClassNames;
 import li.lingfeng.ltweaks.prefs.PackageNames;

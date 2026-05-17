@@ -19,7 +19,7 @@ import java.lang.ref.WeakReference;
 import java.util.EnumMap;
 import java.util.EnumSet;
 
-import li.lingfeng.ltweaks.MyApplication;
+import me.dreamvoid.mtweaks.MyApplication;
 
 /**
  * Created by smallville on 2017/2/1.

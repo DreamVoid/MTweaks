@@ -49,7 +49,7 @@ public class XposedTrustAgentWifiSettings extends XposedBase {
                                 // Check if any arg is our package name - if so, grant permission
                                 for (int i = 0; i < param.args.length; i++) {
                                     if (param.args[i] instanceof String
-                                            && ((String) param.args[i]).contains(PackageNames.L_TWEAKS)) {
+                                            && ((String) param.args[i]).contains(PackageNames.M_TWEAKS)) {
                                         Logger.i("TrustAgentManager found our package, granting access");
                                         return; // Allow the original method to proceed normally
                                     }
@@ -64,7 +64,7 @@ public class XposedTrustAgentWifiSettings extends XposedBase {
                                     // Check if any arg is our package
                                     for (int i = 0; i < param.args.length; i++) {
                                         if (param.args[i] instanceof String
-                                                && ((String) param.args[i]).contains(PackageNames.L_TWEAKS)) {
+                                                && ((String) param.args[i]).contains(PackageNames.M_TWEAKS)) {
                                             Logger.i("TrustAgentManager denied our app, overriding to granted");
                                             param.setResult(true);
                                             return;

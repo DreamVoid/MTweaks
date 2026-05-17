@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
-        android:name=".MyApplication"
+        android:name="me.dreamvoid.mtweaks.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -36,7 +36,7 @@
                 android:resource="@array/xposedscopes" />
         
         <provider
-            android:name=".services.MainPreferenceProvider"
+            android:name="li.lingfeng.ltweaks.services.MainPreferenceProvider"
             android:authorities="li.lingfeng.ltweaks.mainpreferences"
             android:exported="true" />
         <provider
@@ -49,12 +49,12 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <provider
-            android:name=".services.ResourceProvider"
+            android:name="li.lingfeng.ltweaks.services.ResourceProvider"
             android:authorities="li.lingfeng.ltweaks.resourceProvider"
             android:exported="true" />
 			
         <activity
-            android:name=".SettingsActivity"
+            android:name="me.dreamvoid.mtweaks.SettingsActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
@@ -62,10 +62,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ListCheckActivity" />
+        <activity android:name="li.lingfeng.ltweaks.activities.ListCheckActivity" />
 
         <activity
-            android:name=".activities.BilibiliActivity"
+            android:name="li.lingfeng.ltweaks.activities.BilibiliActivity"
             android:exported="true"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog"
@@ -82,7 +82,7 @@
         </activity>
 
         <activity
-            android:name=".activities.DoubanMovieActivity"
+            android:name="li.lingfeng.ltweaks.activities.DoubanMovieActivity"
             android:exported="true"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog"
@@ -101,7 +101,7 @@
         </activity>
 
         <activity
-            android:name=".activities.JDActivity"
+            android:name="li.lingfeng.ltweaks.activities.JDActivity"
             android:exported="true"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog"
@@ -137,7 +137,7 @@
                 <data android:host="m.jd.com" android:pathPattern="/product/.*\\.html" android:scheme="https"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.JDHistoryActivity" android:exported="true" android:excludeFromRecents="true"
+        <activity android:name="li.lingfeng.ltweaks.activities.JDHistoryActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/jd_history"
             android:icon="@mipmap/ic_price_history"
             android:theme="@style/DialogActivityTheme"
@@ -149,7 +149,7 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SelectableTextActivity" android:exported="true" android:excludeFromRecents="true"
+        <activity android:name="li.lingfeng.ltweaks.activities.SelectableTextActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/text_selectable"
             android:icon="@mipmap/ic_selectable_text"
             android:theme="@style/DialogActivityTheme"
@@ -162,7 +162,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.QrCodeActivity" android:exported="true" android:excludeFromRecents="true"
+        <activity android:name="li.lingfeng.ltweaks.activities.QrCodeActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/share_qrcode_scan"
             android:icon="@mipmap/ic_qrcode_scan"
             android:theme="@style/DialogActivityTheme"
@@ -175,7 +175,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ImageSearchActivity" android:exported="true" android:excludeFromRecents="true"
+        <activity android:name="li.lingfeng.ltweaks.activities.ImageSearchActivity" android:exported="true" android:excludeFromRecents="true"
             android:label="@string/share_image_search"
             android:icon="@mipmap/ic_image_search"
             android:theme="@style/DialogActivityTheme"
@@ -188,10 +188,10 @@
             </intent-filter>
         </activity>
         <activity-alias
-            android:name=".activities.GoogleImageSearchActivity"
+            android:name="li.lingfeng.ltweaks.activities.GoogleImageSearchActivity"
             android:exported="true"
             android:label="@string/share_image_google_search"
-            android:targetActivity=".activities.ImageSearchActivity">
+            android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
             <intent-filter>
                 <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -199,10 +199,10 @@
             </intent-filter>
         </activity-alias>
         <activity-alias
-            android:name=".activities.TinEyeImageSearchActivity"
+            android:name="li.lingfeng.ltweaks.activities.TinEyeImageSearchActivity"
             android:exported="true"
             android:label="@string/share_image_tineye_search"
-            android:targetActivity=".activities.ImageSearchActivity">
+            android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
             <intent-filter>
                 <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -211,9 +211,9 @@
         </activity-alias>
         <activity-alias
             android:exported="true"
-            android:name=".activities.IQDBImageSearchActivity"
+            android:name="li.lingfeng.ltweaks.activities.IQDBImageSearchActivity"
             android:label="@string/share_image_iqdb_search"
-            android:targetActivity=".activities.ImageSearchActivity">
+            android:targetActivity="li.lingfeng.ltweaks.activities.ImageSearchActivity">
             <intent-filter>
                 <action android:name="li.lingfeng.ltweaks.ACTION_IMAGE_SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -222,15 +222,15 @@
         </activity-alias>
 
         <activity
-            android:name=".activities.ProcessTextActivity"
+            android:name="li.lingfeng.ltweaks.activities.ProcessTextActivity"
             android:taskAffinity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.AppCompat.Dialog">
         </activity>
         <activity-alias
             android:exported="true"
-            android:name=".activities.DoubanMovieProcessTextActivity"
-            android:targetActivity=".activities.ProcessTextActivity"
+            android:name="li.lingfeng.ltweaks.activities.DoubanMovieProcessTextActivity"
+            android:targetActivity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
             android:label="@string/process_text_douban_movie"
             android:enabled="false">
             <intent-filter>
@@ -241,8 +241,8 @@
         </activity-alias>
         <activity-alias
             android:exported="true"
-            android:name=".activities.BilibiliProcessTextActivity"
-            android:targetActivity=".activities.ProcessTextActivity"
+            android:name="li.lingfeng.ltweaks.activities.BilibiliProcessTextActivity"
+            android:targetActivity="li.lingfeng.ltweaks.activities.ProcessTextActivity"
             android:label="@string/process_text_bilibili"
             android:enabled="false">
             <intent-filter>
@@ -251,7 +251,7 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity-alias>
-        <activity android:name=".activities.ChromeIncognitoActivity"
+        <activity android:name="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
             android:exported="true"
             android:taskAffinity="li.lingfeng.ltweaks.activities.ChromeIncognitoActivity"
             android:excludeFromRecents="true"
@@ -272,7 +272,7 @@
         </activity>
 
         <activity
-            android:name=".activities.TrustAgentWifiSettings"
+            android:name="li.lingfeng.ltweaks.activities.TrustAgentWifiSettings"
             android:label="@string/pref_trust_agent_wifi"
             android:exported="true"
             android:launchMode="singleInstance"
@@ -283,7 +283,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".services.WifiTrustAgent"
+            android:name="li.lingfeng.ltweaks.services.WifiTrustAgent"
             android:label="@string/pref_trust_agent_wifi"
             android:permission="android.permission.BIND_TRUST_AGENT"
             android:exported="true">
@@ -295,7 +295,7 @@
                 android:resource="@xml/trust_agent_wifi"/>
         </service>
 
-        <activity android:name=".activities.SolidExplorerUrlReplacerSettings" />
+        <activity android:name="li.lingfeng.ltweaks.activities.SolidExplorerUrlReplacerSettings" />
     </application>
 
 </manifest>

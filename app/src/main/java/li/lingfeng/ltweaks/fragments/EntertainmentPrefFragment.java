@@ -3,7 +3,7 @@ package li.lingfeng.ltweaks.fragments;
 import android.os.Bundle;
 import android.preference.Preference;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.activities.BilibiliActivity;
 import li.lingfeng.ltweaks.activities.DoubanMovieActivity;
 import li.lingfeng.ltweaks.activities.ProcessTextActivity;

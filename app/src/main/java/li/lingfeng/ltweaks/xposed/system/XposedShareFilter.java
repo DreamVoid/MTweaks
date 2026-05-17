@@ -6,15 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.ResolveInfo;
 import android.os.Binder;
 import android.os.Build;
-
-import org.apache.commons.lang3.ArrayUtils;
-
-import java.lang.reflect.Field;
-import java.util.List;
-import java.util.Set;
-
 import de.robv.android.xposed.XC_MethodHook;
-import li.lingfeng.ltweaks.R;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.ClassNames;
 import li.lingfeng.ltweaks.prefs.IntentActions;
@@ -22,6 +14,12 @@ import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.prefs.Prefs;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.xposed.XposedBase;
+import me.dreamvoid.mtweaks.R;
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by smallville on 2017/6/24.
@@ -66,7 +64,7 @@ public class XposedShareFilter extends XposedBase {
             return;
         }
         int uid = Binder.getCallingUid();
-        ApplicationInfo appInfo = mContext.getPackageManager().getApplicationInfo(PackageNames.L_TWEAKS, 0);
+        ApplicationInfo appInfo = mContext.getPackageManager().getApplicationInfo(PackageNames.M_TWEAKS, 0);
         if (uid == appInfo.uid) {
             return;
         }

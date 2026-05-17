@@ -7,32 +7,29 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Binder;
+import android.util.TypedValue;
+import android.widget.Toast;
 import androidx.annotation.ArrayRes;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.StringRes;
-import android.util.TypedValue;
-import android.widget.Toast;
-
-import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.R;
 import li.lingfeng.ltweaks.activities.LoadingDialog;
 import li.lingfeng.ltweaks.prefs.PackageNames;
+import me.dreamvoid.mtweaks.MyApplication;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by smallville on 2017/1/25.
@@ -41,8 +38,8 @@ import okhttp3.Response;
 public class ContextUtils {
 
     public static Context createPackageContext(String packageName) {
-        if (MyApplication.instance().getPackageName().equals(PackageNames.L_TWEAKS)
-                && packageName.equals(PackageNames.L_TWEAKS)) {
+        if (MyApplication.instance().getPackageName().equals(PackageNames.M_TWEAKS)
+                && packageName.equals(PackageNames.M_TWEAKS)) {
             return MyApplication.instance();
         }
         try {
@@ -57,7 +54,7 @@ public class ContextUtils {
     private static Context sLTweaksContext;
     public static Context createLTweaksContext() {
         if (sLTweaksContext == null) {
-            sLTweaksContext = createPackageContext(PackageNames.L_TWEAKS);
+            sLTweaksContext = createPackageContext(PackageNames.M_TWEAKS);
         }
         return sLTweaksContext;
     }
@@ -387,7 +384,7 @@ public class ContextUtils {
     public static boolean isCallingFromLTweaks() {
         try {
             int uid = Binder.getCallingUid();
-            ApplicationInfo appInfo = MyApplication.instance().getPackageManager().getApplicationInfo(PackageNames.L_TWEAKS, 0);
+            ApplicationInfo appInfo = MyApplication.instance().getPackageManager().getApplicationInfo(PackageNames.M_TWEAKS, 0);
             if (uid != appInfo.uid) {
                 return true;
             }

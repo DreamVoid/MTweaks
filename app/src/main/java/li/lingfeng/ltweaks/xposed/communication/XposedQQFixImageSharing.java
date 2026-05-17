@@ -8,8 +8,7 @@ import java.io.File;
 import java.util.Random;
 
 import de.robv.android.xposed.XC_MethodHook;
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.MyApplication;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.IOUtils;

@@ -1,107 +1,107 @@
 <resources>
-    <string name="app_name">L Tweaks</string>
-    <string name="app_summary">Little tweaks for Android apps, if you like it, then use it</string>
-    <string name="app_about">About</string>
+    <string name="app_name">M 工具箱</string>
+    <string name="app_summary">一些个人使用的小东西合集，主要针对应用，如果你喜欢，那就用去吧</string>
+    <string name="app_about">关于</string>
     <string name="app_about_summary">
-\"L Tweaks\" is my little tweaks for some Android apps, Xposed is needed for most functions.\n
+\"M 工具箱\" 是个人使用的一些小东西合集，主要对应用，大部分功能都需要 Xposed 的支持.\n
 \n
-You need restart app / system to let it work, after changing settings.\n
+在修改设置后，你需要重启应用或系统来使其生效.\n
 \n
-Open source on github: \n
-<a href="https://github.com/bluesky139/LTweaks">https://github.com/bluesky139/LTweaks</a>
+在 GitHub 上查看源码: \n
+<a href="https://github.com/DreamVoid/MTweaks">https://github.com/DreamVoid/MTweaks</a>
     </string>
-    <string name="app_send_log">Send Log</string>
-    <string name="app_send_log_error">Send log error.</string>
-    <string name="app_retry_after_permission_granted">Retry after permission granted.</string>
-    <string name="app_save_log">Save Log</string>
-    <string name="app_save_log_ok">Log is saved to %s</string>
-    <string name="app_save_log_error">Save log error.</string>
-    <string name="app_open_log">Open Log</string>
-    <string name="app_send_mail">Send Mail</string>
-    <string name="app_send_mail_description">Please describe what you did, and what happened.\nAlso attach some screenshot if possible.</string>
-    <string name="app_send_to">Send To...</string>
+    <string name="app_send_log">发送日志</string>
+    <string name="app_send_log_error">发送日志出错.</string>
+    <string name="app_retry_after_permission_granted">授权后重试.</string>
+    <string name="app_save_log">保存</string>
+    <string name="app_open_log">打开</string>
+    <string name="app_save_log_ok">日志被保存到 %s</string>
+    <string name="app_save_log_error">保存日志出错.</string>
+    <string name="app_send_mail">发邮件</string>
+    <string name="app_send_mail_description">请描述一下你做了什么，出了什么错.\n可能的话请附上一些截屏.</string>
+    <string name="app_send_to">发送到...</string>
     <string name="app_ok">OK</string>
-    <string name="app_cancel">Cancel</string>
-    <string name="app_close">Close</string>
-    <string name="app_delete">Delete</string>
-    <string name="app_shortcut_is_created">Shortcut is created.</string>
-    <string name="app_submit_issue">Submit Issue</string>
-    <string name="app_error_check_mode_world_readable">Starting from Android 7.0, store mode of preferences is changed, you need enable this module in Xposed Installer and reboot once first</string>
-    <string name="app_kill_hint">%s is killed.</string>
+    <string name="app_cancel">取消</string>
+    <string name="app_close">关闭</string>
+    <string name="app_delete">删除</string>
+    <string name="app_shortcut_is_created">快捷方式已创建.</string>
+    <string name="app_submit_issue">提交问题</string>
+    <string name="app_error_check_mode_world_readable">从 Android 7.0 开始, 设置的存储方式发生了一点改变, 你需要先在 Xposed Installer 中启动此模块并重启一次</string>
+    <string name="app_kill_hint">%s 已终止.</string>
 
     <!--Common-->
-    <string name="uninstall_message">Detected \"%s\" is installed, it has become part of \"L Tweaks\", better to uninstall it.</string>
-    <string name="uninstall_confirm">Uninstall</string>
-    <string name="not_supported">Not supported.</string>
-    <string name="cant_read_file">Can\'t read file.</string>
-    <string name="request_failed">Request failed.</string>
-    <string name="upload_failed">Upload failed.</string>
-    <string name="error">Error.</string>
-    <string name="all">All</string>
-    <string name="disabled">Disabled</string>
-    <string name="enabled">Enabled</string>
-    <string name="list">List</string>
-    <string name="current">Current</string>
-    <string name="secure_lock_screen_not_setup">Secure lock screen hasn\'t set up.</string>
+    <string name="uninstall_message">检测到已安装 \"%s\", 它已经成为了 \"L Tweaks\" 的一部分, 最好删除它.</string>
+    <string name="uninstall_confirm">卸载</string>
+    <string name="not_supported">不支持.</string>
+    <string name="cant_read_file">无法读取文件.</string>
+    <string name="request_failed">请求失败.</string>
+    <string name="upload_failed">上传失败.</string>
+    <string name="error">发生错误.</string>
+    <string name="all">所有</string>
+    <string name="disabled">已禁用</string>
+    <string name="enabled">已启用</string>
+    <string name="list">列表</string>
+    <string name="current">当前</string>
+    <string name="secure_lock_screen_not_setup">你还未给你的设备设置密码.</string>
 
     <!-- Google -->
     <string name="pref_header_google">Google</string>
     <string name="pref_category_google_play_services">Google Play Services</string>
-    <string name="pref_google_dismiss_location_checker">Dismiss location settings checker</string>
-    <string name="pref_google_dismiss_location_checker_summary">Dismiss dialog \"To continue, let your device turn on location using Google\'s location service.\"</string>
-    <string name="pref_google_block_system_update_notification">Block system update notificaton</string>
-    <string name="pref_category_google">Google Search App</string>
-    <string name="pref_google_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_google_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_google_com_domain">Use google.com to search</string>
-    <string name="pref_google_com_domain_summary">Not local domain, eg: google.com.hk</string>
-    <string name="pref_google_keyboard_suggestion">Allow keyboard suggestions in search box</string>
-    <string name="pref_google_overlay_search_to_browser">Overlay search go to browser</string>
-    <string name="pref_google_overlay_search_to_browser_summary">In nova launcher or some other launcher, there\'s an option \"Search as overlay\", use browser to open search result with this option</string>
+    <string name="pref_google_dismiss_location_checker">不提示\"打开位置服务\"</string>
+    <string name="pref_google_dismiss_location_checker_summary">不提示 \"要继续,请允许设备使用 Google 的位置信息服务开启位置信息功能.\"</string>
+    <string name="pref_google_block_system_update_notification">屏蔽系统更新通知</string>
+    <string name="pref_category_google">Google 搜索</string>
+    <string name="pref_google_remove_bottom_bar">去底栏</string>
+    <string name="pref_google_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_google_com_domain">在 google.com 搜索</string>
+    <string name="pref_google_com_domain_summary">而不是本地域, 比如: google.com.hk</string>
+    <string name="pref_google_keyboard_suggestion">允许在搜索框中使用键盘的建议字词</string>
+    <string name="pref_google_overlay_search_to_browser">叠加式搜索跳转浏览器</string>
+    <string name="pref_google_overlay_search_to_browser_summary">在 nova launcher 或其它 launcher 里面, 有一个\"叠加式搜索\"的选项, 勾选此选项时使用浏览器打开搜索结果</string>
     <string name="pref_category_google_plus">Google+</string>
-    <string name="pref_google_plus_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_google_plus_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_google_plus_top_right_refresh">Put \"New posts\" to top right menu</string>
-    <string name="pref_google_plus_hide_comment_edit">Hide comment edit box</string>
-    <string name="pref_google_plus_hide_comment_edit_summary">Replace by floating button</string>
-    <string name="pref_google_plus_no_redirect">Url no redirect</string>
-    <string name="pref_google_plus_no_redirect_summary">Remove \"http://plus.url.google.com/url?q=\"</string>
-    <string name="pref_category_google_photos">Google Photos</string>
-    <string name="pref_google_photos_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_google_photos_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_category_google_newsstand">Google Newsstand</string>
-    <string name="pref_google_newsstand_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_google_newsstand_remove_bottom_bar_summary">Put them into drawer menu</string>
+    <string name="pref_google_plus_remove_bottom_bar">去底栏</string>
+    <string name="pref_google_plus_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_google_plus_top_right_refresh">把\"新信息\"放到右上角菜单</string>
+    <string name="pref_google_plus_hide_comment_edit">隐藏评论编辑框</string>
+    <string name="pref_google_plus_hide_comment_edit_summary">被浮动按钮取代</string>
+    <string name="pref_google_plus_no_redirect">链接不跳转</string>
+    <string name="pref_google_plus_no_redirect_summary">去除 \"http://plus.url.google.com/url?q=\"</string>
+    <string name="pref_category_google_photos">Google 相册</string>
+    <string name="pref_google_photos_remove_bottom_bar">去底栏</string>
+    <string name="pref_google_photos_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_category_google_newsstand">Google 报亭</string>
+    <string name="pref_google_newsstand_remove_bottom_bar">去底栏</string>
+    <string name="pref_google_newsstand_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
     <string name="pref_category_google_books">Google Play Books</string>
-    <string name="pref_google_books_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_google_books_remove_bottom_bar_summary">Put them into drawer menu</string>
+    <string name="pref_google_books_remove_bottom_bar">去底栏</string>
+    <string name="pref_google_books_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
     <string name="pref_category_google_play">Google Play</string>
-    <string name="pref_google_play_view_in_coolapk">Add menu \"View in CoolApk / ApkPure / Mobilism / App Info\"</string>
-    <string name="pref_google_play_view_in_coolapk_summary">Jump to CoolApk / ApkPure, just like jump to Google Play from CoolApk, search in Mobilism, jump to App Info page of system</string>
+    <string name="pref_google_play_view_in_coolapk">添加菜单\"去酷安 / ApkPure / Mobilism / 应用详情 查看\"</string>
+    <string name="pref_google_play_view_in_coolapk_summary">酷安有个\"去 Play 查看\"，这个恰好相反，也可以去 ApkPure，去 Mobilism 搜索，去系统的应用详情页面</string>
     <string name="pref_category_google_messenger">Google Messenger</string>
-    <string name="pref_google_messenger_disable_direct_share">Disable direct share</string>
-    <string name="pref_google_messenger_disable_direct_share_summary">For Android 6.0+</string>
+    <string name="pref_google_messenger_disable_direct_share">禁用 direct share</string>
+    <string name="pref_google_messenger_disable_direct_share_summary">仅 Android 6.0+</string>
     <string name="pref_category_chrome">Chrome</string>
-    <string name="pref_chrome_incognito_search">Search / Open in incognito</string>
-    <string name="pref_chrome_incognito_search_summary">Search in incognito with selected text, use floating menu with text selection, for Android 6.0+\nMenu \"Open in incognito\" in Chrome and Custom Tab\nLong click link menu \"Open in incognito\" in Custom Tab</string>
-    <string name="pref_chrome_google_cache">View Google cached webpage</string>
-    <string name="pref_chrome_google_cache_summary">Menu \"View Google cached\" in Chrome and Custom Tab</string>
+    <string name="pref_chrome_incognito_search">用\"隐身模式\"搜索/打开</string>
+    <string name="pref_chrome_incognito_search_summary">选中文本后到\"隐身模式\"中搜索，使用选中文本后的浮动菜单，仅 Android 6.0+\n在 Chrome 和 Custom Tab 中添加\"在隐身模式中打开\"菜单\n在 Custom Tab 中添加\"在隐身模式中打开\"长按链接菜单</string>
+    <string name="pref_chrome_google_cache">查看 Google 网页缓存</string>
+    <string name="pref_chrome_google_cache_summary">在 Chrome 和 Custom Tab 中添加 \"查看 Google 网页缓存\"菜单</string>
     <string name="pref_chrome_wayback">Wayback Machine</string>
-    <string name="pref_chrome_wayback_summary">Menu \"Wayback Machine\" in Chrome and Custom Tab</string>
-    <string name="pref_chrome_go_top_or_bottom">Go top or bottom</string>
-    <string name="pref_chrome_go_top_or_bottom_summary">Menu \"Go Top\" and \"Go Bottom\" in Chrome and Custom Tab</string>
-    <string name="pref_chrome_open_with">Open with...</string>
-    <string name="pref_chrome_open_with_summary">Open url by other supported apps</string>
-    <string name="pref_chrome_ip_info">IP info</string>
-    <string name="pref_chrome_ip_info_summary">Menu to lookup ip info of current website</string>
+    <string name="pref_chrome_wayback_summary">在 Chrome 和 Custom Tab 中添加 \"Wayback Machine\"菜单</string>
+    <string name="pref_chrome_go_top_or_bottom">转到顶部或底部</string>
+    <string name="pref_chrome_go_top_or_bottom_summary">在 Chrome 和 Custom Tab 中添加 \"转到顶部\" 和 \"转到底部\" 菜单</string>
+    <string name="pref_chrome_open_with">用其它应用打开...</string>
+    <string name="pref_chrome_open_with_summary">选择一个其它支持该网址的应用来打开</string>
+    <string name="pref_chrome_ip_info">IP 信息</string>
+    <string name="pref_chrome_ip_info_summary">查找当前网站的 IP 信息</string>
     <string name="pref_category_youtube">Youtube</string>
-    <string name="pref_youtube_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_youtube_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_youtube_set_quality">Automatically set quality</string>
+    <string name="pref_youtube_remove_bottom_bar">去底栏</string>
+    <string name="pref_youtube_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_youtube_set_quality">自动设置分辨率</string>
 
     <!-- Youtube -->
     <string-array name="youtube_quality_string">
-        <item>Auto</item>
+        <item>自动</item>
         <item>144p</item>
         <item>240p</item>
         <item>360p</item>
@@ -126,335 +126,334 @@ Open source on github: \n
     </string-array>
 
     <!-- Google Play -->
-    <string name="google_play_view_in_coolapk">View in CoolApk</string>
-    <string name="google_play_view_in_apkpure">View in ApkPure</string>
-    <string name="google_play_search_in_mobilism">Search in Mobilism</string>
-    <string name="google_play_search_in_apkmirror">Search in ApkMirror</string>
-    <string name="google_play_view_in_app_info">View in App Info</string>
+    <string name="google_play_view_in_coolapk">去酷市场查看</string>
+    <string name="google_play_view_in_apkpure">去 ApkPure 查看</string>
+    <string name="google_play_search_in_mobilism">去 Mobilism 搜索</string>
+    <string name="google_play_search_in_apkmirror">去 ApkMirror 搜索</string>
+    <string name="google_play_view_in_app_info">去系统详情页面</string>
 
-    <!-- Chrome -->
-    <string name="chrome_open_in_incognito">Open in Incognito</string>
-    <string name="chrome_google_cache">View Google Cache</string>
+    <string name="chrome_open_in_incognito">隐身模式打开此页面</string>
+    <string name="chrome_google_cache">查看 Google 缓存</string>
     <string name="chrome_wayback_machine">Wayback Machine</string>
-    <string name="chrome_go_top">Go Top</string>
-    <string name="chrome_go_bottom">Go Bottom</string>
-    <string name="chrome_open_with">Open With...</string>
-    <string name="chrome_ip_info">IP Info</string>
-    <string name="chrome_ip_domain">Domain</string>
+    <string name="chrome_go_top">回到顶部</string>
+    <string name="chrome_go_bottom">转到底部</string>
+    <string name="chrome_open_with">使用其它应用打开...</string>
+    <string name="chrome_ip_info">IP 信息</string>
     <string name="chrome_ip_ip">IP</string>
-    <string name="chrome_ip_geo">GeoLocation</string>
+    <string name="chrome_ip_domain">域名</string>
+    <string name="chrome_ip_geo">地理位置</string>
     <string name="chrome_ip_isp">ISP</string>
     <string name="chrome_ip_asn">ASN</string>
 
     <!--Shopping-->
-    <string name="pref_header_shopping">Shopping</string>
-    <string name="pref_category_jd">JD</string>
-    <string name="pref_jd_open_link_in_app">Open link in app</string>
-    <string name="pref_jd_open_link_in_app_summary">eg. http://item.jd.com/123.html</string>
-    <string name="pref_jd_share_item">Share product by \"System Share\"</string>
-    <string name="pref_jd_share_item_summary">Use \"Copy To Clipboard\" in app share menu, a button will appear for you</string>
-    <string name="pref_jd_history">Price history in share menu</string>
-    <string name="pref_jd_history_summary">Use with above share function</string>
-    <string name="pref_jd_basic_share_activity">Original share activity</string>
-    <string name="pref_jd_basic_share_activity_summary">Not something like \"Share Reward\", in case no \"Copy Link\" button</string>
-    <string name="pref_category_suning">Suning</string>
-    <string name="pref_suning_share_item">Share product by \"System Share\"</string>
-    <string name="pref_suning_share_item_summary">Use \"Copy To Clipboard\" in app share menu, a button will appear for you</string>
-    <string name="pref_suning_history">Price history in share menu</string>
-    <string name="pref_suning_history_summary">Use with above share function</string>
-    <string name="pref_category_taobao">Taobao</string>
-    <string name="pref_category_smzdm">SMZDM</string>
-    <string name="pref_smzdm_open_link_in_jd_app">Open link in JD app</string>
-    <string name="pref_smzdm_open_link_in_jd_app_summary">Of course only for JD link</string>
+    <string name="pref_header_shopping">购物</string>
+    <string name="pref_category_jd">京东</string>
+    <string name="pref_jd_open_link_in_app">京东的链接直接由京东客户端打开</string>
+    <string name="pref_jd_open_link_in_app_summary">比如 http://item.jd.com/123.html</string>
+    <string name="pref_jd_share_item">使用系统分享来分享商品</string>
+    <string name="pref_jd_share_item_summary">在自带的分享菜单中使用\"复制链接\"，之后会浮现一个分享按钮给你</string>
+    <string name="pref_jd_history">查询历史价格</string>
+    <string name="pref_jd_history_summary">配合上面的分享功能来使用</string>
+    <string name="pref_jd_basic_share_activity">原始分享界面</string>
+    <string name="pref_jd_basic_share_activity_summary">而不是\"分享有礼\"之类的，避免没有\"复制链接\"按钮</string>
+    <string name="pref_category_suning">苏宁</string>
+    <string name="pref_suning_share_item">使用系统分享来分享商品</string>
+    <string name="pref_suning_share_item_summary">在自带的分享菜单中使用\"复制链接\"，之后会浮现一个分享按钮给你</string>
+    <string name="pref_suning_history">查询历史价格</string>
+    <string name="pref_suning_history_summary">配合上面的分享功能来使用</string>
+    <string name="pref_category_taobao">淘宝</string>
+    <string name="pref_category_smzdm">什么值得买</string>
+    <string name="pref_smzdm_open_link_in_jd_app">在京东客户端打开链接</string>
+    <string name="pref_smzdm_open_link_in_jd_app_summary">当然只针对京东链接</string>
 
     <!-- JD -->
-    <string name="jd_app">JD App</string>
-    <string name="jd_history">Price History</string>
-    <string name="jd_history_can_not_find_item_id">Can\'t find product id.</string>
-    <string name="jd_history_can_not_get_prices">Can\'t get history prices.</string>
-    <string name="jd_history_highest">Highest</string>
-    <string name="jd_history_lowest">Lowest</string>
-    
+    <string name="jd_app">京东</string>
+    <string name="jd_history">历史价格</string>
+    <string name="jd_history_can_not_find_item_id">找不到商品ID.</string>
+    <string name="jd_history_can_not_get_prices">无法获取历史价格.</string>
+    <string name="jd_history_highest">最高</string>
+    <string name="jd_history_lowest">最低</string>
+
     <!--Communication-->
-    <string name="pref_header_communication">Communication</string>
-    <string name="pref_category_wechat">WeChat</string>
-    <string name="pref_wechat_use_incoming_ringtone">Customize incoming ringtone</string>
-    <string name="pref_wechat_use_incoming_ringtone_summary">Set ringtone below</string>
-    <string name="pref_wechat_set_incoming_ringtone">Set incoming ringtone</string>
-    <string name="pref_wechat_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_wechat_remove_bottom_bar_summary">Put them into drawer menu\nNote: If WeChat can\'t be launched, try delete /data/data/com.tencent.mm/tinker folder, and create a same one with 000 permission.</string>
-    <string name="pref_wechat_no_drawer">No drawer menu after bottom bar removed</string>
-    <string name="pref_wechat_no_drawer_summary">You can also swipe left or right to switch pages</string>
-    <string name="pref_category_qq">QQ (Only tested on lite version)</string>
-    <string name="pref_qq_dismiss_contacts_enabler">Dismiss contacts enabler</string>
-    <string name="pref_qq_dismiss_contacts_enabler_summary">Don\'t enable this if you are using contacts</string>
-    <string name="pref_qq_remove_ads">Remove banner ads</string>
-    <string name="pref_qq_outer_browser">Use outer browser</string>
-    <string name="pref_qq_collapse_chat_buttons">Hide bottom buttons first in chat activity</string>
-    <string name="pref_qq_collapse_chat_buttons_summary">Until you press an \"Add\" button</string>
-    <string name="pref_qq_clear_background">Set a clear and undistorted chat background</string>
-    <string name="pref_qq_clear_background_summary">May not work on very high definition device, no problem on 1080x1920 (Nexus 5)\nSet path below</string>
-    <string name="pref_qq_clear_background_path">Set chat background path</string>
-    <string name="pref_qq_clear_background_path_summary">File is copied to %s</string>
-    <string name="pref_qq_exit_directly_by_sharing">Exit directly by sharing</string>
-    <string name="pref_qq_exit_directly_by_sharing_summary">After sharing something to someone, do not back to main activity by pressing back button</string>
-    <string name="pref_qq_fix_image_sharing">Fix image sharing in some situation</string>
-    <string name="pref_qq_fix_image_sharing_summary">eg. Sharing from Google+</string>
-    <string name="pref_qq_disable_discussion_notification">Disable notification of discussion group</string>
-    <string name="pref_qq_disable_discussion_notification_summary">No matter \"Notification\" is checked or not in discussion group settings</string>
-    <string name="pref_qq_prevent_audio_panel">Prevent \"Press To Talk\" panel popup automatically</string>
-    <string name="pref_qq_hide_weak_net_toast">Hide weak network hint</string>
+    <string name="pref_header_communication">通信</string>
+    <string name="pref_category_wechat">微信</string>
+    <string name="pref_wechat_use_incoming_ringtone">自定义来电铃声</string>
+    <string name="pref_wechat_use_incoming_ringtone_summary">在下面设置铃声</string>
+    <string name="pref_wechat_set_incoming_ringtone">设置铃声</string>
+    <string name="pref_wechat_remove_bottom_bar">去底栏</string>
+    <string name="pref_wechat_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单\n注意: 如果微信无法启动, 尝试删掉 /data/data/com.tencent.mm/tinker 文件夹, 再手动创建这个文件夹并赋于 000 权限.</string>
+    <string name="pref_wechat_no_drawer">去掉底栏后不添加抽屉菜单</string>
+    <string name="pref_wechat_no_drawer_summary">你仍然可以左右滑动来切换页面</string>
+    <string name="pref_category_qq">QQ (仅在轻聊版上测试过)</string>
+    <string name="pref_qq_dismiss_contacts_enabler">不再弹出\"启用通信录\"</string>
+    <string name="pref_qq_dismiss_contacts_enabler_summary">如果你要使用通信录请不要勾这个</string>
+    <string name="pref_qq_remove_ads">去横幅广告</string>
+    <string name="pref_qq_outer_browser">使用外部浏览器</string>
+    <string name="pref_qq_collapse_chat_buttons">在聊天界面先隐藏底部按钮栏</string>
+    <string name="pref_qq_collapse_chat_buttons_summary">有个\"加号\"来显示它们</string>
+    <string name="pref_qq_clear_background">设置一张清晰不变形的聊天背景</string>
+    <string name="pref_qq_clear_background_summary">也许在分辨率非常高的设备上不工作, 在 1080x1920 (Nexus 5) 上没有问题\n在下面设置路径</string>
+    <string name="pref_qq_clear_background_path">设置聊天背景路径</string>
+    <string name="pref_qq_clear_background_path_summary">文件被复制到了 %s</string>
+    <string name="pref_qq_exit_directly_by_sharing">分享后直接退出</string>
+    <string name="pref_qq_exit_directly_by_sharing_summary">在使用分享后, 按返回键时不退到主界面</string>
+    <string name="pref_qq_fix_image_sharing">修复某些情况下的图片分享</string>
+    <string name="pref_qq_fix_image_sharing_summary">比如: 从 Google+ 分享</string>
+    <string name="pref_qq_disable_discussion_notification">禁止讨论组的消息通知</string>
+    <string name="pref_qq_disable_discussion_notification_summary">不管讨论组设置里是否钩选\"新消息通知\"</string>
+    <string name="pref_qq_prevent_audio_panel">阻止\"按住说话\"面板自动弹出</string>
+    <string name="pref_qq_hide_weak_net_toast">隐藏弱网络提示</string>
     <string name="pref_category_push_bullet">Pushbullet</string>
-    <string name="pref_push_bullet_share_to_all">Share to all devices by default</string>
-    <string name="pref_push_bullet_share_to_all_summary">Then you can disable direct share in Pushbullet settings if you only want to push everything to all devices with one tap</string>
+    <string name="pref_push_bullet_share_to_all">默认推送内容到所有设备</string>
+    <string name="pref_push_bullet_share_to_all_summary">如果你只想每次一键推送内容到所有设备.\n同时也可以关掉 direct share</string>
     <string name="pref_category_ttrss">Tiny Tiny RSS</string>
-    <string name="pref_ttrss_disable_article_pager">Disable article pager</string>
-    <string name="pref_ttrss_open_link_in_browser_menu">More menu in article page</string>
-    <string name="pref_ttrss_open_link_in_browser_menu_summary">Open in browser, Share, Go top, Go bottom</string>
-    <string name="pref_ttrss_refresh_menu">Put refresh button to top right menu</string>
-    <string name="pref_ttrss_disable_show_hide_on_scroll">Disable top app bar show hide on scroll</string>
-    <string name="pref_ttrss_darken">A more better night mode</string>
-    <string name="pref_ttrss_darken_summary">For switching back after low memory kill</string>
-    <string name="pref_ttrss_open_all_articles_at_startup">Open all articles at startup</string>
-    <string name="pref_ttrss_open_all_articles_at_startup_summary">\"Open fresh articles at startup\" must be checked in TT RSS settings</string>
+    <string name="pref_ttrss_disable_article_pager">禁止文章页面左右滑动切换</string>
+    <string name="pref_ttrss_open_link_in_browser_menu">向文章页添加更多菜单</string>
+    <string name="pref_ttrss_open_link_in_browser_menu_summary">用浏览器打开，分享，跳转顶部，跳转底部</string>
+    <string name="pref_ttrss_refresh_menu">把刷新按钮放到右上角菜单</string>
+    <string name="pref_ttrss_disable_show_hide_on_scroll">禁止顶部应用栏在滚动时显示和隐藏</string>
+    <string name="pref_ttrss_darken">更完美的夜间模式</string>
+    <string name="pref_ttrss_darken_summary">主要用于在后台被系统杀掉再切回来的时候</string>
+    <string name="pref_ttrss_open_all_articles_at_startup">启动时打开所有文章</string>
+    <string name="pref_ttrss_open_all_articles_at_startup_summary">需要在 TT RSS 里勾选\"启动时打开新文章\"</string>
 
     <!-- TTRss -->
-    <string name="ttrss_open_in_browser">Open In Browser</string>
-    <string name="ttrss_refresh">Refresh</string>
-    <string name="ttrss_go_top">Go Top</string>
-    <string name="ttrss_go_bottom">Go Bottom</string>
+    <string name="ttrss_open_in_browser">使用浏览器打开</string>
+    <string name="ttrss_refresh">刷新</string>
+    <string name="ttrss_go_top">跳转顶部</string>
+    <string name="ttrss_go_bottom">跳转底部</string>
 
     <!--Entertainment-->
-    <string name="pref_header_entertainment">Entertainment</string>
-    <string name="pref_category_douban_movie">Douban Movie</string>
-    <string name="pref_douban_movie_url">Open link in app</string>
-    <string name="pref_douban_movie_search">Search in Douban Movie with selected text</string>
-    <string name="pref_douban_movie_search_summary">Use floating menu with text selection\nFor Android 6.0+</string>
-    <string name="pref_douban_movie_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_douban_movie_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_douban_movie_remove_ads">Remove fullscreen ads</string>
-    <string name="pref_category_bilibili">Bilibili</string>
-    <string name="pref_bilibili_search">Search in Bilibili with selected text</string>
-    <string name="pref_bilibili_search_summary">Use floating menu with text selection\nFor Android 6.0+</string>
-    <string name="pref_bilibili_open_link_in_app">Open link in app</string>
-    <string name="pref_bilibili_open_link_in_app_summary">eg. http://m.bilibili.com/video/av123.html</string>
-    <string name="pref_bilibili_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_bilibili_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_bilibili_get_cover">Get cover</string>
-    <string name="pref_bilibili_get_cover_summary">Add a menu item to get cover</string>
-    <string name="pref_bilibili_expand_desc">Expand description by default</string>
-    <string name="pref_bilibili_darken">A more better night mode</string>
-    <string name="pref_bilibili_darken_summary">1.When entering reading page in night mode, it will switch to daytime mode first, then suddenly back to night mode. Try fix this\n2.When entering this app, the whole screen will become white before app loading finish, change it to dark</string>
-    <string name="pref_bilibili_hide_follow_at_full_screen">Hide follow button at full screen</string>
-    <string name="pref_bilibili_dismiss_update">Never check for new version</string>
+    <string name="pref_header_entertainment">娱乐</string>
+    <string name="pref_category_douban_movie">豆瓣电影</string>
+    <string name="pref_douban_movie_url">豆瓣电影的链接直接由客户端打开</string>
+    <string name="pref_douban_movie_search">选中文本后去豆瓣电影搜索</string>
+    <string name="pref_douban_movie_search_summary">使用选中文本后的浮动菜单\n仅 Android 6.0+</string>
+    <string name="pref_douban_movie_remove_bottom_bar">去底栏</string>
+    <string name="pref_douban_movie_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_douban_movie_remove_ads">移除全屏广告</string>
+    <string name="pref_category_bilibili">哔哩哔哩</string>
+    <string name="pref_bilibili_search">选中文本后去哔哩哔哩搜索</string>
+    <string name="pref_bilibili_search_summary">使用选中文本后的浮动菜单\n仅 Android 6.0+</string>
+    <string name="pref_bilibili_open_link_in_app">哔哩哔哩的链接由哔哩哔哩客户端打开</string>
+    <string name="pref_bilibili_open_link_in_app_summary">比如 http://m.bilibili.com/video/av123.html</string>
+    <string name="pref_bilibili_remove_bottom_bar">去底栏</string>
+    <string name="pref_bilibili_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_bilibili_get_cover">获取封面</string>
+    <string name="pref_bilibili_get_cover_summary">添加一个菜单项来获取封面</string>
+    <string name="pref_bilibili_expand_desc">默认展开视频描述</string>
+    <string name="pref_bilibili_darken">更完美的夜间模式</string>
+    <string name="pref_bilibili_darken_summary">1.夜间模式下进入文章页面时，会先调为白天模式，然后瞬间再返回夜间模式. 尝试修复此问题\n2.启动此应用时，将应用尚未加载完成前的白屏调为黑屏</string>
+    <string name="pref_bilibili_hide_follow_at_full_screen">隐藏全屏状态下的关注按钮</string>
+    <string name="pref_bilibili_dismiss_update">不检查更新</string>
     <string name="pref_category_steam">Steam</string>
-    <string name="pref_steam_share_url">Share url</string>
-    <string name="pref_steam_share_url_summary">Add a top right menu to use system share</string>
-    <string name="pref_steam_database">View in Steam Database</string>
-    <string name="pref_steam_database_summary">Add a top right menu</string>
-    <string name="pref_steam_go_top">Go top in store item page</string>
-    <string name="pref_steam_go_top_summary">Add a top right menu</string>
-    <string name="pref_steam_go_reviews">Go reviews in store item page</string>
-    <string name="pref_steam_go_reviews_summary">Add a top right menu</string>
-    <string name="pref_steam_chinese">Chinese store page</string>
-    <string name="pref_steam_chinese_summary">Check this if your system language is English but you want Chinese store page</string>
+    <string name="pref_steam_share_url">分享链接</string>
+    <string name="pref_steam_share_url_summary">在右上角菜单添加一个系统分享项</string>
+    <string name="pref_steam_database">去 Steam Database 查看</string>
+    <string name="pref_steam_database_summary">在右上角添加一个菜单</string>
+    <string name="pref_steam_go_top">在商品页跳到顶部</string>
+    <string name="pref_steam_go_top_summary">在右上角添加一个菜单</string>
+    <string name="pref_steam_go_reviews">在商品页跳到评测栏</string>
+    <string name="pref_steam_go_reviews_summary">在右上角添加一个菜单</string>
+    <string name="pref_steam_chinese">中文商店页面</string>
+    <string name="pref_steam_chinese_summary">如果你的系统语言是英文但又想要中文商店界面的话就勾这个</string>
     <string name="pref_category_comic_screen">Comic Screen</string>
-    <string name="pref_comic_screen_better_sort">Better sort</string>
-    <string name="pref_comic_screen_better_sort_summary">If you have folder name like \"01.5\", try this method to get right sort.\neg. \"01 -> 01.5 -> 02 -> 03\"</string>
+    <string name="pref_comic_screen_better_sort">更好的文件夹排序</string>
+    <string name="pref_comic_screen_better_sort_summary">如果你有文件夹命名为 \"01.5\" 这种, 可以试试这个方法来获得正确的排序.\n比如 \"01 -> 01.5 -> 02 -> 03\"</string>
 
     <!-- Bilibili -->
-    <string name="bilibili_get_cover">Get Cover</string>
+    <string name="bilibili_get_cover">获取封面</string>
 
     <!-- Douban Movie -->
-    <string name="douban_movie_app">Douban Movie</string>
+    <string name="douban_movie_app">豆瓣电影</string>
 
     <!--System-->
-    <string name="pref_header_system">System / Tools</string>
+    <string name="pref_header_system">系统 / 工具</string>
     <string name="pref_category_text_aide">Text Aide</string>
-    <string name="pref_text_aide_open_youdao">Use Youdao dict</string>
-    <string name="pref_category_text">Text</string>
-    <string name="pref_text_double_click_for_selectable">Double click for selectable</string>
-    <string name="pref_text_double_click_for_selectable_summary">Double click to let text become selectable, then long press text to do something as usual.\n
-May not work on all places</string>
-    <string name="pref_text_long_press_to_copy">Long press to copy</string>
-    <string name="pref_text_long_press_to_copy_summary">Exclude selectable text</string>
-    <string name="pref_text_selectable_text">Selectable Text</string>
-    <string name="pref_text_selectable_text_summary">Add a item in share menu, to display or reprocess shared text</string>
-    <string name="pref_text_actions">Manage floating menus</string>
-    <string name="pref_text_actions_summary">Block and sort\nFor Android 6.0+</string>
-    <string name="pref_text_actions_original">Show all floating menus</string>
-    <string name="pref_text_actions_original_summary">Some menus may be hidden by app itself\nFor Android 6.0+</string>
-    <string name="pref_category_youdao">Youdao Dict</string>
-    <string name="pref_youdao_quick_query_shortcut">Create shortcut for quick query</string>
-    <string name="pref_youdao_quick_query_shortcut_summary">Activity for word query, nothing more</string>
-    <string name="pref_category_system_share">System Share</string>
-    <string name="pref_system_share_qrcode_scan">Add menu \"Scan QR Code\"</string>
-    <string name="pref_system_share_qrcode_scan_summary">You can share QR image from browser, local file or screenshot</string>
-    <string name="pref_system_share_image_search">Add menu \"Search by image\"</string>
-    <string name="pref_system_share_image_search_summary">You can share image from other app or local file, search engines include: Google, TinEye, IQDB</string>
-    <string name="pref_system_share_filter">Hide share menu items</string>
-    <string name="pref_system_share_copy_to_share">Copy to share</string>
-    <string name="pref_system_share_copy_to_share_summary">When you copy text, a button will appear for you to trigger share action.\nMay not work in some app</string>
-    <string name="pref_category_coolapk">Coolapk</string>
-    <string name="pref_coolapk_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_coolapk_remove_bottom_bar_summary">Put them into drawer menu.\nYou need disable \"Disable Xposed modules\" in settings</string>
-    <string name="pref_category_prevent_running">Prevent Running</string>
-    <string name="pref_prevent_running_prevent_foreground_service">Prevent foreground service</string>
-    <string name="pref_prevent_running_prevent_foreground_service_summary">Prevent service becomes foreground service, some app will create invisible foreground service to avoid low memory kill.\n
-Note, this is a simple and crude way, visible \"Running Notification\" will also disappear.</string>
-    <string name="pref_prevent_running_set_inactive">App standby</string>
-    <string name="pref_prevent_running_set_inactive_summary">Try set app to standby, rather than kill it.\nFor Android 6.0+\n
-Note, somehow, some app will disconnect from internet, those apps didn\'t have a long time test on 6.0</string>
-    <string name="pref_prevent_running_prevent_exact_alarm">Delay wakeup of exact alarm</string>
-    <string name="pref_prevent_running_prevent_exact_alarm_summary">Some task will be delayed due to optimize battery use by system\nFor Android 6.0+</string>
-    <string name="pref_prevent_running_prevent_wake_lock">Prevent wake lock</string>
-    <string name="pref_prevent_running_prevent_wake_lock_summary">Without wake lock, app may hard to keep running at screen off</string>
-    <string name="pref_prevent_running_prevent_receiver">Prevent some broadcast</string>
-    <string name="pref_prevent_running_set_list">Set prevent list</string>
-    <string name="pref_prevent_running_set_list_summary">You can set each prevent method for individual app.\n
-Note, you\'d better know what these methods for, in case of unexpected error</string>
+    <string name="pref_text_aide_open_youdao">使用有道词典</string>
+    <string name="pref_category_text">文本</string>
+    <string name="pref_text_double_click_for_selectable">双击让文本变为可选状态</string>
+    <string name="pref_text_double_click_for_selectable_summary">然后再像平常一样长按进行操作.\n
+也许在某些地方无法使用</string>
+    <string name="pref_text_long_press_to_copy">长按复制</string>
+    <string name="pref_text_long_press_to_copy_summary">忽略长按可进行选择的文本</string>
+    <string name="pref_text_selectable_text">查看文本</string>
+    <string name="pref_text_selectable_text_summary">在分享菜单中添加一个菜单, 用于查看当前分享的文本或对文本进行简单的二次处理</string>
+    <string name="pref_text_actions">管理浮动菜单</string>
+    <string name="pref_text_actions_summary">屏蔽和排序\n仅 Android 6.0+</string>
+    <string name="pref_text_actions_original">显示所有浮动菜单项</string>
+    <string name="pref_text_actions_original_summary">某些菜单项被应用自身隐藏掉\n仅 Android 6.0+</string>
+    <string name="pref_category_youdao">有道词典</string>
+    <string name="pref_youdao_quick_query_shortcut">为快速查询创建快捷方式</string>
+    <string name="pref_youdao_quick_query_shortcut_summary">进入纯粹的单词查询界面，没有多余的功能</string>
+    <string name="pref_category_system_share">系统分享</string>
+    <string name="pref_system_share_qrcode_scan">添加菜单\"扫描二维码\"</string>
+    <string name="pref_system_share_qrcode_scan_summary">你可以通过浏览器、本地文件、截屏等分享图片</string>
+    <string name="pref_system_share_image_search">添加菜单\"以图搜图\"</string>
+    <string name="pref_system_share_image_search_summary">你可以通过其它应用、本地文件等分享图片，搜索引擎可选：Google，TinEye，IQDB</string>
+    <string name="pref_system_share_filter">隐藏分享菜单项</string>
+    <string name="pref_system_share_copy_to_share">复制后分享</string>
+    <string name="pref_system_share_copy_to_share_summary">当你复制文本的时候, 会浮现一个按钮让你能直接分享文本.\n也许在某些应用中不工作</string>
+    <string name="pref_category_coolapk">酷市场</string>
+    <string name="pref_coolapk_remove_bottom_bar">去底栏</string>
+    <string name="pref_coolapk_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单.\n你需要到设置里面关闭\"禁用 Xposed 模块\"</string>
+    <string name="pref_category_prevent_running">阻止运行</string>
+    <string name="pref_prevent_running_prevent_foreground_service">阻止前台服务</string>
+    <string name="pref_prevent_running_prevent_foreground_service_summary">有些应用为避免被杀死会创建看不见的前台服务，阻止其变为前台服务.\n
+注意，这是一个简单粗暴的方法，如果应用本身有可见的\"正在运行的通知\"，这个通知也将变得不可见.</string>
+    <string name="pref_prevent_running_set_inactive">休眠应用</string>
+    <string name="pref_prevent_running_set_inactive_summary">尝试休眠应用而不是杀掉它.\n仅 Android 6.0+\n
+注意，这个方法可能使得某些应用在使用一段时间后变得不能正常联网，那些破应用根本不会针对 6.0 系统进行长时间测试.</string>
+    <string name="pref_prevent_running_prevent_exact_alarm">延迟精确的唤醒</string>
+    <string name="pref_prevent_running_prevent_exact_alarm_summary">系统为优化电池使用而延迟一些任务\n仅 Android 6.0+</string>
+    <string name="pref_prevent_running_prevent_wake_lock">阻止唤醒锁</string>
+    <string name="pref_prevent_running_prevent_wake_lock_summary">没有唤醒锁，在屏幕关闭的情况下，应用将难以在后台保持长时间运行</string>
+    <string name="pref_prevent_running_prevent_receiver">阻止一些广播</string>
+    <string name="pref_prevent_running_set_list">设置阻止列表</string>
+    <string name="pref_prevent_running_set_list_summary">你可以为每个应用单独设置需要阻止的内容.\n
+注意, 你最好清楚每个方法是拿来做什么的, 以避免不可预料的错误</string>
     <string name="pref_category_shadowsocks">Shadowsocks</string>
-    <string name="pref_shadowsocks_primary_dns">Primary DNS</string>
-    <string name="pref_shadowsocks_primary_dns_summary">Comma seperated ip:port</string>
-    <string name="pref_shadowsocks_transproxy">Transproxy</string>
-    <string name="pref_shadowsocks_transproxy_summary">Use it with Shadowsocks transproxy mode, set route to \"bypass LAN &amp; mainland China\".\nss-local acl will be disabled, IP list will be added by iptables.\nIt will take several minutes at Shadowsocks enabled.\nRoot is required</string>
-    <string name="pref_category_quick_settings">Quick Settings in status bar</string>
-    <string name="pref_quick_settings_tile_adb_wireless">Add tile \"Adb Wireless\"</string>
-    <string name="pref_quick_settings_tile_adb_wireless_summary">Use \"adb connect x:x:x:x:5555\" to connect\nFor Android 5.0+, root is required</string>
-    <string name="pref_quick_settings_tile_4g3g">Add tile \"4G/3G Switch\"</string>
-    <string name="pref_quick_settings_tile_4g3g_summary">This is equivalent to set preferred network type from *#*#4636#*#*\nSet 4G/3G network types below</string>
+    <string name="pref_shadowsocks_primary_dns">主 DNS</string>
+    <string name="pref_shadowsocks_primary_dns_summary">ip:port, 多个用逗号隔开</string>
+    <string name="pref_shadowsocks_transproxy">透明代理</string>
+    <string name="pref_shadowsocks_transproxy_summary">配合 Shadowsocks 的透明代理模式使用, 需要设置路由为\"绕过局域网和中国大陆\".\nss-local acl 将被禁用, IP 列表将使用 iptables 来添加.\n每次启用 Shadowsocks 时需要几分钟的时间.\n需要 root</string>
+    <string name="pref_category_quick_settings">通知栏快捷菜单</string>
+    <string name="pref_quick_settings_tile_adb_wireless">添加菜单 \"Adb Wireless\"</string>
+    <string name="pref_quick_settings_tile_adb_wireless_summary">使用 \"adb connect x:x:x:x:5555\" 来连接\n仅 Android 5.0+, 需要 root</string>
+    <string name="pref_quick_settings_tile_4g3g">添加菜单 \"4G/3G 切换\"</string>
+    <string name="pref_quick_settings_tile_4g3g_summary">这等同于在 *#*#4636#*#* 中设置优先使用的网络\n在下面设置 4G/3G 网络类型</string>
     <string name="pref_quick_settings_tile_4g">4G</string>
     <string name="pref_quick_settings_tile_3g">3G</string>
-    <string name="pref_quick_settings_tile_set_preconfigured_brightness">Add tile \"Set xxx brightness\"</string>
-    <string name="pref_quick_settings_tile_set_preconfigured_brightness_summary">Tap to set preconfigured brightness, long press to set auto brightness.\nConfigure brightness below</string>
-    <string name="pref_quick_settings_tile_preconfigured_brightness">Configure brightness</string>
-    <string name="pref_quick_settings_tile_preconfigured_brightness_dialog_title">Valid range 1-254</string>
-    <string name="pref_quick_settings_brightness_by_volume_buttons">Adjust brightness by volume buttons</string>
-    <string name="pref_quick_settings_brightness_by_volume_buttons_summary">At quick settings is fully expanded.\nThis is useful for precise adjustment</string>
-    <string name="pref_category_nav_bar">Navigation Bar</string>
-    <string name="pref_nav_bar_input_cursor_control">Input cursor control</string>
-    <string name="pref_nav_bar_input_cursor_control_summary">Add left / right buttons on navigation bar to control cursor at inputting\nFor Android 7.0+</string>
-    <string name="pref_category_native_clipboard">Native Clipboard (A Xposed module)</string>
-    <string name="pref_native_clipboard_fix_chrome">Fix in Chrome</string>
-    <string name="pref_native_clipboard_fix_chrome_summary">Try this if \"Native Clipboard\" doesn\'t work in Chrome</string>
-    <string name="pref_category_trust_agent">Trust Agents</string>
-    <string name="pref_trust_agent_wifi">Smart Lock with WiFi</string>
-    <string name="pref_trust_agent_wifi_summary">Unlock device by certain Wifi connected, just like Smart Lock which provided by Google.\nUse both SSID and BSSID to match.\nYou need go \"Settings -> Security -> Trust agents\" to enable this agent.\nClick to set WiFi list, only connected WiFi can be added.\nFor Android 5.0+\nPlease manually give location permission on Android 8.1+, or SSID and BSSID can\'t be got.</string>
-    <string name="pref_category_solid_explorer">Solid Explorer (Not Classic)</string>
-    <string name="pref_solid_explorer_replace_url">Replace Streaming Url</string>
-    <string name="pref_solid_explorer_replace_url_summary">When playing video from network, Solid Explorer will streaming video to local url (eg: \"http://127.0.0.1:12345/public/a.mp4\"), it has performance loss.\nReplace \"127.0.0.1:12345\" to server url for accessing video directly (If server supports it).\nSupport smb, dav, ftp, sftp.</string>
-    <string name="pref_category_app_info">App Info</string>
-    <string name="pref_app_info_open_app_data_folder">Open App Data/APK Folder</string>
-    <string name="pref_app_info_open_app_data_folder_summary">Generally, it will open \"/data/data/[package_name]\", \"/sdcard/Android/data/[package_name]\", \"/data/user_de/0/[package_name]\" or \"/data/app/[package_name]\", you need a file explorer which supports root access, tested with Solid Explorer\nAdd as menu</string>
-    <string name="pref_app_info_go_market">Go to market</string>
-    <string name="pref_app_info_go_market_summary">Go to Google Play, CoolApk, ApkPure, Mobilism\nAdd as menu</string>
-    <string name="pref_app_info_allow_disable">Allow core system apps to be disabled</string>
-    <string name="pref_app_info_allow_disable_summary">This will allow you to click \"DISABLE\" button on core system apps, be careful, you might brick your phone\n
-\"DISABLE\" button will become red to warn you</string>
-    <string name="pref_app_info_app_ops">Go to App Ops</string>
-    <string name="pref_app_info_app_ops_summary">For Lineage OS</string>
+    <string name="pref_quick_settings_tile_set_preconfigured_brightness">添加菜单 \"设置 xxx 亮度\"</string>
+    <string name="pref_quick_settings_tile_set_preconfigured_brightness_summary">轻触设置事先配置的亮度, 长按设为自动亮度.\n在下面配置亮度</string>
+    <string name="pref_quick_settings_tile_preconfigured_brightness">配置亮度</string>
+    <string name="pref_quick_settings_tile_preconfigured_brightness_dialog_title">有效范围 1-254</string>
+    <string name="pref_quick_settings_brightness_by_volume_buttons">通过音量键调整屏幕亮度</string>
+    <string name="pref_quick_settings_brightness_by_volume_buttons_summary">在快捷菜单完全展开的时候.\n这个适合精细的调整</string>
+    <string name="pref_category_nav_bar">导航栏</string>
+    <string name="pref_nav_bar_input_cursor_control">控制输入光标</string>
+    <string name="pref_nav_bar_input_cursor_control_summary">在输入文字的时候在导航栏上添加左右两个按钮来控制光标\n仅 Android 7.0+</string>
+    <string name="pref_category_native_clipboard">原生剪贴板（一个 Xposed 模块）</string>
+    <string name="pref_native_clipboard_fix_chrome">修复在 Chrome 上不工作的问题</string>
+    <string name="pref_native_clipboard_fix_chrome_summary">如果 \"原生剪贴板\" 在 Chrome 上不工作，你可以尝试这个</string>
+    <string name="pref_category_trust_agent">信任的环境</string>
+    <string name="pref_trust_agent_wifi">在指定 WiFi 下自动解锁屏幕</string>
+    <string name="pref_trust_agent_wifi_summary">在连接到指定 WiFi 后自动解锁屏幕, 类似 Google 提供的 Smart Lock.\n同时使用 SSID 和 BSSID 来确定 WiFi 是否可信.\n你需要到 \"设置 -> 安全 -> 信任的代理\" 启用此代理.\n点此设置可信的 WiFi 列表, 仅当前连上的 WiFi 才能加入到列表.\n仅 Android 5.0+\n请在 Android 8.1+ 上手动给予位置权限, 否则 SSID 和 BSSID 都无法获得.</string>
+    <string name="pref_category_solid_explorer">Solid Explorer (非经典版本)</string>
+    <string name="pref_solid_explorer_replace_url">替换视频流地址</string>
+    <string name="pref_solid_explorer_replace_url_summary">当通过网络播放视频时, Solid Explorer 会中转视频流到本地 (比如: \"http://127.0.0.1:12345/public/a.mp4\"), 这会引起性能损失.\n把 \"127.0.0.1:12345\" 替换为服务器的地址，让播放器直连服务器 (如果服务器支持).\n支持 smb, dav, ftp, sftp.</string>
+    <string name="pref_category_app_info">应用信息</string>
+    <string name="pref_app_info_open_app_data_folder">打开应用数据/APK文件夹</string>
+    <string name="pref_app_info_open_app_data_folder_summary">通常情况下会打开 \"/data/data/[package_name]\", \"/sdcard/Android/data/[package_name]\", \"/data/user_de/0/[package_name]\" 或 \"/data/app/[package_name]\", 你需要一个支持 root 的文件管理器, 配合 Solid Explorer 测试过\n以菜单的形式添加</string>
+    <string name="pref_app_info_go_market">跳转到市场</string>
+    <string name="pref_app_info_go_market_summary">跳转到 Google Play, 酷市场, ApkPure, Mobilism\n以菜单的形式添加</string>
+    <string name="pref_app_info_allow_disable">允许禁用系统核心应用</string>
+    <string name="pref_app_info_allow_disable_summary">这将让\"禁用\"按钮在系统核心应用上也可被点击, 小心, 你也许会让你的手机变砖\n
+\"禁用\"按钮会变为红色来给以警告</string>
+    <string name="pref_app_info_app_ops">转到 App Ops</string>
+    <string name="pref_app_info_app_ops_summary">在 Lineage OS 上有效</string>
     <string name="pref_category_lineage_os">Lineage OS (Android 7.0+)</string>
-    <string name="pref_lineage_os_live_display_time">Customize Live Display time</string>
-    <string name="pref_lineage_os_live_display_time_summary">Manually set Live Display time, not calculate sunrise/sunset from location</string>
-    <string name="pref_lineage_os_live_display_time_sunrise">Set Live Display sunrise</string>
-    <string name="pref_lineage_os_live_display_time_sunset">Set Live Display sunset</string>
-    <string name="pref_lineage_os_gallery_remove_bottom_bar">Remove Gallery bottom bar</string>
-    <string name="pref_lineage_os_gallery_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_category_keys">Keys</string>
-    <string name="pref_keys_long_press_back_to_kill">Long press back key to kill current app</string>
-    <string name="pref_keys_long_press_back_to_kill_summary">Exclude system apps</string>
-    <string name="pref_category_recent_task">Recent Tasks</string>
-    <string name="pref_recent_task_swipe_to_kill">Right swipe to kill app</string>
-    <string name="pref_recent_task_swipe_to_kill_summary">Exclude system apps</string>
-    <string name="pref_category_phone">Phone</string>
-    <string name="pref_phone_deny_access_phone_number">Deny access phone number</string>
-    <string name="pref_phone_deny_access_phone_number_summary">Your phone number may be stored in SIM card, deny access it for non-system apps</string>
-    <string name="pref_category_display">Display</string>
-    <string name="pref_display_light_amber_in_daylight">Light amber in daylight</string>
-    <string name="pref_display_light_amber_in_daylight_summary">Color temperature is about 5500K\nFor Android 7.1+</string>
-    <string name="pref_display_min_brightness">Set minimum brightness</string>
-    <string name="pref_display_min_brightness_dialog_title">Default is %d, valid range 1-254</string>
-    <string name="pref_display_dark_wallpaper_color">Dark wallpaper color</string>
-    <string name="pref_display_dark_wallpaper_color_summary">Trick the system that we are using a dark wallpaper, then system theme color will change to dark.\neg. Quick Settings will use dark background.\nFor Android 8.1+</string>
-    <string name="pref_display_hspap_signal">H+ signal</string>
-    <string name="pref_display_hspap_signal_summary">Display H+ instead of H for HSPA+ signal\nFor Android 6.0+</string>
-    <string name="pref_category_web">Web</string>
-    <string name="pref_web_search_to_browser">Go to browser on web search</string>
-    <string name="pref_web_search_to_browser_summary">Instead of Google Search App</string>
-    <string name="pref_category_debug">Debug / Misc</string>
-    <string name="pref_debug_app_crash_info">Show app crash info</string>
-    <string name="pref_debug_app_crash_info_summary">Show crash info in app crash dialog.\nAll exception handlers from user installed apps will be disabled.\nFor Android 7.0+</string>
-    <string name="pref_debug_mtp_always">MTP always</string>
-    <string name="pref_debug_mtp_always_summary">Always enable MTP when device is connected to PC.\nMTP will also be enabled if you choose charge only.\nFor Android 8.0+</string>
-    <string name="pref_debug_debuggable">Enable debuggable for all apps</string>
-    <string name="pref_debug_debuggable_summary">Equal to set debuggable in AndroidManifest.xml</string>
+    <string name="pref_lineage_os_live_display_time">自定义 Live Display 时间</string>
+    <string name="pref_lineage_os_live_display_time_summary">手动设置 Live Display 时间, 而不是通过位置来计算日出/日落</string>
+    <string name="pref_lineage_os_live_display_time_sunrise">设置 Live Display 日出时间</string>
+    <string name="pref_lineage_os_live_display_time_sunset">设置 Live Display 日落时间</string>
+    <string name="pref_lineage_os_gallery_remove_bottom_bar">去除图库底栏</string>
+    <string name="pref_lineage_os_gallery_remove_bottom_bar_summary">底栏按钮放到左侧滑出的抽屉菜单</string>
+    <string name="pref_category_keys">按键</string>
+    <string name="pref_keys_long_press_back_to_kill">长按返回键终止当前应用</string>
+    <string name="pref_keys_long_press_back_to_kill_summary">对系统应用无效</string>
+    <string name="pref_category_recent_task">最近任务</string>
+    <string name="pref_recent_task_swipe_to_kill">右滑清除任务时终止应用</string>
+    <string name="pref_recent_task_swipe_to_kill_summary">对系统应用无效</string>
+    <string name="pref_category_phone">电话</string>
+    <string name="pref_phone_deny_access_phone_number">拒绝读取 SIM 卡中的手机号</string>
+    <string name="pref_phone_deny_access_phone_number_summary">有些 SIM 卡保存了此卡所对应的手机号, 禁止非系统应用读取</string>
+    <string name="pref_category_display">显示</string>
+    <string name="pref_display_light_amber_in_daylight">白天使用轻微的琥珀色</string>
+    <string name="pref_display_light_amber_in_daylight_summary">色温大概为 5500K\n仅 Android 7.1+</string>
+    <string name="pref_display_min_brightness">设置最低亮度</string>
+    <string name="pref_display_min_brightness_dialog_title">默认为 %d, 有效范围 1-254</string>
+    <string name="pref_display_dark_wallpaper_color">黑色的壁纸颜色</string>
+    <string name="pref_display_dark_wallpaper_color_summary">欺骗系统认为我们正在使用一张黑色的壁纸, 因此可以使系统固定在深色主题.\n比如: 快速下拉设置会使用黑色背景.\n仅 Android 8.1+</string>
+    <string name="pref_category_web">网络</string>
+    <string name="pref_display_hspap_signal">H+ 网络</string>
+    <string name="pref_display_hspap_signal_summary">让 HSPA+ 网络显示 H+ 而不是 H\n仅 Android 6.0+</string>
+    <string name="pref_web_search_to_browser">网页搜索跳转浏览器</string>
+    <string name="pref_web_search_to_browser_summary">而不是\"Google 搜索\"应用</string>
+    <string name="pref_category_debug">调试 / 其它</string>
+    <string name="pref_debug_app_crash_info">在应用崩溃的时候显示调试信息</string>
+    <string name="pref_debug_app_crash_info_summary">作用在崩溃时系统弹出的对话框上.\n用户安装的应用内所有捕获异常的功能都将被禁掉.\n仅 Android 7.0+</string>
+    <string name="pref_debug_mtp_always">总是启用 MTP</string>
+    <string name="pref_debug_mtp_always_summary">当连接到电脑时总是启用 MTP.\n即使你选择仅充电, MTP 仍将被启用.\n仅 Android 8.0+</string>
+    <string name="pref_debug_debuggable">设置所有应用为可调试</string>
+    <string name="pref_debug_debuggable_summary">相当于在 AndroidManifest.xml 中设置 debuggable</string>
 
     <!-- Text -->
-    <string name="text_selectable">Selectable Text</string>
-    <string name="text_actions_all">All</string>
-    <string name="text_action_cut">Cut</string>
-    <string name="text_action_copy">Copy</string>
-    <string name="text_action_paste">Paste</string>
-    <string name="text_action_share">Share</string>
-    <string name="text_action_select_all">Select all</string>
-    <string name="text_action_replace">Replace\u2026</string>
-    <string name="text_actions_system">System action</string>
-    <string name="text_actions_custom">Custom</string>
-    <string name="text_actions_menu_add_custom">Add Custom</string>
-    <string name="text_actions_custom_title">Menu item name</string>
-    <string name="text_actions_menu_usage">Usage</string>
-    <string name="text_actions_usage">Usage:\n
-        ⋅ Toggle on to block.\n
-        ⋅ Long click and drag to sort, swipe left or right to remove.\n
-        ⋅ App can add additional menu items by itself, those are not listed here, you can add it manually.\n
-        ⋅ Comparison is based on name, you need reconfigure this list if system language changed.\n
-        ⋅ Name duplicated menu items will be removed after sorting and renaming.\n
+    <string name="text_selectable">查看文本</string>
+    <string name="text_actions_all">所有</string>
+    <string name="text_action_cut">剪切</string>
+    <string name="text_action_copy">复制</string>
+    <string name="text_action_paste">粘贴</string>
+    <string name="text_action_share">分享</string>
+    <string name="text_action_select_all">全选</string>
+    <string name="text_action_replace">替换...</string>
+    <string name="text_actions_system">系统自带</string>
+    <string name="text_actions_custom">自定义</string>
+    <string name="text_actions_menu_add_custom">添加</string>
+    <string name="text_actions_custom_title">菜单名</string>
+    <string name="text_actions_menu_usage">使用说明</string>
+    <string name="text_actions_usage">使用说明:\n
+        ⋅ 勾选表示屏蔽.\n
+        ⋅ 长按并上下拖动进行排序，左右滑动进行删除.\n
+        ⋅ 应用可额外添加一些菜单项, 这些菜单项不会默认列在此列表内, 你可以手动添加.\n
+        ⋅ 此功能直接通过菜单文本进行比较, 如果你改了系统语言，你需要重新配置.\n
+        ⋅ 在排序和重命名之后相同菜单名的菜单项会被去掉.\n
     </string>
-    <string name="text_actions_rename">Rename</string>
-    <string name="text_actions_remove_custom_only">Only custom items can be removed.</string>
+    <string name="text_actions_rename">重命名</string>
+    <string name="text_actions_remove_custom_only">仅可删除自定义项.</string>
 
     <!--Share-->
-    <string name="share_qrcode_scan">Scan QR Code in image</string>
-    <string name="share_qrcode_cant_decode">Can\'t decode image.</string>
-    <string name="share_qrcode_wechat_scan">Scan with WeChat</string>
-    <string name="share_image_search">Search by image</string>
+    <string name="share_qrcode_scan">识别图中二维码</string>
+    <string name="share_qrcode_cant_decode">无法识别.</string>
+    <string name="share_qrcode_wechat_scan">使用微信扫描</string>
+    <string name="share_image_search">以图搜图</string>
     <string name="share_image_google_search">Google</string>
     <string name="share_image_tineye_search">TinEye</string>
     <string name="share_image_iqdb_search">IQDB</string>
 
     <!-- Prevent Running -->
-    <string name="prevent_running_list_all">All</string>
-    <string name="prevent_running_list_prevented">Prevented</string>
-    <string name="prevent_running_list_not_prevented">Not prevented</string>
+    <string name="prevent_running_list_all">所有</string>
+    <string name="prevent_running_list_prevented">已阻止</string>
+    <string name="prevent_running_list_not_prevented">未阻止</string>
 
     <!-- Process Text -->
-    <string name="process_text_douban_movie">Douban Movie</string>
-    <string name="process_text_bilibili">Bilibili</string>
-    <string name="process_text_incognito_search">Incognito Search</string>
+    <string name="process_text_douban_movie">豆瓣电影</string>
+    <string name="process_text_bilibili">哔哩哔哩</string>
+    <string name="process_text_incognito_search">隐身搜索</string>
 
     <!-- Url Replacer -->
-    <string name="solid_explorer_db_query_error">Can\'t connect to Solid Explorer.</string>
-    <string name="solid_explorer_db_empty">No supported network storage in Solid Explorer.</string>
-    <string name="solid_explorer_url_replacer_dialog_title">Edit Url Replacer</string>
+    <string name="solid_explorer_db_query_error">无法连接到 Solid Explorer.</string>
+    <string name="solid_explorer_db_empty">Solid Explorer 里没有支持的网络存储设备.</string>
+    <string name="solid_explorer_url_replacer_dialog_title">编辑地址替换</string>
     <string name="solid_explorer_url_replacer_dialog_instruction"></string>
-    <string name="solid_explorer_url_replacer_dialog_instruction_from">Server:</string>
-    <string name="solid_explorer_url_replacer_dialog_instruction_to">Replace To (eg: http://10.0.0.4/download):</string>
-    
+    <string name="solid_explorer_url_replacer_dialog_instruction_from">服务器:</string>
+    <string name="solid_explorer_url_replacer_dialog_instruction_to">替换为 (比如: http://10.0.0.4/download):</string>
+
     <!-- Adb Wireless -->
     <string name="adb_wireless_notification_title">ADB over network enabled</string>
     <string name="adb_wireless_notification_text">Touch to disable debugging</string>
 
     <!-- Donate -->
-    <string name="pref_header_doate">Donate</string>
-    <string name="pref_header_doate_summary">Please donate if this module is really useful for you</string>
-    <string name="pref_donate_alipay">Alipay</string>
-    <string name="pref_donate_alipay_summary">Recommended\nSimply click this menu, Alipay will be opened</string>
-    <string name="pref_donate_wechat">WeChat</string>
-    <string name="pref_donate_wechat_summary">Click this menu, WeChat scanner will be opened, QrCode of donate will be scanned automatically.\nIf nothing happened in scanner, choose QrCode from gallery, the QrCode should at the first place, you can see my app name in that QrCode image</string>
+    <string name="pref_header_doate">捐赠</string>
+    <string name="pref_header_doate_summary">如果这个模块真心对你有用，请进行捐赠</string>
+    <string name="pref_donate_alipay">支付宝</string>
+    <string name="pref_donate_alipay_summary">推荐\n点击此菜单打开支付宝</string>
+    <string name="pref_donate_wechat">微信</string>
+    <string name="pref_donate_wechat_summary">点击此菜单打开微信扫一扫, 会自动扫描捐赠二维码.\n若扫描未被触发, 请从相册选取二维码, 通常情况下会是第一张图, 你可以从缩略图看到应用名</string>
 
     <!-- Alipay -->
-    <string name="alipay_not_installed">Alipay is not installed.</string>
+    <string name="alipay_not_installed">未安装支付宝.</string>
 
     <!-- WeChat -->
-    <string name="wechat_not_installed">WeChat is not installed.</string>
+    <string name="wechat_not_installed">未安装微信.</string>
 </resources>

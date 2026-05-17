@@ -10,7 +10,7 @@ import li.lingfeng.ltweaks.utils.Logger;
 /**
  * Created by lilingfeng on 2017/11/10.
  */
-@XposedLoad(packages = PackageNames.L_TWEAKS, prefs = {})
+@XposedLoad(packages = PackageNames.M_TWEAKS, prefs = {})
 public class XposedLTweaks extends XposedBase {
 
     private static final String CONTEXT_IMPL = "android.app.ContextImpl";

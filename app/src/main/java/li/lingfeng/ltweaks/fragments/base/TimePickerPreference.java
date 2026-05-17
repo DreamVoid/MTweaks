@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TimePicker;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 
 /**
  * Created by smallville on 2017/10/21.

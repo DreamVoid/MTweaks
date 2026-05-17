@@ -1,4 +1,4 @@
-package li.lingfeng.ltweaks;
+package me.dreamvoid.mtweaks;
 
 import android.app.AndroidAppHelper;
 import android.app.Application;

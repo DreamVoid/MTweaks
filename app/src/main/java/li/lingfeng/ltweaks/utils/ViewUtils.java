@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Queue;
 
 import de.robv.android.xposed.XposedHelpers;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 
 /**
  * Created by smallville on 2017/2/9.

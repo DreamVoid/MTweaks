@@ -2,16 +2,12 @@ package li.lingfeng.ltweaks.utils;
 
 import android.content.Intent;
 import android.util.Log;
-
 import org.apache.commons.lang3.reflect.FieldUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
-
-import de.robv.android.xposed.XposedHelpers;
-import li.lingfeng.ltweaks.BuildConfig;
 
 /**
  * Created by smallville on 2016/11/23.

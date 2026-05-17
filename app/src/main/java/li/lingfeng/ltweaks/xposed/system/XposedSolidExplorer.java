@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.prefs.Prefs;
@@ -130,7 +130,7 @@ public class XposedSolidExplorer extends XposedBase {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 ContentProvider provider = (ContentProvider) param.thisObject;
                 int uid = Binder.getCallingUid();
-                ApplicationInfo appInfo = provider.getContext().getPackageManager().getApplicationInfo(PackageNames.L_TWEAKS, 0);
+                ApplicationInfo appInfo = provider.getContext().getPackageManager().getApplicationInfo(PackageNames.M_TWEAKS, 0);
                 if (uid != appInfo.uid) {
                     return;
                 }

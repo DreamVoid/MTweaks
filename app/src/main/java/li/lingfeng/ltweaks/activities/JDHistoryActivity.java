@@ -45,7 +45,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import li.lingfeng.ltweaks.utils.Logger;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.utils.ShoppingUtils;
 import okhttp3.Call;
 import okhttp3.Callback;

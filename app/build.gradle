@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'li.lingfeng.ltweaks'
+    namespace 'me.dreamvoid.mtweaks'
     compileSdk 35
 
     defaultConfig {
-        applicationId "li.lingfeng.ltweaks"
+        applicationId "me.dreamvoid.mtweaks"
         minSdk 21
         targetSdk 35
         versionCode 29

@@ -11,7 +11,7 @@ import java.lang.reflect.Modifier;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;
-import li.lingfeng.ltweaks.MyApplication;
+import me.dreamvoid.mtweaks.MyApplication;
 import li.lingfeng.ltweaks.prefs.ClassNames;
 import li.lingfeng.ltweaks.utils.ContextUtils;
 import li.lingfeng.ltweaks.utils.Logger;

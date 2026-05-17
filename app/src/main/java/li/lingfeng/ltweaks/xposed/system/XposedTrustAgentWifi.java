@@ -76,7 +76,7 @@ public class XposedTrustAgentWifi extends XposedBase {
                         boolean found = false;
                         for (Object info : result) {
                             Object si = XposedHelpers.getObjectField(info, "serviceInfo");
-                            if (si != null && PackageNames.L_TWEAKS.equals(
+                            if (si != null && PackageNames.M_TWEAKS.equals(
                                     XposedHelpers.getObjectField(si, "packageName"))) {
                                 found = true; break;
                             }
@@ -95,7 +95,7 @@ public class XposedTrustAgentWifi extends XposedBase {
                                             param.args[1]);
                             for (Object info : all) {
                                 Object si = XposedHelpers.getObjectField(info, "serviceInfo");
-                                if (si != null && PackageNames.L_TWEAKS.equals(
+                                if (si != null && PackageNames.M_TWEAKS.equals(
                                         XposedHelpers.getObjectField(si, "packageName"))) {
                                     result.add(info);
                                     Logger.i("Agent added via backup path");

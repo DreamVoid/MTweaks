@@ -12,7 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 
 /**
  * Created by smallville on 2017/11/5.

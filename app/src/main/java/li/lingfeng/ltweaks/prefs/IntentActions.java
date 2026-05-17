@@ -6,10 +6,6 @@ import android.net.ConnectivityManager;
 import android.net.Proxy;
 import android.net.wifi.WifiManager;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Created by smallville on 2017/3/29.
  */
@@ -58,5 +54,5 @@ public class IntentActions {
             Intent.ACTION_SEND_MULTIPLE
     };
 
-    public static final String ACTION_CHROME_INCOGNITO = "li.lingfeng.ltweaks.ACTION_CHROME_INCOGNITO";
+    public static final String ACTION_CHROME_INCOGNITO = PackageNames.L_TWEAKS + ".ACTION_CHROME_INCOGNITO";
 }

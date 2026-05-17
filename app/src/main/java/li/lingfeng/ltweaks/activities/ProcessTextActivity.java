@@ -10,7 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Method;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.prefs.ClassNames;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.ComponentUtils;

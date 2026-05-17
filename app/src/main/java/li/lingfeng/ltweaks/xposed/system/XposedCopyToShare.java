@@ -8,7 +8,7 @@ import android.os.Handler;
 import java.lang.ref.WeakReference;
 
 import de.robv.android.xposed.XC_MethodHook;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;

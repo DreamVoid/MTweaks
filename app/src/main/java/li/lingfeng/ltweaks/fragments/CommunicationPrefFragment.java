@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.lib.PreferenceChange;
 import li.lingfeng.ltweaks.lib.PreferenceClick;
 import li.lingfeng.ltweaks.prefs.ActivityRequestCode;

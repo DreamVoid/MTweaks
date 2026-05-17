@@ -1,4 +1,4 @@
-package li.lingfeng.ltweaks;
+package me.dreamvoid.mtweaks;
 
 
 import android.Manifest;
@@ -11,26 +11,25 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import androidx.core.content.FileProvider;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.util.List;
-
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.FileProvider;
+import li.lingfeng.ltweaks.AppCompatPreferenceActivity;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.prefs.Prefs;
 import li.lingfeng.ltweaks.utils.ContextUtils;
 import li.lingfeng.ltweaks.utils.Logger;
 import li.lingfeng.ltweaks.utils.PermissionUtils;
 import li.lingfeng.ltweaks.utils.ViewUtils;
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -218,7 +217,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     private void showAbout() {
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setMessage(R.string.app_about_summary)
-                .setPositiveButton(R.string.app_ok, null)
+                .setPositiveButton(android.R.string.ok, null)
                 .show();
         ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
     }

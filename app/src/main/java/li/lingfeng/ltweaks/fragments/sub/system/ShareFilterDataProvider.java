@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.activities.ListCheckActivity;
 import li.lingfeng.ltweaks.prefs.IntentActions;
 import li.lingfeng.ltweaks.prefs.Prefs;

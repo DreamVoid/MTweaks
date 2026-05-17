@@ -12,9 +12,7 @@ import java.lang.reflect.Method;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.XposedHelpers;
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.MyApplication;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.ContextUtils;

@@ -5,7 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.widget.Toast;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.utils.Logger;
 
 /**

@@ -18,8 +18,8 @@ import java.util.Comparator;
 import java.util.List;
 
 import de.robv.android.xposed.XposedHelpers;
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.MyApplication;
+import me.dreamvoid.mtweaks.R;
 
 /**
  * Created by smallville on 2017/1/12.

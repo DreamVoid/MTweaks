@@ -12,7 +12,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 import android.widget.Toast;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.activities.*;
 import li.lingfeng.ltweaks.fragments.base.Extra;
 import li.lingfeng.ltweaks.fragments.sub.system.PreventListDataProvider;

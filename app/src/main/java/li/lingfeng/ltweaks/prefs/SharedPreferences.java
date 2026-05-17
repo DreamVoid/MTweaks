@@ -26,7 +26,7 @@ public class SharedPreferences implements android.content.SharedPreferences {
         void onChanged(String key, Object value);
     }
 
-    public static final String ACTION_PREF_CHANGE_PREFIX = PackageNames.L_TWEAKS + ".ACTION_PREF_CHANGE.";
+    public static final String ACTION_PREF_CHANGE_PREFIX = PackageNames.M_TWEAKS + ".ACTION_PREF_CHANGE.";
     private Context mContext;
     private android.content.SharedPreferences mOriginal;
     private Set<String> mRegisteredChangeKeys;

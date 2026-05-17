@@ -7,7 +7,7 @@ import android.preference.SwitchPreference;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.activities.ChromeIncognitoActivity;
 import li.lingfeng.ltweaks.lib.PreferenceChange;
 import li.lingfeng.ltweaks.utils.ComponentUtils;

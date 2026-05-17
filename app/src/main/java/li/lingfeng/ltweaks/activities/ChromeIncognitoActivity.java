@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import org.apache.commons.lang3.StringUtils;
 
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.prefs.IntentActions;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 import li.lingfeng.ltweaks.utils.Logger;

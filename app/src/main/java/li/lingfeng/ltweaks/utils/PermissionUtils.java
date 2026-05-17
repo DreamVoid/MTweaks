@@ -1,23 +1,14 @@
 package li.lingfeng.ltweaks.utils;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import android.text.TextUtils;
 import android.widget.Toast;
 
 import org.apache.commons.lang3.NotImplementedException;
 
-import java.io.Serializable;
-
-import li.lingfeng.ltweaks.MyApplication;
-import li.lingfeng.ltweaks.R;
+import me.dreamvoid.mtweaks.R;
 import li.lingfeng.ltweaks.prefs.PackageNames;
 
 /**
@@ -60,7 +51,7 @@ public class PermissionUtils {
             }
             return;
         }
-        if (callback != null && !activity.getPackageName().equals(PackageNames.L_TWEAKS)) {
+        if (callback != null && !activity.getPackageName().equals(PackageNames.M_TWEAKS)) {
             throw new NotImplementedException("requestPermissions from other package with callback is not implemented.");
         }
         mCallback = callback;
