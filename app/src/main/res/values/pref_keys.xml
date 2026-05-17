@@ -8,7 +8,6 @@
     <string name="key_google_com_domain">key_google_com_domain</string>
     <string name="key_google_keyboard_suggestion">key_google_keyboard_suggestion</string>
     <string name="key_google_overlay_search_to_browser">key_google_overlay_search_to_browser</string>
-    <string name="key_google_plus_remove_bottom_bar">key_google_plus_remove_bottom_bar</string>
     <string name="key_google_plus_top_right_refresh">key_google_plus_top_right_refresh</string>
     <string name="key_google_plus_hide_comment_edit">key_google_plus_hide_comment_edit</string>
     <string name="key_google_plus_no_redirect">key_google_plus_no_redirect</string>
@@ -27,32 +26,32 @@
     <string name="key_youtube_set_quality">key_youtube_set_quality</string>
 
     <!--Shopping-->
-    <string name="key_jd_open_link_in_app">key_jd_open_link_in_app</string>
-    <string name="key_jd_share_item">key_jd_share_item</string>
-    <string name="key_jd_history">key_jd_history</string>
-    <string name="key_jd_basic_share_activity">key_jd_basic_share_activity</string>
-    <string name="key_smzdm_open_link_in_jd_app">key_smzdm_open_link_in_jd_app</string>
-    <string name="key_suning_share_item">key_suning_share_item</string>
-    <string name="key_suning_history">key_suning_history</string>
-    <!-- Removed "key_taobao_share_item" -->
+
+
+
+
+
+
+
+
 
     <!--Communication-->
-    <!-- Removed "key_wechat_system_share_in_inner_browser" -->
-    <string name="key_wechat_use_incoming_ringtone">key_wechat_use_incoming_ringtone</string>
-    <string name="key_wechat_set_incoming_ringtone">key_wechat_set_incoming_ringtone</string>
-    <string name="key_wechat_remove_bottom_bar">key_wechat_remove_bottom_bar</string>
-    <string name="key_wechat_no_drawer">key_wechat_no_drawer</string>
-    <string name="key_qq_dismiss_contacts_enabler">key_qq_dismiss_contacts_enabler</string>
-    <string name="key_qq_remove_ads">key_qq_remove_ads</string>
-    <string name="key_qq_outer_browser">key_qq_outer_browser</string>
-    <string name="key_qq_collapse_chat_buttons">key_qq_collapse_chat_buttons</string>
-    <string name="key_qq_clear_background">key_qq_clear_background</string>
-    <string name="key_qq_clear_background_path">key_qq_clear_background_path</string>
-    <string name="key_qq_exit_directly_by_sharing">key_qq_exit_directly_by_sharing</string>
-    <string name="key_qq_fix_image_sharing">key_qq_fix_image_sharing</string>
-    <string name="key_qq_disable_discussion_notification">key_qq_disable_discussion_notification</string>
-    <string name="key_qq_prevent_audio_panel">key_qq_prevent_audio_panel</string>
-    <string name="key_qq_hide_weak_net_toast">key_qq_hide_weak_net_toast</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="key_push_bullet_share_to_all">key_push_bullet_share_to_all</string>
     <string name="key_ttrss_disable_article_pager">key_ttrss_disable_article_pager</string>
     <string name="key_ttrss_open_link_in_browser_menu">key_ttrss_open_link_in_browser_menu</string>
@@ -62,37 +61,35 @@
     <string name="key_ttrss_open_all_articles_at_startup">key_ttrss_open_all_articles_at_startup</string>
 
     <!--Entertainment-->
-    <string name="key_douban_movie_url">key_douban_movie_url</string>
-    <!-- Removed "key_douban_movie_skip_splash" -->
-    <string name="key_douban_movie_search">key_douban_movie_search</string>
-    <string name="key_douban_movie_remove_bottom_bar">key_douban_movie_remove_bottom_bar</string>
-    <string name="key_douban_movie_remove_ads">key_douban_movie_remove_ads</string>
-    <!-- Removed "key_bilibili_subscriptions_goto_top" -->
-    <string name="key_bilibili_search">key_bilibili_search</string>
-    <string name="key_bilibili_open_link_in_app">key_bilibili_open_link_in_app</string>
-    <!-- Removed "key_bilibili_expand_following" -->
-    <string name="key_bilibili_remove_bottom_bar">key_bilibili_remove_bottom_bar</string>
-    <string name="key_bilibili_get_cover">key_bilibili_get_cover</string>
-    <!-- key_bilibili_light_desc_in_night -->
-    <string name="key_bilibili_expand_desc">key_bilibili_expand_desc</string>
-    <string name="key_bilibili_darken">key_bilibili_darken</string>
-    <string name="key_bilibili_hide_follow_at_full_screen">key_bilibili_hide_follow_at_full_screen</string>
-    <string name="key_bilibili_dismiss_update">key_bilibili_dismiss_update</string>
-    <string name="key_steam_share_url">key_steam_share_url</string>
-    <string name="key_steam_database">key_steam_database</string>
-    <string name="key_steam_go_top">key_steam_go_top</string>
-    <string name="key_steam_go_reviews">key_steam_go_reviews</string>
-    <string name="key_steam_chinese">key_steam_chinese</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="key_comic_screen_better_sort">key_comic_screen_better_sort</string>
 
     <!--System-->
-    <string name="key_text_aide_open_youdao">key_text_aide_open_youdao</string>
     <string name="key_text_double_click_for_selectable">key_text_double_click_for_selectable</string>
     <string name="key_text_long_press_to_copy">key_text_long_press_to_copy</string>
     <string name="key_text_selectable_text">key_text_selectable_text</string>
     <string name="key_text_actions">key_text_actions</string>
     <string name="key_text_actions_set">key_text_actions_set</string>
-    <string name="key_youdao_quick_query_shortcut">key_youdao_quick_query_shortcut</string>
     <string name="key_system_share_qrcode_scan">key_system_share_qrcode_scan</string>
     <string name="key_system_share_image_search">key_system_share_image_search</string>
     <string name="key_system_share_filter">key_system_share_filter</string>
@@ -110,9 +107,9 @@
     <string name="key_prevent_list_prevent_exact_alarm">key_prevent_list_prevent_exact_alarm</string>
     <string name="key_prevent_list_prevent_wake_lock">key_prevent_list_prevent_wake_lock</string>
     <string name="key_prevent_list_prevent_receiver">key_prevent_list_prevent_receiver</string>
-    <!-- Removed "key_shadowsocks_precise_route" -->
-    <string name="key_shadowsocks_primary_dns">key_shadowsocks_primary_dns</string>
-    <string name="key_shadowsocks_transproxy">key_shadowsocks_transproxy</string>
+
+
+
     <string name="key_quick_settings_tile_adb_wireless">key_quick_settings_tile_adb_wireless</string>
     <string name="key_quick_settings_tile_4g3g">key_quick_settings_tile_4g3g</string>
     <string name="key_quick_settings_tile_4g">key_quick_settings_tile_4g</string>
@@ -122,8 +119,8 @@
     <string name="key_quick_settings_brightness_by_volume_buttons">key_quick_settings_brightness_by_volume_buttons</string>
     <string name="key_nav_bar_input_cursor_control">key_nav_bar_input_cursor_control</string>
     <string name="key_native_clipboard_fix_chrome">key_native_clipboard_fix_chrome</string>
-    <string name="key_trust_agent_wifi_aps">key_google_smart_lock_with_wifi_aps</string>
-    <string name="key_solid_explorer_url_replacers">key_solid_explorer_url_replacers</string>
+    <string name="key_trust_agent_wifi_aps">key_trust_agent_wlan</string>
+
     <string name="key_selection_action_mode_original">key_selection_action_mode_original</string>
     <string name="key_app_info_open_app_data_folder">key_app_info_open_app_data_folder</string>
     <string name="key_app_info_go_market">key_app_info_go_market</string>
@@ -146,6 +143,6 @@
     <string name="key_debug_debuggable">key_debug_debuggable</string>
 
     <!--Donate-->
-    <string name="key_donate_alipay">key_donate_alipay</string>
-    <string name="key_donate_wechat">key_donate_wechat</string>
+
+
 </resources>

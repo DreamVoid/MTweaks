@@ -1,25 +1,19 @@
 package li.lingfeng.ltweaks.utils;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Process;
-import androidx.appcompat.app.AlertDialog;
 import android.widget.Toast;
+import de.robv.android.xposed.XposedHelpers;
+import me.dreamvoid.mtweaks.MyApplication;
+import me.dreamvoid.mtweaks.R;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import de.robv.android.xposed.XposedHelpers;
-import me.dreamvoid.mtweaks.MyApplication;
-import me.dreamvoid.mtweaks.R;
 
 /**
  * Created by smallville on 2017/1/12.
@@ -58,28 +52,6 @@ public class PackageUtils {
         } catch (PackageManager.NameNotFoundException e) {
         }
         return false;
-    }
-
-    public static void uninstallPackage(String packageName) {
-        Uri uri = Uri.parse("package:" + packageName);
-        Intent intent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, uri);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        MyApplication.instance().startActivity(intent);
-    }
-
-    public static void tryUninstallPackage(final String packageName, String appName, Activity activity) {
-        if (!isPackageInstalled(packageName)) {
-            return;
-        }
-        new AlertDialog.Builder(activity)
-                .setMessage(activity.getString(R.string.uninstall_message, appName))
-                .setPositiveButton(R.string.uninstall_confirm, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        uninstallPackage(packageName);
-                    }
-                })
-                .show();
     }
 
     public static boolean killPackage(Context context, String packageName) throws Throwable {

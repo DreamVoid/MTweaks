@@ -1,13 +1,10 @@
 package li.lingfeng.ltweaks.activities;
 
-import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -19,18 +16,14 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.Result;
+import li.lingfeng.ltweaks.utils.Logger;
+import li.lingfeng.ltweaks.utils.ZXingUtils;
+import me.dreamvoid.mtweaks.R;
 
 import java.util.regex.Matcher;
-
-import me.dreamvoid.mtweaks.R;
-import li.lingfeng.ltweaks.prefs.ClassNames;
-import li.lingfeng.ltweaks.prefs.PackageNames;
-import li.lingfeng.ltweaks.utils.IOUtils;
-import li.lingfeng.ltweaks.utils.Logger;
-import li.lingfeng.ltweaks.utils.PermissionUtils;
-import li.lingfeng.ltweaks.utils.ZXingUtils;
 
 /**
  * Created by smallville on 2017/2/1.
@@ -63,8 +56,6 @@ public class QrCodeActivity extends AppCompatActivity {
         mQrcodeText = (TextView) findViewById(R.id.qrcode_text);
         mQrcodeText.setTextIsSelectable(true);
         mQrcodeText.setMovementMethod(LinkMovementMethod.getInstance());
-        mWeChatButton = (Button) findViewById(R.id.qrcode_wechat_scan);
-        mWeChatButton.setOnClickListener(new WeChatButton(uri));
 
         new DecodeTask().execute(uri);
     }
@@ -95,41 +86,6 @@ public class QrCodeActivity extends AppCompatActivity {
                     content.setSpan(new URLSpan(url), matcher.start(), matcher.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 }
                 mQrcodeText.setText(content);
-            }
-        }
-    }
-
-    private class WeChatButton implements View.OnClickListener {
-
-        private Uri mUri;
-
-        public WeChatButton(Uri uri) {
-            mUri = uri;
-        }
-
-        @Override
-        public void onClick(View v) {
-            if (!PermissionUtils.tryPermissions(QrCodeActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                return;
-            }
-
-            String path = getExternalFilesDir(null) + "/qrcode_wechat_scan_image";
-            if (!IOUtils.saveUriToFile(mUri, path)) {
-                Toast.makeText(QrCodeActivity.this, R.string.error, Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            try {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setClassName(PackageNames.WE_CHAT, ClassNames.WE_CHAT_LAUNCHER_UI);
-                intent.putExtra("LauncherUI.From.Scaner.Shortcut", true);
-                intent.putExtra("ltweaks_scannable_image", path);
-                intent.setFlags(335544320);
-                startActivity(intent);
-                QrCodeActivity.this.finish();
-            } catch (Throwable e) {
-                Toast.makeText(QrCodeActivity.this, R.string.error, Toast.LENGTH_SHORT).show();
-                Logger.e("Start WeChat image scanner error, " + e);
             }
         }
     }

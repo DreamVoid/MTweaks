@@ -21,12 +21,11 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Button
-        android:id="@+id/qrcode_wechat_scan"
+
         android:layout_below="@id/qrcode_text"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="@string/share_qrcode_wechat_scan" />
+        android:visibility="gone"/>
 
 </RelativeLayout>

@@ -3,19 +3,14 @@ package li.lingfeng.ltweaks.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.widget.Toast;
-
+import androidx.annotation.Nullable;
+import li.lingfeng.ltweaks.utils.ComponentUtils;
+import li.lingfeng.ltweaks.utils.Logger;
+import me.dreamvoid.mtweaks.R;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Method;
-
-import me.dreamvoid.mtweaks.R;
-import li.lingfeng.ltweaks.prefs.ClassNames;
-import li.lingfeng.ltweaks.prefs.PackageNames;
-import li.lingfeng.ltweaks.utils.ComponentUtils;
-import li.lingfeng.ltweaks.utils.Logger;
-import li.lingfeng.ltweaks.utils.PackageUtils;
 
 /**
  * Created by lilingfeng on 2017/6/30.
@@ -54,19 +49,4 @@ public class ProcessTextActivity extends Activity {
         finish();
     }
 
-    private void doubanMovie(String text) {
-        Intent intent = new Intent();
-        intent.setClassName(PackageNames.DOUBAN_MOVIE, ClassNames.DOUBAN_MOVIE_SEARCH_ACTIVITY);
-        intent.putExtra("search_entry", "all");
-        intent.putExtra("query", text);
-        startActivity(intent);
-    }
-
-    private void bilibili(String text) {
-        Intent intent = new Intent(Intent.ACTION_SEARCH);
-        intent.setClassName(PackageUtils.isPackageInstalled(PackageNames.BILIBILI_IN)
-                ? PackageNames.BILIBILI_IN : PackageNames.BILIBILI, ClassNames.BILIBILI_SEARCH_ACTIVITY);
-        intent.putExtra("query", text);
-        startActivity(intent);
-    }
 }

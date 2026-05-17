@@ -30,7 +30,7 @@ Open source on GitHub: \n
     <string name="app_kill_hint">%s is killed.</string>
 
     <!--Common-->
-    <string name="uninstall_message">Detected \"%s\" is installed, it has become part of \"L Tweaks\", better to uninstall it.</string>
+
     <string name="uninstall_confirm">Uninstall</string>
     <string name="not_supported">Not supported.</string>
     <string name="cant_read_file">Can\'t read file.</string>
@@ -146,64 +146,8 @@ Open source on GitHub: \n
     <string name="chrome_ip_isp">ISP</string>
     <string name="chrome_ip_asn">ASN</string>
 
-    <!--Shopping-->
-    <string name="pref_header_shopping">Shopping</string>
-    <string name="pref_category_jd">JD</string>
-    <string name="pref_jd_open_link_in_app">Open link in app</string>
-    <string name="pref_jd_open_link_in_app_summary">eg. http://item.jd.com/123.html</string>
-    <string name="pref_jd_share_item">Share product by \"System Share\"</string>
-    <string name="pref_jd_share_item_summary">Use \"Copy To Clipboard\" in app share menu, a button will appear for you</string>
-    <string name="pref_jd_history">Price history in share menu</string>
-    <string name="pref_jd_history_summary">Use with above share function</string>
-    <string name="pref_jd_basic_share_activity">Original share activity</string>
-    <string name="pref_jd_basic_share_activity_summary">Not something like \"Share Reward\", in case no \"Copy Link\" button</string>
-    <string name="pref_category_suning">Suning</string>
-    <string name="pref_suning_share_item">Share product by \"System Share\"</string>
-    <string name="pref_suning_share_item_summary">Use \"Copy To Clipboard\" in app share menu, a button will appear for you</string>
-    <string name="pref_suning_history">Price history in share menu</string>
-    <string name="pref_suning_history_summary">Use with above share function</string>
-    <string name="pref_category_taobao">Taobao</string>
-    <string name="pref_category_smzdm">SMZDM</string>
-    <string name="pref_smzdm_open_link_in_jd_app">Open link in JD app</string>
-    <string name="pref_smzdm_open_link_in_jd_app_summary">Of course only for JD link</string>
-
-    <!-- JD -->
-    <string name="jd_app">JD App</string>
-    <string name="jd_history">Price History</string>
-    <string name="jd_history_can_not_find_item_id">Can\'t find product id.</string>
-    <string name="jd_history_can_not_get_prices">Can\'t get history prices.</string>
-    <string name="jd_history_highest">Highest</string>
-    <string name="jd_history_lowest">Lowest</string>
-    
     <!--Communication-->
     <string name="pref_header_communication">Communication</string>
-    <string name="pref_category_wechat">WeChat</string>
-    <string name="pref_wechat_use_incoming_ringtone">Customize incoming ringtone</string>
-    <string name="pref_wechat_use_incoming_ringtone_summary">Set ringtone below</string>
-    <string name="pref_wechat_set_incoming_ringtone">Set incoming ringtone</string>
-    <string name="pref_wechat_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_wechat_remove_bottom_bar_summary">Put them into drawer menu\nNote: If WeChat can\'t be launched, try delete /data/data/com.tencent.mm/tinker folder, and create a same one with 000 permission.</string>
-    <string name="pref_wechat_no_drawer">No drawer menu after bottom bar removed</string>
-    <string name="pref_wechat_no_drawer_summary">You can also swipe left or right to switch pages</string>
-    <string name="pref_category_qq">QQ (Only tested on lite version)</string>
-    <string name="pref_qq_dismiss_contacts_enabler">Dismiss contacts enabler</string>
-    <string name="pref_qq_dismiss_contacts_enabler_summary">Don\'t enable this if you are using contacts</string>
-    <string name="pref_qq_remove_ads">Remove banner ads</string>
-    <string name="pref_qq_outer_browser">Use outer browser</string>
-    <string name="pref_qq_collapse_chat_buttons">Hide bottom buttons first in chat activity</string>
-    <string name="pref_qq_collapse_chat_buttons_summary">Until you press an \"Add\" button</string>
-    <string name="pref_qq_clear_background">Set a clear and undistorted chat background</string>
-    <string name="pref_qq_clear_background_summary">May not work on very high definition device, no problem on 1080x1920 (Nexus 5)\nSet path below</string>
-    <string name="pref_qq_clear_background_path">Set chat background path</string>
-    <string name="pref_qq_clear_background_path_summary">File is copied to %s</string>
-    <string name="pref_qq_exit_directly_by_sharing">Exit directly by sharing</string>
-    <string name="pref_qq_exit_directly_by_sharing_summary">After sharing something to someone, do not back to main activity by pressing back button</string>
-    <string name="pref_qq_fix_image_sharing">Fix image sharing in some situation</string>
-    <string name="pref_qq_fix_image_sharing_summary">eg. Sharing from Google+</string>
-    <string name="pref_qq_disable_discussion_notification">Disable notification of discussion group</string>
-    <string name="pref_qq_disable_discussion_notification_summary">No matter \"Notification\" is checked or not in discussion group settings</string>
-    <string name="pref_qq_prevent_audio_panel">Prevent \"Press To Talk\" panel popup automatically</string>
-    <string name="pref_qq_hide_weak_net_toast">Hide weak network hint</string>
     <string name="pref_category_push_bullet">Pushbullet</string>
     <string name="pref_push_bullet_share_to_all">Share to all devices by default</string>
     <string name="pref_push_bullet_share_to_all_summary">Then you can disable direct share in Pushbullet settings if you only want to push everything to all devices with one tap</string>
@@ -226,52 +170,52 @@ Open source on GitHub: \n
 
     <!--Entertainment-->
     <string name="pref_header_entertainment">Entertainment</string>
-    <string name="pref_category_douban_movie">Douban Movie</string>
-    <string name="pref_douban_movie_url">Open link in app</string>
-    <string name="pref_douban_movie_search">Search in Douban Movie with selected text</string>
-    <string name="pref_douban_movie_search_summary">Use floating menu with text selection\nFor Android 6.0+</string>
-    <string name="pref_douban_movie_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_douban_movie_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_douban_movie_remove_ads">Remove fullscreen ads</string>
-    <string name="pref_category_bilibili">Bilibili</string>
-    <string name="pref_bilibili_search">Search in Bilibili with selected text</string>
-    <string name="pref_bilibili_search_summary">Use floating menu with text selection\nFor Android 6.0+</string>
-    <string name="pref_bilibili_open_link_in_app">Open link in app</string>
-    <string name="pref_bilibili_open_link_in_app_summary">eg. http://m.bilibili.com/video/av123.html</string>
-    <string name="pref_bilibili_remove_bottom_bar">Remove bottom bar</string>
-    <string name="pref_bilibili_remove_bottom_bar_summary">Put them into drawer menu</string>
-    <string name="pref_bilibili_get_cover">Get cover</string>
-    <string name="pref_bilibili_get_cover_summary">Add a menu item to get cover</string>
-    <string name="pref_bilibili_expand_desc">Expand description by default</string>
-    <string name="pref_bilibili_darken">A more better night mode</string>
-    <string name="pref_bilibili_darken_summary">1.When entering reading page in night mode, it will switch to daytime mode first, then suddenly back to night mode. Try fix this\n2.When entering this app, the whole screen will become white before app loading finish, change it to dark</string>
-    <string name="pref_bilibili_hide_follow_at_full_screen">Hide follow button at full screen</string>
-    <string name="pref_bilibili_dismiss_update">Never check for new version</string>
-    <string name="pref_category_steam">Steam</string>
-    <string name="pref_steam_share_url">Share url</string>
-    <string name="pref_steam_share_url_summary">Add a top right menu to use system share</string>
-    <string name="pref_steam_database">View in Steam Database</string>
-    <string name="pref_steam_database_summary">Add a top right menu</string>
-    <string name="pref_steam_go_top">Go top in store item page</string>
-    <string name="pref_steam_go_top_summary">Add a top right menu</string>
-    <string name="pref_steam_go_reviews">Go reviews in store item page</string>
-    <string name="pref_steam_go_reviews_summary">Add a top right menu</string>
-    <string name="pref_steam_chinese">Chinese store page</string>
-    <string name="pref_steam_chinese_summary">Check this if your system language is English but you want Chinese store page</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="pref_category_comic_screen">Comic Screen</string>
     <string name="pref_comic_screen_better_sort">Better sort</string>
     <string name="pref_comic_screen_better_sort_summary">If you have folder name like \"01.5\", try this method to get right sort.\neg. \"01 -> 01.5 -> 02 -> 03\"</string>
 
     <!-- Bilibili -->
-    <string name="bilibili_get_cover">Get Cover</string>
+
 
     <!-- Douban Movie -->
-    <string name="douban_movie_app">Douban Movie</string>
+
 
     <!--System-->
     <string name="pref_header_system">System / Tools</string>
     <string name="pref_category_text_aide">Text Aide</string>
-    <string name="pref_text_aide_open_youdao">Use Youdao dict</string>
+
     <string name="pref_category_text">Text</string>
     <string name="pref_text_double_click_for_selectable">Double click for selectable</string>
     <string name="pref_text_double_click_for_selectable_summary">Double click to let text become selectable, then long press text to do something as usual.\n
@@ -284,9 +228,9 @@ May not work on all places</string>
     <string name="pref_text_actions_summary">Block and sort\nFor Android 6.0+</string>
     <string name="pref_text_actions_original">Show all floating menus</string>
     <string name="pref_text_actions_original_summary">Some menus may be hidden by app itself\nFor Android 6.0+</string>
-    <string name="pref_category_youdao">Youdao Dict</string>
-    <string name="pref_youdao_quick_query_shortcut">Create shortcut for quick query</string>
-    <string name="pref_youdao_quick_query_shortcut_summary">Activity for word query, nothing more</string>
+
+
+
     <string name="pref_category_system_share">System Share</string>
     <string name="pref_system_share_qrcode_scan">Add menu \"Scan QR Code\"</string>
     <string name="pref_system_share_qrcode_scan_summary">You can share QR image from browser, local file or screenshot</string>
@@ -313,11 +257,11 @@ Note, somehow, some app will disconnect from internet, those apps didn\'t have a
     <string name="pref_prevent_running_set_list">Set prevent list</string>
     <string name="pref_prevent_running_set_list_summary">You can set each prevent method for individual app.\n
 Note, you\'d better know what these methods for, in case of unexpected error</string>
-    <string name="pref_category_shadowsocks">Shadowsocks</string>
-    <string name="pref_shadowsocks_primary_dns">Primary DNS</string>
-    <string name="pref_shadowsocks_primary_dns_summary">Comma seperated ip:port</string>
-    <string name="pref_shadowsocks_transproxy">Transproxy</string>
-    <string name="pref_shadowsocks_transproxy_summary">Use it with Shadowsocks transproxy mode, set route to \"bypass LAN &amp; mainland China\".\nss-local acl will be disabled, IP list will be added by iptables.\nIt will take several minutes at Shadowsocks enabled.\nRoot is required</string>
+
+
+
+
+
     <string name="pref_category_quick_settings">Quick Settings in status bar</string>
     <string name="pref_quick_settings_tile_adb_wireless">Add tile \"Adb Wireless\"</string>
     <string name="pref_quick_settings_tile_adb_wireless_summary">Use \"adb connect x:x:x:x:5555\" to connect\nFor Android 5.0+, root is required</string>
@@ -338,11 +282,12 @@ Note, you\'d better know what these methods for, in case of unexpected error</st
     <string name="pref_native_clipboard_fix_chrome">Fix in Chrome</string>
     <string name="pref_native_clipboard_fix_chrome_summary">Try this if \"Native Clipboard\" doesn\'t work in Chrome</string>
     <string name="pref_category_trust_agent">Trust Agents</string>
-    <string name="pref_trust_agent_wifi">Smart Lock with WiFi</string>
+    <string name="pref_trust_agent_wifi">Trusted WLAN</string>
     <string name="pref_trust_agent_wifi_summary">Unlock device by certain Wifi connected, just like Smart Lock which provided by Google.\nUse both SSID and BSSID to match.\nYou need go \"Settings -> Security -> Trust agents\" to enable this agent.\nClick to set WiFi list, only connected WiFi can be added.\nFor Android 5.0+\nPlease manually give location permission on Android 8.1+, or SSID and BSSID can\'t be got.</string>
-    <string name="pref_category_solid_explorer">Solid Explorer (Not Classic)</string>
-    <string name="pref_solid_explorer_replace_url">Replace Streaming Url</string>
-    <string name="pref_solid_explorer_replace_url_summary">When playing video from network, Solid Explorer will streaming video to local url (eg: \"http://127.0.0.1:12345/public/a.mp4\"), it has performance loss.\nReplace \"127.0.0.1:12345\" to server url for accessing video directly (If server supports it).\nSupport smb, dav, ftp, sftp.</string>
+    <string name="pref_trust_agent_wifi_summary_settings">Unlock device by certain Wifi connected, just like Smart Lock which provided by Google.\nUse both SSID and BSSID to match.</string>
+
+
+
     <string name="pref_category_app_info">App Info</string>
     <string name="pref_app_info_open_app_data_folder">Open App Data/APK Folder</string>
     <string name="pref_app_info_open_app_data_folder_summary">Generally, it will open \"/data/data/[package_name]\", \"/sdcard/Android/data/[package_name]\", \"/data/user_de/0/[package_name]\" or \"/data/app/[package_name]\", you need a file explorer which supports root access, tested with Solid Explorer\nAdd as menu</string>
@@ -416,7 +361,7 @@ Note, you\'d better know what these methods for, in case of unexpected error</st
     <!--Share-->
     <string name="share_qrcode_scan">Scan QR Code in image</string>
     <string name="share_qrcode_cant_decode">Can\'t decode image.</string>
-    <string name="share_qrcode_wechat_scan">Scan with WeChat</string>
+
     <string name="share_image_search">Search by image</string>
     <string name="share_image_google_search">Google</string>
     <string name="share_image_tineye_search">TinEye</string>
@@ -428,33 +373,33 @@ Note, you\'d better know what these methods for, in case of unexpected error</st
     <string name="prevent_running_list_not_prevented">Not prevented</string>
 
     <!-- Process Text -->
-    <string name="process_text_douban_movie">Douban Movie</string>
-    <string name="process_text_bilibili">Bilibili</string>
+
+
     <string name="process_text_incognito_search">Incognito Search</string>
 
     <!-- Url Replacer -->
-    <string name="solid_explorer_db_query_error">Can\'t connect to Solid Explorer.</string>
-    <string name="solid_explorer_db_empty">No supported network storage in Solid Explorer.</string>
-    <string name="solid_explorer_url_replacer_dialog_title">Edit Url Replacer</string>
-    <string name="solid_explorer_url_replacer_dialog_instruction"></string>
-    <string name="solid_explorer_url_replacer_dialog_instruction_from">Server:</string>
-    <string name="solid_explorer_url_replacer_dialog_instruction_to">Replace To (eg: http://10.0.0.4/download):</string>
+
+
+
+
+
+
     
     <!-- Adb Wireless -->
     <string name="adb_wireless_notification_title">ADB over network enabled</string>
     <string name="adb_wireless_notification_text">Touch to disable debugging</string>
 
     <!-- Donate -->
-    <string name="pref_header_doate">Donate</string>
-    <string name="pref_header_doate_summary">Please donate if this module is really useful for you</string>
-    <string name="pref_donate_alipay">Alipay</string>
-    <string name="pref_donate_alipay_summary">Recommended\nSimply click this menu, Alipay will be opened</string>
-    <string name="pref_donate_wechat">WeChat</string>
-    <string name="pref_donate_wechat_summary">Click this menu, WeChat scanner will be opened, QrCode of donate will be scanned automatically.\nIf nothing happened in scanner, choose QrCode from gallery, the QrCode should at the first place, you can see my app name in that QrCode image</string>
+
+
+
+
+
+
 
     <!-- Alipay -->
-    <string name="alipay_not_installed">Alipay is not installed.</string>
+
 
     <!-- WeChat -->
-    <string name="wechat_not_installed">WeChat is not installed.</string>
+
 </resources>

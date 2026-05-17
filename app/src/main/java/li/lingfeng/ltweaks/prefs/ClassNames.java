@@ -48,19 +48,6 @@ public class ClassNames {
 
     public static final String TEXT_ACTION_MODE_CALLBACK = "android.widget.Editor.TextActionModeCallback";
 
-    // Douban Movie
-    public static final String DOUBAN_MOVIE_SEARCH_ACTIVITY = "com.douban.frodo.search.activity.SearchActivity";
-    public static final String DOUBAN_MOVIE_INTENT_HANDLER_ACTIVITY = "com.douban.movie.activity.InnerFacadeActivity";
-
-    // Bilibili
-    public static final String BILIBILI_SEARCH_ACTIVITY = "com.bilibili.search.stardust.StarDustSearchActivity";
-
-    // Zhi Hu
-    public static final String ZHI_HU_MAIN_ACTIVITY = "com.zhihu.android.app.ui.activity.MainActivity";
-
-    // QQ
-    public static final String QQ_CHAT_ACTIVITY = "com.tencent.mobileqq.activity.ChatActivity";
-
     // WeChat
     public static final String WE_CHAT_LAUNCHER_UI = "com.tencent.mm.ui.LauncherUI";
 }

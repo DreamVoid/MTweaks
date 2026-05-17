@@ -30,7 +30,7 @@ Open source on GitHub: \n
     <string name="app_kill_hint">%s 已終止。</string>
 
     <!--Common-->
-    <string name="uninstall_message">檢測到已安裝 \"%s\"，它已經成為了 \"L Tweaks\" 的一部分，最好刪除它。</string>
+
     <string name="uninstall_confirm">移除</string>
     <string name="not_supported">不支援。</string>
     <string name="cant_read_file">無法讀取檔案。</string>
@@ -133,64 +133,8 @@ Open source on GitHub: \n
     <string name="chrome_ip_isp">ISP</string>
     <string name="chrome_ip_asn">ASN</string>
 
-    <!--Shopping-->
-    <string name="pref_header_shopping">購物</string>
-    <string name="pref_category_jd">京東</string>
-    <string name="pref_jd_open_link_in_app">京東的連結直接由京東使用者端打開</string>
-    <string name="pref_jd_open_link_in_app_summary">比如 http://item.jd.com/123.html</string>
-    <string name="pref_jd_share_item">使用系統分享來分享商品</string>
-    <string name="pref_jd_share_item_summary">在自帶的分享選單中使用\"複製連結\"，之後會浮現一個分享按鈕給你</string>
-    <string name="pref_jd_history">查詢歷史價格</string>
-    <string name="pref_jd_history_summary">配合上面的分享功能來使用</string>
-    <string name="pref_jd_basic_share_activity">原始分享介面</string>
-    <string name="pref_jd_basic_share_activity_summary">而不是\"分享有禮\"之類的，避免沒有\"複製連結\"按鈕</string>
-    <string name="pref_category_suning">蘇寧</string>
-    <string name="pref_suning_share_item">使用系統分享來分享商品</string>
-    <string name="pref_suning_share_item_summary">在自帶的分享選單中使用\"複製連結\"，之後會浮現一個分享按鈕給你</string>
-    <string name="pref_suning_history">查詢歷史價格</string>
-    <string name="pref_suning_history_summary">配合上面的分享功能來使用</string>
-    <string name="pref_category_taobao">淘寶</string>
-    <string name="pref_category_smzdm">什麼值得買</string>
-    <string name="pref_smzdm_open_link_in_jd_app">在京東使用者端打開連結</string>
-    <string name="pref_smzdm_open_link_in_jd_app_summary">當然只針對京東連結</string>
-
-    <!-- JD -->
-    <string name="jd_app">京東</string>
-    <string name="jd_history">歷史價格</string>
-    <string name="jd_history_can_not_find_item_id">找不到商品ID。</string>
-    <string name="jd_history_can_not_get_prices">無法取得歷史價格。</string>
-    <string name="jd_history_highest">最高</string>
-    <string name="jd_history_lowest">最低</string>
-
     <!--Communication-->
     <string name="pref_header_communication">通信</string>
-    <string name="pref_category_wechat">微信</string>
-    <string name="pref_wechat_use_incoming_ringtone">自訂來電鈴聲</string>
-    <string name="pref_wechat_use_incoming_ringtone_summary">在下面設定鈴聲</string>
-    <string name="pref_wechat_set_incoming_ringtone">設定鈴聲</string>
-    <string name="pref_wechat_remove_bottom_bar">去底欄</string>
-    <string name="pref_wechat_remove_bottom_bar_summary">底欄按鈕放到左側滑出的抽屜選單\n注意: 如果微信無法啟動，嘗試刪掉 /data/data/com.tencent.mm/tinker 資料夾，再手動建立這個資料夾並賦於 000 權限。</string>
-    <string name="pref_wechat_no_drawer">去掉底欄後不新增抽屜選單</string>
-    <string name="pref_wechat_no_drawer_summary">你仍然可以左右滑動來切換頁面</string>
-    <string name="pref_category_qq">QQ (僅在輕聊版上測試過)</string>
-    <string name="pref_qq_dismiss_contacts_enabler">不再彈出\"啟用通信錄\"</string>
-    <string name="pref_qq_dismiss_contacts_enabler_summary">如果你要使用通信錄請不要勾這個</string>
-    <string name="pref_qq_remove_ads">去橫幅廣告</string>
-    <string name="pref_qq_outer_browser">使用外部瀏覽器</string>
-    <string name="pref_qq_collapse_chat_buttons">在聊天介面先隱藏底部按鈕欄</string>
-    <string name="pref_qq_collapse_chat_buttons_summary">有個\"加號\"來顯示它們</string>
-    <string name="pref_qq_clear_background">設定一張清晰不變形的聊天背景</string>
-    <string name="pref_qq_clear_background_summary">也許在解析度非常高的設備上不工作，在 1080x1920 (Nexus 5) 上沒有問題\n在下面設定路徑</string>
-    <string name="pref_qq_clear_background_path">設定聊天背景路徑</string>
-    <string name="pref_qq_clear_background_path_summary">檔案被複製到了 %s</string>
-    <string name="pref_qq_exit_directly_by_sharing">分享後直接退出</string>
-    <string name="pref_qq_exit_directly_by_sharing_summary">在使用分享後，按返回鍵時不退到主介面</string>
-    <string name="pref_qq_fix_image_sharing">修復某些情況下的圖片分享</string>
-    <string name="pref_qq_fix_image_sharing_summary">比如: 從 Google+ 分享</string>
-    <string name="pref_qq_disable_discussion_notification">禁止討論組的消息通知</string>
-    <string name="pref_qq_disable_discussion_notification_summary">不管討論組設定裡是否勾選\"新消息通知\"</string>
-    <string name="pref_qq_prevent_audio_panel">阻止\"按住說話\"面板自動彈出</string>
-    <string name="pref_qq_hide_weak_net_toast">隱藏弱網路提示</string>
     <string name="pref_category_push_bullet">Pushbullet</string>
     <string name="pref_push_bullet_share_to_all">預設推送內容到所有設備</string>
     <string name="pref_push_bullet_share_to_all_summary">如果你只想每次一鍵推送內容到所有設備。\n同時也可以關掉 direct share</string>
@@ -213,52 +157,52 @@ Open source on GitHub: \n
 
     <!--Entertainment-->
     <string name="pref_header_entertainment">娛樂</string>
-    <string name="pref_category_douban_movie">豆瓣電影</string>
-    <string name="pref_douban_movie_url">豆瓣電影的連結直接由使用者端打開</string>
-    <string name="pref_douban_movie_search">選中文字後去豆瓣電影搜尋</string>
-    <string name="pref_douban_movie_search_summary">使用選中文字後的浮動選單\n僅 Android 6.0+</string>
-    <string name="pref_douban_movie_remove_bottom_bar">去底欄</string>
-    <string name="pref_douban_movie_remove_bottom_bar_summary">底欄按鈕放到左側滑出的抽屜選單</string>
-    <string name="pref_douban_movie_remove_ads">移除全螢幕廣告</string>
-    <string name="pref_category_bilibili">嗶哩嗶哩</string>
-    <string name="pref_bilibili_search">選中文字後去嗶哩嗶哩搜尋</string>
-    <string name="pref_bilibili_search_summary">使用選中文字後的浮動選單\n僅 Android 6.0+</string>
-    <string name="pref_bilibili_open_link_in_app">嗶哩嗶哩的連結由嗶哩嗶哩使用者端打開</string>
-    <string name="pref_bilibili_open_link_in_app_summary">比如 http://m.bilibili.com/video/av123.html</string>
-    <string name="pref_bilibili_remove_bottom_bar">去底欄</string>
-    <string name="pref_bilibili_remove_bottom_bar_summary">底欄按鈕放到左側滑出的抽屜選單</string>
-    <string name="pref_bilibili_get_cover">取得封面</string>
-    <string name="pref_bilibili_get_cover_summary">新增一個選單項來取得封面</string>
-    <string name="pref_bilibili_expand_desc">預設展開影片描述</string>
-    <string name="pref_bilibili_darken">更完美的夜間模式</string>
-    <string name="pref_bilibili_darken_summary">1.夜間模式下進入文章頁面時，會先調為白天模式，然後瞬間再返回夜間模式。嘗試修復此問題\n2.啟動此程式時，將程式尚未載入完成前的白屏調為黑屏</string>
-    <string name="pref_bilibili_hide_follow_at_full_screen">隱藏全螢幕狀態下的關注按鈕</string>
-    <string name="pref_bilibili_dismiss_update">不檢查更新</string>
-    <string name="pref_category_steam">Steam</string>
-    <string name="pref_steam_share_url">分享連結</string>
-    <string name="pref_steam_share_url_summary">在右上角選單新增一個系統分享項</string>
-    <string name="pref_steam_database">去 Steam Database 查看</string>
-    <string name="pref_steam_database_summary">在右上角新增一個選單</string>
-    <string name="pref_steam_go_top">在商品頁跳到頂部</string>
-    <string name="pref_steam_go_top_summary">在右上角新增一個選單</string>
-    <string name="pref_steam_go_reviews">在商品頁跳到評測欄</string>
-    <string name="pref_steam_go_reviews_summary">在右上角新增一個選單</string>
-    <string name="pref_steam_chinese">中文商店頁面</string>
-    <string name="pref_steam_chinese_summary">如果你的系統語言是英文但又想要中文商店介面的話就勾這個</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="pref_category_comic_screen">Comic Screen</string>
     <string name="pref_comic_screen_better_sort">更好的資料夾排序</string>
     <string name="pref_comic_screen_better_sort_summary">如果你有資料夾命名為 \"01.5\" 這種，可以試試這個方法來取得正確的排序。\n比如 \"01 -> 01.5 -> 02 -> 03\"</string>
 
     <!-- Bilibili -->
-    <string name="bilibili_get_cover">取得封面</string>
+
 
     <!-- Douban Movie -->
-    <string name="douban_movie_app">豆瓣電影</string>
+
 
     <!--System-->
     <string name="pref_header_system">系統 / 工具</string>
     <string name="pref_category_text_aide">Text Aide</string>
-    <string name="pref_text_aide_open_youdao">使用有道詞典</string>
+
     <string name="pref_category_text">文字</string>
     <string name="pref_text_double_click_for_selectable">雙擊讓文字變為可選狀態</string>
     <string name="pref_text_double_click_for_selectable_summary">然後再像平常一樣長按進行操作。\n
@@ -271,9 +215,9 @@ Open source on GitHub: \n
     <string name="pref_text_actions_summary">封鎖和排序\n僅 Android 6.0+</string>
     <string name="pref_text_actions_original">顯示所有浮動選單項</string>
     <string name="pref_text_actions_original_summary">某些選單項被程式自身隱藏掉\n僅 Android 6.0+</string>
-    <string name="pref_category_youdao">有道詞典</string>
-    <string name="pref_youdao_quick_query_shortcut">為快速查詢建立捷徑</string>
-    <string name="pref_youdao_quick_query_shortcut_summary">進入純粹的單詞查詢介面，沒有多餘的功能</string>
+
+
+
     <string name="pref_category_system_share">系統分享</string>
     <string name="pref_system_share_qrcode_scan">新增選單\"掃描二維碼\"</string>
     <string name="pref_system_share_qrcode_scan_summary">你可以透過瀏覽器、本機檔案、截圖等分享圖片</string>
@@ -300,11 +244,11 @@ Open source on GitHub: \n
     <string name="pref_prevent_running_set_list">設定阻止列表</string>
     <string name="pref_prevent_running_set_list_summary">你可以為每個程式單獨設定需要阻止的內容。\n
 注意，你最好清楚每個方法是拿來做什麼的，以避免不可預料的錯誤</string>
-    <string name="pref_category_shadowsocks">Shadowsocks</string>
-    <string name="pref_shadowsocks_primary_dns">主 DNS</string>
-    <string name="pref_shadowsocks_primary_dns_summary">ip:port，多個用逗號隔開</string>
-    <string name="pref_shadowsocks_transproxy">透明代理</string>
-    <string name="pref_shadowsocks_transproxy_summary">配合 Shadowsocks 的透明代理模式使用，需要設定路由為\"繞過區域網路和中國大陸\"。\nss-local acl 將被禁用，IP 列表將使用 iptables 來新增。\n每次啟用 Shadowsocks 時需要幾分鐘的時間。\n需要 root</string>
+
+
+
+
+
     <string name="pref_category_quick_settings">通知欄快捷選單</string>
     <string name="pref_quick_settings_tile_adb_wireless">新增選單 \"Adb Wireless\"</string>
     <string name="pref_quick_settings_tile_adb_wireless_summary">使用 \"adb connect x:x:x:x:5555\" 來連接\n僅 Android 5.0+，需要 root</string>
@@ -327,9 +271,9 @@ Open source on GitHub: \n
     <string name="pref_category_trust_agent">信任的環境</string>
     <string name="pref_trust_agent_wifi">在指定 WiFi 下自動解鎖螢幕</string>
     <string name="pref_trust_agent_wifi_summary">在連接到指定 WiFi 後自動解鎖螢幕，類似 Google 提供的 Smart Lock。\n同時使用 SSID 和 BSSID 來確定 WiFi 是否可信。\n你需要到 \"設定 -> 安全 -> 信任的代理\" 啟用此代理。\n點此設定可信的 WiFi 列表，僅目前連上的 WiFi 才能加入到列表。\n僅 Android 5.0+\n請在 Android 8.1+ 上手動給予位置權限，否則 SSID 和 BSSID 都無法獲得。</string>
-    <string name="pref_category_solid_explorer">Solid Explorer (非經典版本)</string>
-    <string name="pref_solid_explorer_replace_url">取代影片軌地址</string>
-    <string name="pref_solid_explorer_replace_url_summary">當透過網路播放影片時，Solid Explorer 會中轉影片軌到本機 (比如: \"http://127.0.0.1:12345/public/a.mp4\")，這會引起性能損失。\n把 \"127.0.0.1:12345\" 取代為伺服器的地址，讓播放器直連伺服器 (如果伺服器支援)。\n支援 smb、dav、ftp、sftp。</string>
+
+
+
     <string name="pref_category_app_info">程式訊息</string>
     <string name="pref_app_info_open_app_data_folder">打開程式資料/APK資料夾</string>
     <string name="pref_app_info_open_app_data_folder_summary">通常情況下會打開 \"/data/data/[package_name]\"、\"/sdcard/Android/data/[package_name]\"、\"/data/user_de/0/[package_name]\" 或 \"/data/app/[package_name]\"，你需要一個支援 root 的檔案管理器，配合 Solid Explorer 測試過\n以選單的形式新增</string>
@@ -403,7 +347,7 @@ Open source on GitHub: \n
     <!--Share-->
     <string name="share_qrcode_scan">識別圖中二維碼</string>
     <string name="share_qrcode_cant_decode">無法識別。</string>
-    <string name="share_qrcode_wechat_scan">使用微信掃描</string>
+
     <string name="share_image_search">以圖搜圖</string>
     <string name="share_image_google_search">Google</string>
     <string name="share_image_tineye_search">TinEye</string>
@@ -415,33 +359,33 @@ Open source on GitHub: \n
     <string name="prevent_running_list_not_prevented">未阻止</string>
 
     <!-- Process Text -->
-    <string name="process_text_douban_movie">豆瓣電影</string>
-    <string name="process_text_bilibili">嗶哩嗶哩</string>
+
+
     <string name="process_text_incognito_search">隱身搜尋</string>
 
     <!-- Url Replacer -->
-    <string name="solid_explorer_db_query_error">無法連接到 Solid Explorer。</string>
-    <string name="solid_explorer_db_empty">Solid Explorer 裡沒有支援的網路儲存設備。</string>
-    <string name="solid_explorer_url_replacer_dialog_title">編輯地址取代</string>
-    <string name="solid_explorer_url_replacer_dialog_instruction"></string>
-    <string name="solid_explorer_url_replacer_dialog_instruction_from">伺服器：</string>
-    <string name="solid_explorer_url_replacer_dialog_instruction_to">取代為 (比如: http://10.0.0.4/download)：</string>
+
+
+
+
+
+
 
     <!-- Adb Wireless -->
     <string name="adb_wireless_notification_title">網路 ADB 偵錯中</string>
     <string name="adb_wireless_notification_text">按此停止偵錯</string>
 
     <!-- Donate -->
-    <string name="pref_header_doate">捐贈</string>
-    <string name="pref_header_doate_summary">如果這個模組真心對你有用，請進行捐贈</string>
-    <string name="pref_donate_alipay">支付寶</string>
-    <string name="pref_donate_alipay_summary">推薦\n點擊此選單打開支付寶</string>
-    <string name="pref_donate_wechat">微信</string>
-    <string name="pref_donate_wechat_summary">點擊此選單打開微信掃一掃，會自動掃描捐贈二維碼。\n若掃描未被觸發，請從相冊選取二維碼，通常情況下會是第一張圖，你可以從縮圖看到程式名</string>
+
+
+
+
+
+
 
     <!-- Alipay -->
-    <string name="alipay_not_installed">未安裝支付寶。</string>
+
 
     <!-- WeChat -->
-    <string name="wechat_not_installed">未安裝微信。</string>
+
 </resources>

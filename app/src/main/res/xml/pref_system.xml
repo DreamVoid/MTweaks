@@ -1,11 +1,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:title="@string/pref_category_text_aide">
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="@string/key_text_aide_open_youdao"
-            android:title="@string/pref_text_aide_open_youdao" />
-    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/pref_category_text_aide">-->
+<!--        <SwitchPreference-->
+<!--            android:defaultValue="false"-->
+
+
+<!--    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/pref_category_text">
@@ -35,13 +35,13 @@
             android:summary="@string/pref_text_actions_original_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/pref_category_youdao">
-        <Preference
-            android:key="@string/key_youdao_quick_query_shortcut"
-            android:title="@string/pref_youdao_quick_query_shortcut"
-            android:summary="@string/pref_youdao_quick_query_shortcut_summary" />
-    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+
+<!--        <Preference-->
+
+
+
+<!--    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/pref_category_system_share">
@@ -65,14 +65,14 @@
             android:summary="@string/pref_system_share_copy_to_share_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/pref_category_coolapk">
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="@string/key_coolapk_remove_bottom_bar"
-            android:title="@string/pref_coolapk_remove_bottom_bar"
-            android:summary="@string/pref_coolapk_remove_bottom_bar_summary" />
-    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/pref_category_coolapk">-->
+<!--        <SwitchPreference-->
+<!--            android:defaultValue="false"-->
+<!--            android:key="@string/key_coolapk_remove_bottom_bar"-->
+<!--            android:title="@string/pref_coolapk_remove_bottom_bar"-->
+<!--            android:summary="@string/pref_coolapk_remove_bottom_bar_summary" />-->
+<!--    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/pref_category_prevent_running">
@@ -82,17 +82,17 @@
             android:summary="@string/pref_prevent_running_set_list_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/pref_category_shadowsocks">
-        <EditTextPreference
-            android:key="@string/key_shadowsocks_primary_dns"
-            android:title="@string/pref_shadowsocks_primary_dns"
-            android:summary="@string/pref_shadowsocks_primary_dns_summary" />
-        <SwitchPreference
-            android:key="@string/key_shadowsocks_transproxy"
-            android:title="@string/pref_shadowsocks_transproxy"
-            android:summary="@string/pref_shadowsocks_transproxy_summary" />
-    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+
+<!--        <EditTextPreference-->
+
+
+
+<!--        <SwitchPreference-->
+
+
+
+<!--    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/pref_category_quick_settings">
@@ -101,17 +101,17 @@
             android:key="@string/key_quick_settings_tile_adb_wireless"
             android:title="@string/pref_quick_settings_tile_adb_wireless"
             android:summary="@string/pref_quick_settings_tile_adb_wireless_summary" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="@string/key_quick_settings_tile_4g3g"
-            android:title="@string/pref_quick_settings_tile_4g3g"
-            android:summary="@string/pref_quick_settings_tile_4g3g_summary" />
-        <ListPreference
-            android:key="@string/key_quick_settings_tile_4g"
-            android:title="@string/pref_quick_settings_tile_4g" />
-        <ListPreference
-            android:key="@string/key_quick_settings_tile_3g"
-            android:title="@string/pref_quick_settings_tile_3g" />
+<!--        <SwitchPreference-->
+<!--            android:defaultValue="false"-->
+<!--            android:key="@string/key_quick_settings_tile_4g3g"-->
+<!--            android:title="@string/pref_quick_settings_tile_4g3g"-->
+<!--            android:summary="@string/pref_quick_settings_tile_4g3g_summary" />-->
+<!--        <ListPreference-->
+<!--            android:key="@string/key_quick_settings_tile_4g"-->
+<!--            android:title="@string/pref_quick_settings_tile_4g" />-->
+<!--        <ListPreference-->
+<!--            android:key="@string/key_quick_settings_tile_3g"-->
+<!--            android:title="@string/pref_quick_settings_tile_3g" />-->
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/key_quick_settings_tile_set_preconfigured_brightness"
@@ -138,14 +138,6 @@
             android:summary="@string/pref_nav_bar_input_cursor_control_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/pref_category_native_clipboard">
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="@string/key_native_clipboard_fix_chrome"
-            android:title="@string/pref_native_clipboard_fix_chrome"
-            android:summary="@string/pref_native_clipboard_fix_chrome_summary" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/pref_category_trust_agent">
@@ -153,14 +145,6 @@
             android:key="@string/key_trust_agent_wifi_aps"
             android:title="@string/pref_trust_agent_wifi"
             android:summary="@string/pref_trust_agent_wifi_summary" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/pref_category_solid_explorer">
-        <Preference
-            android:key="@string/key_solid_explorer_url_replacers"
-            android:title="@string/pref_solid_explorer_replace_url"
-            android:summary="@string/pref_solid_explorer_replace_url_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
