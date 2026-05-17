@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+                android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:stateListAnimator="@null"
+            app:elevation="0dp"
+            app:liftOnScroll="false">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:collapsedTitleTextAppearance="?attr/textAppearanceTitleLarge"
+                app:expandedTitleTextAppearance="?attr/textAppearanceHeadlineMedium"
+                app:collapsedTitleTextColor="?attr/colorOnSurface"
+                app:expandedTitleTextColor="?attr/colorOnSurface"
+                app:expandedTitleMarginStart="16dp"
+                app:expandedTitleMarginBottom="12dp"
+                app:contentScrim="@android:color/transparent"
+                app:statusBarScrim="@android:color/transparent"
+                app:statusBarForeground="@null"
+                app:titleCollapseMode="scale">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="pin"
+                    app:navigationIconTint="?attr/colorOnSurface"
+                    app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    app:titleTextColor="?attr/colorOnSurface" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        android:clipToPadding="false"
+                        android:background="?attr/colorSurface"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

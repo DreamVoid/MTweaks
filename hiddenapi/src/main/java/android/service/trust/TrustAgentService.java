@@ -10,6 +10,8 @@ import android.os.IBinder;
 
 public class TrustAgentService extends Service {
 
+    public static final int FLAG_GRANT_TRUST_DISMISS_KEYGUARD = 1;
+
     public final void grantTrust(
             final CharSequence message, final long durationMs, final int flags) {
     }

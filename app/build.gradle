@@ -1,58 +1,55 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    namespace 'me.dreamvoid.mtweaks'
+    compileSdk 37
+
     defaultConfig {
-        applicationId "li.lingfeng.ltweaks"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 29
-        versionName '1.22.0'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId "me.dreamvoid.mtweaks"
+        minSdk 28
+        targetSdk 37
+        versionCode 1
+        versionName '1.0'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-        flavorDimensions "versionCode"
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-        main0 {
-        }
-        selfUse {
-        }
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding true
     }
-    sourceSets {
-        selfUse {
-            java.srcDirs = ['src/main/java', 'src/main/javaSelfUse']
-            res.srcDirs = ['src/main/res', 'src/main/resSelfUse']
-        }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+tasks.withType(org.gradle.api.tasks.compile.JavaCompile).configureEach { task ->
+    if (!task.name.contains('UnitTest') && !task.name.contains('AndroidTest')) {
+        def variant = task.name.replace('compile', '').replace('JavaWithJavac', '')
+        task.dependsOn("process${variant}Resources")
     }
 }
 
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.android.support:appcompat-v7:28.0.0'
-    api 'com.android.support:support-v4:28.0.0'
-    api 'com.android.support:support-vector-drawable:28.0.0'
-    api 'com.android.support:design:28.0.0'
-    api 'com.github.PhilJay:MPAndroidChart:v3.0.1'
-    api 'com.squareup.okhttp3:okhttp:3.5.0'
-    api 'com.alibaba:fastjson:1.2.23'
-    compileOnly files('lib/XposedBridgeApi-54.jar')
-    api project(':lib')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.8.0'
+    implementation 'com.google.android.material:material:1.14.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'org.apache.commons:commons-lang3:3.22.0'
+    compileOnly 'io.github.libxposed:api:102.0.0'
+    implementation 'io.github.libxposed:service:102.0.0'
+    implementation project(':lib')
     compileOnly project(':hiddenapi')
-    compileOnly project(':compiler')
-    api 'com.google.zxing:core:3.3.0'
-    api 'org.apache.commons:commons-io:1.3.2'
-    api 'org.apache.commons:commons-lang3:3.6'
-    api 'org.apache.commons:commons-collections4:4.1'
-    api 'com.crossbowffs.remotepreferences:remotepreferences:0.5'
-    api 'com.github.sevar83:indeterminate-checkbox:1.0.5@aar'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     annotationProcessor project(':compiler')
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc2'
 }

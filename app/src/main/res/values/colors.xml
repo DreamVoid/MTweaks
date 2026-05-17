@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
-	<color name="jd_history_main_line">#55a4e1</color>
+    <color name="md_primary">#FF6750A4</color>
+    <color name="md_on_primary">#FFFFFFFF</color>
+    <color name="md_primary_container">#FFEADDFF</color>
+    <color name="md_secondary">#FF625B71</color>
+    <color name="md_on_secondary">#FFFFFFFF</color>
+    <color name="md_secondary_container">#FFE8DEF8</color>
+    <color name="md_tertiary">#FF7D5260</color>
+    <color name="md_surface">#FFFDF7FF</color>
+    <color name="md_on_surface">#FF1D1B20</color>
+    <color name="md_surface_variant">#FFE7E0EC</color>
+    <color name="md_on_surface_variant">#FF49454F</color>
+    <color name="md_outline">#FF79747E</color>
+    <color name="md_outline_variant">#FFC8C0D0</color>
+    <color name="md_error">#FFB3261E</color>
+    <color name="md_on_error">#FFFFFFFF</color>
+    <color name="md_surface_container">#FFF3EDF7</color>
+    <color name="md_surface_container_high">#FFECE6F0</color>
 </resources>
