@@ -3,19 +3,20 @@ package me.dreamvoid.mtweaks.xposed.google.iconpack;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
-
+import me.dreamvoid.mtweaks.utils.Logger;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import me.dreamvoid.mtweaks.utils.Logger;
-
-/** 解析并加载选中图标包的图标。 */
+/**
+ * 解析并加载选中图标包的图标。
+ */
 public final class IconPackManager {
 
     private static String sPackageName;
@@ -28,6 +29,7 @@ public final class IconPackManager {
     private final Map<String, Integer> mDrawableIds = new HashMap<>();
 
     private Resources mResources;
+    private String mThemeKey;
     private boolean mLoaded;
 
     private IconPackManager(Context context, String packPackageName) {
@@ -35,19 +37,17 @@ public final class IconPackManager {
         mPackPackageName = packPackageName;
     }
 
-    public static Drawable getIcon(Context context, String packPackageName,
-                                   ComponentName component, int density) {
+    public static Drawable getIcon(Context context, String packPackageName, ComponentName component, int density) {
         try {
-            return manager(context, packPackageName).loadIcon(component, density);
+            return manager(context, packPackageName).loadIcon(context, component, density);
         } catch (Throwable ignored) {
             return null;
         }
     }
 
-    public static Drawable getMonochromeIcon(Context context, String packPackageName,
-                                             String appPackageName, int density) {
+    public static Drawable getMonochromeIcon(Context context, String packPackageName, String appPackageName, int density) {
         try {
-            return manager(context, packPackageName).loadMonochrome(appPackageName, density);
+            return manager(context, packPackageName).loadMonochrome(context, appPackageName, density);
         } catch (Throwable ignored) {
             return null;
         }
@@ -68,14 +68,14 @@ public final class IconPackManager {
         return sInstance;
     }
 
-    private Drawable loadIcon(ComponentName component, int density) {
-        ensureLoaded();
+    private Drawable loadIcon(Context context, ComponentName component, int density) {
+        ensureLoaded(context);
         String drawableName = mComponentMap.get(component);
         return drawableName == null ? null : loadDrawable(drawableName, density);
     }
 
-    private Drawable loadMonochrome(String appPackageName, int density) {
-        ensureLoaded();
+    private Drawable loadMonochrome(Context context, String appPackageName, int density) {
+        ensureLoaded(context);
         Integer id = mGrayscaleMap.get(appPackageName);
         if (id == null || id == 0) {
             return null;
@@ -87,8 +87,9 @@ public final class IconPackManager {
         }
     }
 
-    private synchronized void ensureLoaded() {
+    private synchronized void ensureLoaded(Context context) {
         if (mLoaded) {
+            applyTheme(context);
             return;
         }
         mLoaded = true;
@@ -98,8 +99,33 @@ public final class IconPackManager {
             Logger.w("Icon pack not installed: " + mPackPackageName);
             return;
         }
+        mThemeKey = ThemeSignature.of(context);
         parseAppFilter();
         parseGrayscaleMap();
+    }
+
+    // 主题或夜间模式变化后重新获取资源，使动态颜色立即生效
+    @SuppressWarnings("deprecation")
+    private synchronized void applyTheme(Context context) {
+        if (mResources == null) {
+            return;
+        }
+        String key = ThemeSignature.of(context);
+        if (key.equals(mThemeKey)) {
+            return;
+        }
+        mThemeKey = key;
+        try {
+            Resources resources = mPackageManager.getResourcesForApplication(mPackPackageName);
+            Configuration config = context.getResources().getConfiguration();
+            if (!config.equals(resources.getConfiguration())) {
+                resources.updateConfiguration(config, context.getResources().getDisplayMetrics());
+            }
+            mResources = resources;
+            mDrawableIds.clear();
+        } catch (Throwable e) {
+            Logger.w("Can't refresh icon pack resources: " + e);
+        }
     }
 
     private void parseAppFilter() {

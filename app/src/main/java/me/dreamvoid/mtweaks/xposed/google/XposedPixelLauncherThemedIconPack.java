@@ -6,11 +6,15 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ComponentInfo;
 import android.content.pm.PackageItemInfo;
+import android.content.res.Configuration;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import me.dreamvoid.mtweaks.R;
 import me.dreamvoid.mtweaks.prefs.PackageNames;
@@ -34,9 +38,13 @@ public class XposedPixelLauncherThemedIconPack extends FeatureModule {
     private static final String SETTINGS_FRAGMENT = "com.google.android.apps.nexuslauncher.settings.MySettingsFragment";
     private static final String PREF_KEY = "mtweaks_icon_pack_pref";
 
+    private static volatile String sRenderedTheme;
+    private static volatile long sLastThemeRefresh;
+
     @Override
     protected void onLoad() {
         hookIconProvider();
+        hookThemeChange();
         hookSettingsFragment();
     }
 
@@ -59,7 +67,15 @@ public class XposedPixelLauncherThemedIconPack extends FeatureModule {
                     if (result != null) {
                         Context context = (Context) Reflect.getObjectField(chain.getThisObject(), "mContext");
                         String pack = IconPackPrefs.get(context);
-                        return Reflect.callMethod(result, "withAdditionalValues", (Object) new String[]{"mtweaks_icon_pack=" + pack});
+                        String state = "mtweaks_icon_pack=" + pack;
+                        if (!pack.isEmpty()) {
+                            String signature = ThemeSignature.of(context);
+                            if (sRenderedTheme == null) {
+                                sRenderedTheme = signature;
+                            }
+                            state += ";theme=" + signature;
+                        }
+                        return Reflect.callMethod(result, "withAdditionalValues", (Object) new String[]{state});
                     }
                 } catch (Throwable e) {
                     Logger.w("Can't update icon freshness: " + e);
@@ -69,6 +85,74 @@ public class XposedPixelLauncherThemedIconPack extends FeatureModule {
             Logger.i("Hooked Pixel Launcher icon pack");
         } catch (Throwable e) {
             Logger.w("Can't hook Pixel Launcher icon provider: " + e);
+        }
+    }
+
+    private void hookThemeChange() {
+        try {
+            Class<?> launcher = findClass("com.android.launcher3.uioverrides.QuickstepLauncher");
+            findAndHookMethod(launcher, "onConfigurationChanged", new Class<?>[]{Configuration.class}, chain -> {
+                Object result = chain.proceed();
+                if (chain.getThisObject() instanceof Context context) {
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> refreshIfThemeChanged(context, false), 500);
+                }
+                return result;
+            });
+            findAndHookMethod(launcher, "onResume", new Class<?>[0], chain -> {
+                Object result = chain.proceed();
+                if (chain.getThisObject() instanceof Context context) {
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> refreshIfThemeChanged(context, true), 500);
+                }
+                return result;
+            });
+        } catch (Throwable e) {
+            Logger.w("Can't hook launcher configuration change: " + e);
+        }
+        try {
+            Class<?> themeManager = findClass("com.android.launcher3.graphics.ThemeManager");
+            findAndHookMethod(themeManager, "verifyIconState", new Class<?>[0], chain -> {
+                Object result = chain.proceed();
+                try {
+                    if (Reflect.getObjectField(chain.getThisObject(), "context") instanceof Context context) {
+                        refreshIfThemeChanged(context, false);
+                    }
+                } catch (Throwable e) {
+                    Logger.w("Can't read theme manager context: " + e);
+                }
+                return result;
+            });
+        } catch (Throwable e) {
+            Logger.w("Can't hook theme manager: " + e);
+        }
+    }
+
+    private static void refreshIfThemeChanged(Context context, boolean force) {
+        try {
+            if (IconPackPrefs.get(context).isEmpty()) {
+                sRenderedTheme = ThemeSignature.of(context);
+                return;
+            }
+            String signature = ThemeSignature.of(context);
+            String rendered = sRenderedTheme;
+            if (rendered == null) {
+                sRenderedTheme = signature;
+                return;
+            }
+            if (rendered.equals(signature)) {
+                return;
+            }
+            long now = SystemClock.uptimeMillis();
+            if (!force && now - sLastThemeRefresh < 1000) {
+                return;
+            }
+            sLastThemeRefresh = now;
+            Logger.i("Theme colors changed, refreshing icons");
+            LauncherAccess.refresh(context);
+            if (force) {
+                sRenderedTheme = signature;
+            }
+        } catch (Throwable e) {
+            Logger.w("Can't refresh icons after theme change: " + e);
         }
     }
 
@@ -215,6 +299,7 @@ public class XposedPixelLauncherThemedIconPack extends FeatureModule {
                 .setSingleChoiceItems(entries, checked, (dialog, which) -> {
                     String value = values[which].toString();
                     IconPackPrefs.set(context, value);
+                    sRenderedTheme = ThemeSignature.of(context);
                     try {
                         Reflect.callMethod(preference, "setSummary", entries[which]);
                     } catch (Throwable e) {
