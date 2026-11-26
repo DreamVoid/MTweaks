@@ -11,6 +11,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/pref_category_google_photos">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_google_photos_spoof_pixel_xl"
+            android:title="@string/pref_google_photos_spoof_pixel_xl"
+            android:summary="@string/pref_google_photos_spoof_pixel_xl_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/pref_category_pixel_thermometer">
         <SwitchPreference
             android:defaultValue="false"

@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
@@ -15,14 +16,20 @@ import io.github.libxposed.api.XposedInterface;
  * Reflection helpers replacing the removed {@code XposedHelpers}.
  * <p>
  * Method/constructor invocations go through {@link XposedInterface#getInvoker}, which bypasses
- * access checks. Field access uses plain reflection (LSPosed exempts module class loaders from
- * hidden API restrictions).
+ * access checks. Field reads use plain reflection; static final writes fall back to
+ * {@code sun.misc.Unsafe} because Android 16/17 rejects them through reflection.
  */
 public final class Reflect {
 
     private static volatile XposedInterface sFramework;
     private static final Map<Object, Map<String, Object>> sAdditionalFields =
             Collections.synchronizedMap(new WeakHashMap<>());
+
+    private static volatile Object sUnsafe;
+    private static volatile long sFieldOffsetOffset = -1;
+    private static volatile Method sUnsafeGetInt;
+    private static volatile Method sUnsafePutObject;
+    private static volatile Method sUnsafeObjectFieldOffset;
 
     private Reflect() {
     }
@@ -153,6 +160,66 @@ public final class Reflect {
         } catch (IllegalAccessException e) {
             throw new InvocationTargetError(e);
         }
+    }
+
+    public static void setStaticObjectField(Class<?> clazz, String name, Object value) {
+        setStaticObjectField(findField(clazz, name), value);
+    }
+
+    public static void setStaticObjectField(Field field, Object value) {
+        if (!Modifier.isStatic(field.getModifiers())) {
+            throw new IllegalArgumentException(field + " is not static");
+        }
+        field.setAccessible(true);
+        try {
+            field.set(null, value);
+            return;
+        } catch (IllegalAccessException | IllegalArgumentException ignored) {
+            // Android 16+/17 rejects writes to static final fields, fall through to Unsafe.
+        }
+        try {
+            Object unsafe = unsafe();
+            field.get(null); // Resolve the field so that ART fills in Field.offset.
+            int offset = (Integer) sUnsafeGetInt.invoke(unsafe, field,
+                    fieldOffsetOffset(unsafe));
+            if (offset <= 0) {
+                throw new IllegalStateException("No resolved offset for " + field);
+            }
+            sUnsafePutObject.invoke(unsafe, field.getDeclaringClass(), (long) offset, value);
+        } catch (ReflectiveOperationException e) {
+            throw new InvocationTargetError(e);
+        }
+    }
+
+    private static Object unsafe() throws ReflectiveOperationException {
+        synchronized (Reflect.class) {
+            if (sUnsafe != null) {
+                return sUnsafe;
+            }
+            Class<?> cls = Class.forName("sun.misc.Unsafe");
+            Field theUnsafe;
+            try {
+                theUnsafe = cls.getDeclaredField("THE_ONE");
+            } catch (NoSuchFieldException e) {
+                theUnsafe = cls.getDeclaredField("theUnsafe");
+            }
+            theUnsafe.setAccessible(true);
+            sUnsafeGetInt = cls.getMethod("getInt", Object.class, long.class);
+            sUnsafePutObject = cls.getMethod("putObject", Object.class, long.class, Object.class);
+            sUnsafeObjectFieldOffset = cls.getMethod("objectFieldOffset", Field.class);
+            sUnsafe = theUnsafe.get(null);
+            return sUnsafe;
+        }
+    }
+
+    private static long fieldOffsetOffset(Object unsafe) throws ReflectiveOperationException {
+        long offset = sFieldOffsetOffset;
+        if (offset >= 0) {
+            return offset;
+        }
+        offset = (Long) sUnsafeObjectFieldOffset.invoke(unsafe, findField(Field.class, "offset"));
+        sFieldOffsetOffset = offset;
+        return offset;
     }
 
     public static void setAdditionalInstanceField(Object obj, String key, Object value) {
