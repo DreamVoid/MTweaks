@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Makes the Settings app show this module in "Trust agents" and accept it.
  */
-@XposedLoad(packages = PackageNames.ANDROID_SETTINGS, prefs = {})
+@XposedLoad(packages = PackageNames.ANDROID_SETTINGS, prefs = {}, uiKeys = "key_trust_agent_wlan")
 public class XposedTrustAgentWlanSettings extends FeatureModule {
 
     private static final String PERMISSION = "android.permission.PROVIDE_TRUST_AGENT";

@@ -26,7 +26,7 @@ import java.util.Set;
 /**
  * 从分享意图查询结果中移除被隐藏的分享入口。
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = {})
+@XposedLoad(packages = PackageNames.ANDROID, prefs = {}, uiKeys = "key_system_share_filter")
 public class XposedShareFilter extends FeatureModule {
 
     private static final String CLASS_PARCELED_LIST_SLICE = "android.content.pm.ParceledListSlice";

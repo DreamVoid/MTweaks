@@ -17,7 +17,7 @@ import java.util.List;
  * Grants {@code PROVIDE_TRUST_AGENT} to this module inside system_server and makes sure the trust
  * agent service survives {@code TrustManagerService#resolveAllowedTrustAgents}.
  */
-@XposedLoad(packages = PackageNames.ANDROID, prefs = {})
+@XposedLoad(packages = PackageNames.ANDROID, prefs = {}, uiKeys = "key_trust_agent_wlan")
 public class XposedTrustAgentWlan extends FeatureModule {
 
     private static final String PERMISSION = "android.permission.PROVIDE_TRUST_AGENT";

@@ -4,6 +4,7 @@ import android.app.Application;
 
 import me.dreamvoid.mtweaks.prefs.Prefs;
 import me.dreamvoid.mtweaks.prefs.PrefsSync;
+import me.dreamvoid.mtweaks.prefs.ScopeRequest;
 
 public class MTweaks extends Application {
 
@@ -19,5 +20,6 @@ public class MTweaks extends Application {
         instance = this;
         Prefs.attachModuleProcess(this);
         PrefsSync.start();
+        ScopeRequest.start();
     }
 }

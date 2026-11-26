@@ -8,6 +8,7 @@ import li.lingfeng.ltweaks.fragments.BasePrefFragment;
 import li.lingfeng.ltweaks.lib.PreferenceClick;
 import me.dreamvoid.mtweaks.R;
 import me.dreamvoid.mtweaks.activities.ShareFilterActivity;
+import me.dreamvoid.mtweaks.prefs.ScopeRequest;
 import me.dreamvoid.mtweaks.utils.TrustAgentUtils;
 
 /**
@@ -23,11 +24,13 @@ public class SystemPrefFragment extends BasePrefFragment {
 
     @PreferenceClick(prefs = "key_system_share_filter")
     private void systemShareFilter(Preference preference) {
+        ScopeRequest.onEntryOpened(getString(R.string.key_system_share_filter));
         startActivity(new Intent(requireContext(), ShareFilterActivity.class));
     }
 
     @PreferenceClick(prefs = "key_trust_agent_wlan")
     private void setSmartLockWifiList(Preference preference) {
+        ScopeRequest.onEntryOpened(getString(R.string.key_trust_agent_wifi_aps));
         if (!TrustAgentUtils.openTrustAgentSettings(requireContext())) {
             Toast.makeText(requireContext(), R.string.trust_agent_settings_unavailable, Toast.LENGTH_SHORT).show();
         }

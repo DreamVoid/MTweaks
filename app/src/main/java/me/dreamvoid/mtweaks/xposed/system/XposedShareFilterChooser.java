@@ -17,7 +17,7 @@ import java.util.Set;
 /**
  * 在系统分享面板进程内移除被隐藏的分享目标。
  */
-@XposedLoad(packages = PackageNames.INTENT_RESOLVER, prefs = {})
+@XposedLoad(packages = PackageNames.INTENT_RESOLVER, prefs = {}, uiKeys = "key_system_share_filter")
 public class XposedShareFilterChooser extends FeatureModule {
 
     private static final long CACHE_TTL = 1000L;

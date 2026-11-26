@@ -14,4 +14,5 @@ public @interface XposedLoad {
     String[] packages(); // Load for all packages if empty.
     String[] prefs();  // Always load if empty.
     String[] excludedPackages() default {};
+    String[] uiKeys() default {}; // Preference keys of the UI entry when prefs is empty.
 }

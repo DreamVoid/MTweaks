@@ -10,8 +10,13 @@ import java.io.File;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -76,6 +81,7 @@ public class XposedProcessor extends AbstractProcessor {
         try {
             if (xposedElement != null) {
                 generateModuleRegistry(xposedElement, env);
+                generateFeatureScopes(xposedElement, env);
             }
             Map<Integer, String> keys = buildKeyMap();
             generatePrefKeys("me.dreamvoid.mtweaks.prefs.PrefKeys", keys);
@@ -138,6 +144,77 @@ public class XposedProcessor extends AbstractProcessor {
                         + element.getQualifiedName() + ".class);\n");
             }
         }
+        writer.write("    }\n");
+        writer.write("}");
+        writer.close();
+    }
+
+    // ------------------------------------------------------------------ scope suggestions
+
+    /**
+     * Generates {@code me.dreamvoid.mtweaks.prefs.FeatureScopes}, mapping every preference key of a
+     * feature to the packages it has to be scoped in.
+     */
+    private void generateFeatureScopes(TypeElement xposedElement, RoundEnvironment env) throws Exception {
+        Map<String, LinkedHashSet<String>> scopes = new LinkedHashMap<>();
+        for (Element element_ : env.getElementsAnnotatedWith(xposedElement)) {
+            TypeElement element = (TypeElement) element_;
+            XposedLoad load = element.getAnnotation(XposedLoad.class);
+            if (load.packages().length == 0) {
+                // Features loaded for all packages have no fixed scope to request.
+                continue;
+            }
+            List<String> keys = new ArrayList<>();
+            Collections.addAll(keys, load.prefs());
+            Collections.addAll(keys, load.uiKeys());
+            for (String key : keys) {
+                if (key == null || key.isEmpty()) {
+                    continue;
+                }
+                LinkedHashSet<String> packages = scopes.computeIfAbsent(key, k -> new LinkedHashSet<>());
+                for (String packageName : load.packages()) {
+                    // LSPosed maps the system server package "android" to "system".
+                    packages.add("android".equals(packageName) ? "system" : packageName);
+                }
+            }
+        }
+
+        JavaFileObject genFile = processingEnv.getFiler()
+                .createSourceFile("me.dreamvoid.mtweaks.prefs.FeatureScopes");
+        Writer writer = genFile.openWriter();
+        writer.write("package me.dreamvoid.mtweaks.prefs;\n\n");
+        writer.write("import java.util.Collections;\n");
+        writer.write("import java.util.LinkedHashMap;\n");
+        writer.write("import java.util.Map;\n\n");
+        writer.write("/**\n");
+        writer.write(" * Generated: packages requested from the Xposed framework per preference key.\n");
+        writer.write(" */\n");
+        writer.write("public final class FeatureScopes {\n\n");
+        writer.write("    private static final Map<String, String[]> BY_KEY;\n\n");
+        writer.write("    static {\n");
+        writer.write("        Map<String, String[]> scopes = new LinkedHashMap<>();\n");
+        for (Map.Entry<String, LinkedHashSet<String>> entry : scopes.entrySet()) {
+            StringBuilder array = new StringBuilder();
+            for (String packageName : entry.getValue()) {
+                if (array.length() > 0) {
+                    array.append(", ");
+                }
+                array.append('"').append(packageName).append('"');
+            }
+            writer.write("        scopes.put(\"" + entry.getKey() + "\", new String[]{" + array + "});\n");
+        }
+        writer.write("        BY_KEY = Collections.unmodifiableMap(scopes);\n");
+        writer.write("    }\n\n");
+        writer.write("    private FeatureScopes() {\n    }\n\n");
+        writer.write("    /**\n");
+        writer.write("     * Returns the packages the given preference key needs in the module scope.\n");
+        writer.write("     *\n");
+        writer.write("     * @param key preference key, may be {@code null}\n");
+        writer.write("     * @return packages, empty when the key is unknown\n");
+        writer.write("     */\n");
+        writer.write("    public static String[] packagesFor(String key) {\n");
+        writer.write("        String[] packages = key == null ? null : BY_KEY.get(key);\n");
+        writer.write("        return packages == null ? new String[0] : packages.clone();\n");
         writer.write("    }\n");
         writer.write("}");
         writer.close();

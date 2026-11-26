@@ -17,6 +17,7 @@
     <string name="current">当前</string>
     <string name="trust_agent_settings_unavailable">无法打开系统安全设置</string>
     <string name="pref_group_empty">暂无可用功能</string>
+    <string name="scope_request_failed">无法申请作用域：%1$s</string>
 
     <!-- Google -->
     <string name="pref_header_google">Google</string>

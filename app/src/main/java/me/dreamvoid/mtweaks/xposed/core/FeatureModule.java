@@ -1,12 +1,12 @@
 package me.dreamvoid.mtweaks.xposed.core;
 
-import java.util.List;
-
 import io.github.libxposed.api.XposedInterface.HookHandle;
 import io.github.libxposed.api.XposedInterface.Hooker;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import me.dreamvoid.mtweaks.prefs.Prefs;
 import me.dreamvoid.mtweaks.utils.Logger;
+
+import java.util.List;
 
 /**
  * Base class for every feature, replacing the legacy {@code XposedBase}.
@@ -49,6 +49,20 @@ public abstract class FeatureModule {
 
     protected abstract void onLoad() throws Throwable;
 
+    /**
+     * 释放功能持有的延迟任务或回调，热重载前由入口调用。
+     */
+    public final void unload() {
+        try {
+            onUnload();
+        } catch (Throwable e) {
+            Logger.e("Failed to unload " + getClass().getName(), e);
+        }
+    }
+
+    protected void onUnload() {
+    }
+
     protected final ModuleContext context() {
         return mContext;
     }
@@ -63,18 +77,15 @@ public abstract class FeatureModule {
 
     // ---------------------------------------------------------------- hooks
 
-    protected HookHandle findAndHookMethod(Class<?> cls, String methodName,
-                                           Class<?>[] parameterTypes, Hooker hooker) {
+    protected HookHandle findAndHookMethod(Class<?> cls, String methodName, Class<?>[] parameterTypes, Hooker hooker) {
         return Hooks.findAndHookMethod(cls, methodName, parameterTypes, hooker);
     }
 
-    protected HookHandle findAndHookMethod(String className, String methodName,
-                                           Class<?>[] parameterTypes, Hooker hooker) {
+    protected HookHandle findAndHookMethod(String className, String methodName, Class<?>[] parameterTypes, Hooker hooker) {
         return Hooks.findAndHookMethod(findClass(className), methodName, parameterTypes, hooker);
     }
 
-    protected HookHandle findAndHookConstructor(String className, Class<?>[] parameterTypes,
-                                                Hooker hooker) {
+    protected HookHandle findAndHookConstructor(String className, Class<?>[] parameterTypes, Hooker hooker) {
         return Hooks.findAndHookConstructor(findClass(className), parameterTypes, hooker);
     }
 

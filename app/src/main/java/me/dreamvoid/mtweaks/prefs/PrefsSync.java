@@ -61,6 +61,15 @@ public final class PrefsSync {
         }
     }
 
+    /**
+     * 当前已绑定的 Xposed 服务，未绑定时返回 {@code null}。
+     */
+    public static XposedService getService() {
+        synchronized (LOCK) {
+            return sService;
+        }
+    }
+
     private static void pushAll() {
         SharedPreferences local = Prefs.get();
         if (local == null) {

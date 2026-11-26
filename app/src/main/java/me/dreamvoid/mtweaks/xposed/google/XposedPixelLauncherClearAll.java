@@ -128,6 +128,14 @@ public class XposedPixelLauncherClearAll extends FeatureModule {
         return mHandler;
     }
 
+    @Override
+    protected void onUnload() {
+        // 热重载前丢弃未完成的延迟任务，避免旧代码在卸载后继续执行。
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
+    }
+
     private void setup(final View clearAll, final int attempt) {
         try {
             if (TAG_SETUP.equals(clearAll.getTag())) {
