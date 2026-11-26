@@ -27,6 +27,8 @@
     <string name="pref_pixel_launcher_clear_all_bottom_summary">把最左侧的"全部清除"按钮添加到其他功能按钮的旁边\n作用域：Pixel 启动器</string>
     <string name="pref_pixel_launcher_themed_icon_pack">带主题的图标包</string>
     <string name="pref_pixel_launcher_themed_icon_pack_summary">作用域：Pixel 启动器</string>
+    <string name="pref_pixel_launcher_better_app_sort">更好的首字母排序</string>
+    <string name="pref_pixel_launcher_better_app_sort_summary">让应用抽屉的中文应用按拼音与英文应用自然排序\n作用域：Pixel 启动器</string>
     <string name="pref_pixel_launcher_themed_icon_pack_system">系统图标</string>
     <string name="pref_pixel_launcher_themed_icon_pack_play">（Play 版）</string>
     <string name="pref_pixel_launcher_themed_icon_pack_nightly">（每夜版）</string>

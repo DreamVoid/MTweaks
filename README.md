@@ -7,6 +7,7 @@
 - Pixel 启动器
   - 将全部清除操作移动到下方
   - 带主题的图标包
+  - 更好的首字母排序
 - Google 相册
   - 伪装成 Pixel XL
 - Pixel 温度计
@@ -22,3 +23,4 @@
 部分功能来自以下代码，并进行了修复和改进：
 - [L Tweaks](https://github.com/bluesky139/LTweaks)
 - [NexAlloy](https://github.com/NexAlloy/NexAlloy)
+- [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)

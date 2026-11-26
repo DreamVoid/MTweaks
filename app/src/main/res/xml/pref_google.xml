@@ -13,6 +13,11 @@
             android:key="@string/key_pixel_launcher_themed_icon_pack"
             android:title="@string/pref_pixel_launcher_themed_icon_pack"
             android:summary="@string/pref_pixel_launcher_themed_icon_pack_summary" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_pixel_launcher_better_app_sort"
+            android:title="@string/pref_pixel_launcher_better_app_sort"
+            android:summary="@string/pref_pixel_launcher_better_app_sort_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
