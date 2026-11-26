@@ -2,6 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- The values below are used for pref keys, should never be changed. -->
     <!--Google-->
+    <string name="key_pixel_launcher_clear_all_bottom">key_pixel_launcher_clear_all_bottom</string>
+    <string name="key_pixel_launcher_themed_icon_pack">key_pixel_launcher_themed_icon_pack</string>
     <string name="key_google_photos_spoof_pixel_xl">key_google_photos_spoof_pixel_xl</string>
     <string name="key_pixel_thermometer_force_bts">key_pixel_thermometer_force_bts</string>
 
@@ -17,7 +19,6 @@
     <!--System-->
     <string name="key_system_share_filter">key_system_share_filter</string>
     <string name="key_system_share_filter_activities">key_system_share_filter_activities</string>
-    <string name="key_pixel_launcher_clear_all_bottom">key_pixel_launcher_clear_all_bottom</string>
 
     <string name="key_trust_agent_wifi_aps">key_trust_agent_wlan</string>
     <string name="key_trust_agent_active">key_trust_agent_active</string>

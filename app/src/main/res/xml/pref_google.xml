@@ -8,6 +8,11 @@
             android:key="@string/key_pixel_launcher_clear_all_bottom"
             android:title="@string/pref_pixel_launcher_clear_all_bottom"
             android:summary="@string/pref_pixel_launcher_clear_all_bottom_summary" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_pixel_launcher_themed_icon_pack"
+            android:title="@string/pref_pixel_launcher_themed_icon_pack"
+            android:summary="@string/pref_pixel_launcher_themed_icon_pack_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory

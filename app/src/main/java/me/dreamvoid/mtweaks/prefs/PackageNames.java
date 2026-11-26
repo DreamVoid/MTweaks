@@ -9,6 +9,9 @@ public final class PackageNames {
     public static final String INTENT_RESOLVER = "com.android.intentresolver";
     public static final String PIXEL_HEALTH = "com.google.android.apps.pixel.health";
     public static final String PIXEL_LAUNCHER = "com.google.android.apps.nexuslauncher";
+    public static final String LAWNICONS = "app.lawnchair.lawnicons";
+    public static final String LAWNICONS_PLAY = "app.lawnchair.lawnicons.play";
+    public static final String LAWNICONS_NIGHTLY = "app.lawnchair.lawnicons.nightly";
 
     private PackageNames() {
     }

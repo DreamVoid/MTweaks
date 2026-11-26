@@ -16,28 +16,20 @@
     <!--Common-->
     <string name="current">当前</string>
     <string name="trust_agent_settings_unavailable">无法打开系统安全设置</string>
+    <string name="pref_group_empty">暂无可用功能</string>
 
     <!-- Google -->
-    <!-- Google Play -->
-
-
-    <!--Communication-->
-
-    <!-- TTRss -->
-
-    <!--Entertainment-->
-
-    <!--System-->
     <string name="pref_header_google">Google</string>
     <string name="pref_header_google_summary">Google 应用相关调整</string>
-    <string name="pref_header_communication">通信</string>
-    <string name="pref_header_communication_summary">通信应用相关调整</string>
-    <string name="pref_header_system">系统 / 工具</string>
-    <string name="pref_header_system_summary">系统与工具相关调整</string>
-    <string name="pref_group_empty">暂无可用功能</string>
+
     <string name="pref_category_pixel_launcher">Pixel 启动器</string>
     <string name="pref_pixel_launcher_clear_all_bottom">在最近任务界面的下方添加全部清除按钮</string>
     <string name="pref_pixel_launcher_clear_all_bottom_summary">把最左侧的"全部清除"按钮添加到其他功能按钮的旁边\n作用域：Pixel 启动器</string>
+    <string name="pref_pixel_launcher_themed_icon_pack">带主题的图标包</string>
+    <string name="pref_pixel_launcher_themed_icon_pack_summary">作用域：Pixel 启动器</string>
+    <string name="pref_pixel_launcher_themed_icon_pack_system">系统图标</string>
+    <string name="pref_pixel_launcher_themed_icon_pack_play">（Play 版）</string>
+    <string name="pref_pixel_launcher_themed_icon_pack_nightly">（每夜版）</string>
 
     <string name="pref_category_google_photos">Google 相册</string>
     <string name="pref_google_photos_spoof_pixel_xl">伪装成 Pixel XL</string>
@@ -46,6 +38,21 @@
     <string name="pref_category_pixel_thermometer">Pixel 温度计</string>
     <string name="pref_pixel_thermometer_force_bts">强制启用体温计</string>
     <string name="pref_pixel_thermometer_force_bts_summary">忽略体温计的地区限制，使其永远可用\n只有带红外温度传感器的 Pixel 机型可用\n作用域：Pixel 温度计</string>
+
+    <!-- Google Play -->
+
+
+    <!--Communication-->
+    <string name="pref_header_communication">通信</string>
+    <string name="pref_header_communication_summary">通信应用相关调整</string>
+
+    <!-- TTRss -->
+
+    <!--Entertainment-->
+
+    <!--System-->
+    <string name="pref_header_system">系统 / 工具</string>
+    <string name="pref_header_system_summary">系统与工具相关调整</string>
 
     <string name="pref_category_system_share">系统分享</string>
     <string name="pref_system_share_filter">隐藏分享菜单项</string>
@@ -59,10 +66,12 @@
     <string name="share_filter_no_results">没有匹配的分享入口</string>
     <string name="share_filter_restore_all">全部恢复</string>
     <string name="share_filter_restore_all_confirm">将清除所有已隐藏的分享入口，确定继续？</string>
+
     <string name="pref_category_trust_agent">信任的环境</string>
     <string name="pref_trust_agent_wifi">可信 WLAN</string>
     <string name="pref_trust_agent_wifi_summary">连接到可信的 WLAN 网络时，让设备保持解锁状态\n同时使用 SSID 和 BSSID 来确定 WLAN 是否可信\n你需要到 \"设置 -> 安全 -> 信任的代理\" 启用此代理\n请手动给予始终可用的位置权限，否则 SSID 和 BSSID 都无法获得\n作用域：系统框架、设置</string>
     <string name="pref_trust_agent_wifi_summary_settings">连接到可信的 WLAN 网络时，让设备保持解锁状态</string>
+
     <string name="pref_category_app_info">应用信息</string>
     <string name="pref_app_info_open_app_data_folder">打开应用数据/APK文件夹</string>
     <string name="pref_app_info_open_app_data_folder_summary">通常情况下会打开以下目录：\n- /data/data/[package_name]\n- /sdcard/Android/data/[package_name]\n- /data/user_de/0/[package_name]\n- /data/app/[package_name]\n你需要一个支持 root 的文件管理器\n以菜单的形式添加\n作用域：设置</string>
@@ -70,6 +79,7 @@
     <string name="pref_app_info_go_market_summary">在应用市场查看对应的应用\n以菜单的形式添加\n作用域：设置</string>
     <string name="pref_app_info_allow_disable">允许禁用系统核心应用</string>
     <string name="pref_app_info_allow_disable_summary">这将让\"禁用\"按钮在系统核心应用上也可被点击\n小心，你也许会让你的手机变砖\n\"禁用\"按钮会变为红色来给予警告\n作用域：设置</string>
+
     <string name="pref_category_debug">调试 / 其它</string>
     <string name="pref_debug_app_crash_info">在应用崩溃的时候显示调试信息</string>
     <string name="pref_debug_app_crash_info_summary">作用在崩溃时系统弹出的对话框上\n用户安装的应用内所有捕获异常的功能都将被禁掉\n作用域：系统框架</string>

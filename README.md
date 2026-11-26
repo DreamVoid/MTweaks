@@ -6,6 +6,7 @@
 
 - Pixel 启动器
   - 将全部清除操作移动到下方
+  - 带主题的图标包
 - Google 相册
   - 伪装成 Pixel XL
 - Pixel 温度计
