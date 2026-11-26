@@ -110,6 +110,25 @@ public final class Reflect {
         throw new NoSuchFieldError(cls.getName() + "#" + name);
     }
 
+    /**
+     * 查找字段，不存在时返回 {@code null}。
+     *
+     * @param cls  目标类
+     * @param name 字段名
+     * @return 可访问的字段，找不到时为 {@code null}
+     */
+    public static Field findFieldIfExists(Class<?> cls, String name) {
+        for (Class<?> current = cls; current != null; current = current.getSuperclass()) {
+            try {
+                Field field = current.getDeclaredField(name);
+                field.setAccessible(true);
+                return field;
+            } catch (NoSuchFieldException ignored) {
+            }
+        }
+        return null;
+    }
+
     public static Object callMethod(Object obj, String name, Object... args) {
         if (obj == null) {
             throw new NullPointerException("obj == null for " + name);

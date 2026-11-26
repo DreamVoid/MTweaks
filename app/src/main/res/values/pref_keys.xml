@@ -22,6 +22,8 @@
     <string name="key_system_share_filter">key_system_share_filter</string>
     <string name="key_system_share_filter_activities">key_system_share_filter_activities</string>
 
+    <string name="key_display_refuse_forced_brightness">key_display_refuse_forced_brightness</string>
+
     <string name="key_trust_agent_wifi_aps">key_trust_agent_wlan</string>
     <string name="key_trust_agent_active">key_trust_agent_active</string>
 

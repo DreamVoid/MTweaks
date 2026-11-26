@@ -71,6 +71,10 @@
     <string name="share_filter_restore_all">全部恢复</string>
     <string name="share_filter_restore_all_confirm">将清除所有已隐藏的分享入口，确定继续？</string>
 
+    <string name="pref_category_display">显示</string>
+    <string name="pref_display_refuse_forced_brightness">拒绝强制亮度</string>
+    <string name="pref_display_refuse_forced_brightness_summary">阻止应用设定强制性的临时的屏幕亮度\n仅 Android 10+\n作用域：系统框架</string>
+
     <string name="pref_category_trust_agent">信任的环境</string>
     <string name="pref_trust_agent_wifi">可信 WLAN</string>
     <string name="pref_trust_agent_wifi_summary">连接到可信的 WLAN 网络时，让设备保持解锁状态\n同时使用 SSID 和 BSSID 来确定 WLAN 是否可信\n你需要到 \"设置 -> 安全 -> 信任的代理\" 启用此代理\n请手动给予始终可用的位置权限，否则 SSID 和 BSSID 都无法获得\n作用域：系统框架、设置</string>

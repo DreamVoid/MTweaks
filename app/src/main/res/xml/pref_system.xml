@@ -9,6 +9,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/pref_category_display">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_display_refuse_forced_brightness"
+            android:title="@string/pref_display_refuse_forced_brightness"
+            android:summary="@string/pref_display_refuse_forced_brightness_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/pref_category_trust_agent">
         <Preference
             android:key="@string/key_trust_agent_wifi_aps"
