@@ -3,12 +3,7 @@ package me.dreamvoid.mtweaks.xposed.google;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PixelFormat;
-import android.graphics.Rect;
+import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,15 +14,15 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import li.lingfeng.ltweaks.lib.XposedLoad;
+import me.dreamvoid.mtweaks.prefs.PackageNames;
+import me.dreamvoid.mtweaks.utils.Logger;
+import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
+import me.dreamvoid.mtweaks.xposed.core.Hooks;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-import li.lingfeng.ltweaks.lib.XposedLoad;
-import li.lingfeng.ltweaks.prefs.PackageNames;
-import me.dreamvoid.mtweaks.utils.Logger;
-import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
-import me.dreamvoid.mtweaks.xposed.core.Hooks;
 
 /**
  * Adds a "clear all" button with a close icon to the bottom action row of the recents screen,
@@ -35,7 +30,7 @@ import me.dreamvoid.mtweaks.xposed.core.Hooks;
  * <p>
  * The launcher keeps owning its own clear all button, the added one only forwards the clicks.
  */
-@XposedLoad(packages = { PackageNames.LAUNCHER },
+@XposedLoad(packages = { PackageNames.PIXEL_LAUNCHER},
         prefs = "key_pixel_launcher_clear_all_bottom")
 public class XposedPixelLauncherClearAll extends FeatureModule {
 

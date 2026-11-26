@@ -5,7 +5,7 @@ import android.content.pm.PackageParser;
 
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.ClassNames;
-import li.lingfeng.ltweaks.prefs.PackageNames;
+import me.dreamvoid.mtweaks.prefs.PackageNames;
 import me.dreamvoid.mtweaks.utils.Logger;
 import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
 

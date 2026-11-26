@@ -5,7 +5,7 @@ import android.content.pm.ApplicationInfo;
 import android.util.Pair;
 
 import li.lingfeng.ltweaks.lib.XposedLoad;
-import li.lingfeng.ltweaks.prefs.PackageNames;
+import me.dreamvoid.mtweaks.prefs.PackageNames;
 import me.dreamvoid.mtweaks.utils.Utils;
 
 /**

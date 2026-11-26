@@ -39,6 +39,10 @@
     <string name="pref_pixel_launcher_clear_all_bottom">在最近任务界面的下方添加全部清除按钮</string>
     <string name="pref_pixel_launcher_clear_all_bottom_summary">把最左侧的"全部清除"按钮添加到其他功能按钮的旁边\n作用域：Pixel 启动器</string>
 
+    <string name="pref_category_pixel_thermometer">Pixel 温度计</string>
+    <string name="pref_pixel_thermometer_force_bts">强制启用体温计</string>
+    <string name="pref_pixel_thermometer_force_bts_summary">忽略体温计的地区限制，使其永远可用\n只有带红外温度传感器的 Pixel 机型可用\n作用域：Pixel 温度计</string>
+
     <string name="pref_category_system_share">系统分享</string>
     <string name="pref_system_share_filter">隐藏分享菜单项</string>
     <string name="pref_system_share_filter_summary">从系统分享面板中隐藏选中的分享入口\n作用域：系统框架、系统分享菜单</string>
