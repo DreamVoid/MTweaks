@@ -5,6 +5,7 @@
     <string name="key_pixel_launcher_clear_all_bottom">key_pixel_launcher_clear_all_bottom</string>
     <string name="key_pixel_launcher_themed_icon_pack">key_pixel_launcher_themed_icon_pack</string>
     <string name="key_pixel_launcher_better_app_sort">key_pixel_launcher_better_app_sort</string>
+    <string name="key_pixel_launcher_no_adaptive_icon">key_pixel_launcher_no_adaptive_icon</string>
     <string name="key_google_photos_spoof_pixel_xl">key_google_photos_spoof_pixel_xl</string>
     <string name="key_pixel_thermometer_force_bts">key_pixel_thermometer_force_bts</string>
 

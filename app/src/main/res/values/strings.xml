@@ -29,6 +29,8 @@
     <string name="pref_pixel_launcher_themed_icon_pack_summary">作用域：Pixel 启动器</string>
     <string name="pref_pixel_launcher_better_app_sort">更好的首字母排序</string>
     <string name="pref_pixel_launcher_better_app_sort_summary">让应用抽屉的中文应用按拼音与英文应用自然排序\n作用域：Pixel 启动器</string>
+    <string name="pref_pixel_launcher_no_adaptive_icon">禁止自适应图标</string>
+    <string name="pref_pixel_launcher_no_adaptive_icon_summary">不为没有提供当前图标形状的应用图标叠加白色背景或按形状裁剪\n图标将按自身的原始形状显示\n作用域：Pixel 启动器</string>
     <string name="pref_pixel_launcher_themed_icon_pack_system">系统图标</string>
     <string name="pref_pixel_launcher_themed_icon_pack_play">（Play 版）</string>
     <string name="pref_pixel_launcher_themed_icon_pack_nightly">（每夜版）</string>

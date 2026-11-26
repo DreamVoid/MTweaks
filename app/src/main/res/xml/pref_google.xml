@@ -18,6 +18,11 @@
             android:key="@string/key_pixel_launcher_better_app_sort"
             android:title="@string/pref_pixel_launcher_better_app_sort"
             android:summary="@string/pref_pixel_launcher_better_app_sort_summary" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_pixel_launcher_no_adaptive_icon"
+            android:title="@string/pref_pixel_launcher_no_adaptive_icon"
+            android:summary="@string/pref_pixel_launcher_no_adaptive_icon_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
