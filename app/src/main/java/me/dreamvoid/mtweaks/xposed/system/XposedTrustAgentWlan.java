@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
-
-import java.util.List;
-
 import io.github.libxposed.api.XposedInterface.HookHandle;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import me.dreamvoid.mtweaks.prefs.PackageNames;
@@ -14,12 +11,14 @@ import me.dreamvoid.mtweaks.utils.Logger;
 import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
 import me.dreamvoid.mtweaks.xposed.core.Reflect;
 
+import java.util.List;
+
 /**
  * Grants {@code PROVIDE_TRUST_AGENT} to this module inside system_server and makes sure the trust
  * agent service survives {@code TrustManagerService#resolveAllowedTrustAgents}.
  */
 @XposedLoad(packages = PackageNames.ANDROID, prefs = {})
-public class XposedTrustAgentWifi extends FeatureModule {
+public class XposedTrustAgentWlan extends FeatureModule {
 
     private static final String PERMISSION = "android.permission.PROVIDE_TRUST_AGENT";
     private static final String SERVICE_ACTION = "android.service.trust.TrustAgentService";
@@ -99,7 +98,7 @@ public class XposedTrustAgentWifi extends FeatureModule {
     }
 
     private static boolean containsOurAgent(List<ResolveInfo> agents) {
-        return agents != null && agents.stream().anyMatch(XposedTrustAgentWifi::isOurAgent);
+        return agents != null && agents.stream().anyMatch(XposedTrustAgentWlan::isOurAgent);
     }
 
     private static boolean isOurAgent(ResolveInfo info) {
@@ -128,7 +127,7 @@ public class XposedTrustAgentWifi extends FeatureModule {
                 return null;
             }
             return candidates.stream()
-                    .filter(XposedTrustAgentWifi::isOurAgent)
+                    .filter(XposedTrustAgentWlan::isOurAgent)
                     .findFirst()
                     .orElse(null);
         } catch (Throwable e) {

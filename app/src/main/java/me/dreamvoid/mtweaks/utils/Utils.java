@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Pair;
 import android.widget.Toast;
-import me.dreamvoid.mtweaks.MyApplication;
+import me.dreamvoid.mtweaks.MTweaks;
 import me.dreamvoid.mtweaks.xposed.core.Reflect;
 
 import java.util.Arrays;
@@ -84,7 +84,7 @@ public final class Utils {
     }
 
     public static String getString(String name) {
-        Context context = MyApplication.instance();
+        Context context = MTweaks.instance();
         return context.getString(context.getResources()
                 .getIdentifier(name, "string", context.getPackageName()));
     }

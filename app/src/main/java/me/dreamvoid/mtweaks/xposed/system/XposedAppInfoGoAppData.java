@@ -16,7 +16,7 @@ import java.io.File;
  * Created by lilingfeng on 2017/8/15.
  */
 @XposedLoad(packages = PackageNames.ANDROID_SETTINGS,
-            prefs = "key_app_info_open_app_data_folder")
+        prefs = "key_app_info_open_app_data_folder")
 public class XposedAppInfoGoAppData extends XposedAppInfo {
 
     private static final String MENU_APP_DATA_FOLDER = "打开应用数据目录";
@@ -32,7 +32,7 @@ public class XposedAppInfoGoAppData extends XposedAppInfo {
 
     @Override
     protected Pair<String, Integer>[] newMenuNames() {
-        return new Pair[] {
+        return new Pair[]{
                 Pair.create(MENU_APP_DATA_FOLDER, 1000),
                 Pair.create(MENU_APP_EXTERNAL_DATA_FOLDER, 1001),
                 Pair.create(MENU_APP_DEVICE_ENCRYPTED_STORAGE, 1002),
@@ -47,18 +47,18 @@ public class XposedAppInfoGoAppData extends XposedAppInfo {
             return;
         }
         String packageName = info.packageName;
-        if (MENU_APP_DATA_FOLDER.equals(menuName)) {
+        if (MENU_APP_DATA_FOLDER.contentEquals(menuName)) {
             Utils.openFolder(activity, info.dataDir);
-        } else if (MENU_APP_EXTERNAL_DATA_FOLDER.equals(menuName)) {
+        } else if (MENU_APP_EXTERNAL_DATA_FOLDER.contentEquals(menuName)) {
             String dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/" + packageName;
             if (new File(dir).exists()) {
                 Utils.openFolder(activity, dir);
             } else {
                 Toast.makeText(activity, "目录不存在", Toast.LENGTH_SHORT).show();
             }
-        } else if (MENU_APP_DEVICE_ENCRYPTED_STORAGE.equals(menuName)) {
+        } else if (MENU_APP_DEVICE_ENCRYPTED_STORAGE.contentEquals(menuName)) {
             Utils.openFolder(activity, "/data/user_de/0/" + packageName);
-        } else if (MENU_APP_APK_FOLDER.equals(menuName)) {
+        } else if (MENU_APP_APK_FOLDER.contentEquals(menuName)) {
             Utils.openFolder(activity, new File(info.sourceDir).getParent());
         } else {
             throw new Exception("Unknown menu " + menuName);

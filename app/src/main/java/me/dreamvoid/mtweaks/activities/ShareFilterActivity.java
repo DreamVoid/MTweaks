@@ -1,10 +1,10 @@
 package me.dreamvoid.mtweaks.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,12 +12,7 @@ import android.os.Looper;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
+import android.view.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -27,23 +22,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.divider.MaterialDividerItemDecoration;
-
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
-
 import li.lingfeng.ltweaks.prefs.IntentActions;
 import me.dreamvoid.mtweaks.R;
 import me.dreamvoid.mtweaks.databinding.ActivityShareFilterBinding;
@@ -51,6 +31,12 @@ import me.dreamvoid.mtweaks.databinding.ItemShareFilterBinding;
 import me.dreamvoid.mtweaks.prefs.Prefs;
 import me.dreamvoid.mtweaks.prefs.ShareFilterStore;
 import me.dreamvoid.mtweaks.utils.UiUtils;
+
+import java.text.Collator;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 /**
  * 选择要从系统分享面板中隐藏的分享入口。
@@ -167,12 +153,9 @@ public class ShareFilterActivity extends AppCompatActivity {
                 if (map.containsKey(component)) {
                     return;
                 }
-                CharSequence appLabel = activityInfo.applicationInfo != null
-                        ? activityInfo.applicationInfo.loadLabel(packageManager)
-                        : activityInfo.packageName;
+                CharSequence appLabel = activityInfo.applicationInfo != null ? activityInfo.applicationInfo.loadLabel(packageManager) : activityInfo.packageName;
                 CharSequence activityLabel = info.loadLabel(packageManager);
-                map.put(component, new TargetItem(component, activityInfo.packageName,
-                        activityInfo.name, info, appLabel, activityLabel));
+                map.put(component, new TargetItem(component, activityInfo.packageName, activityInfo.name, info, appLabel, activityLabel));
             });
         }
         List<TargetItem> result = new ArrayList<>(map.values());
@@ -193,11 +176,7 @@ public class ShareFilterActivity extends AppCompatActivity {
     }
 
     private void applyFilter() {
-        List<TargetItem> filtered = mTargets.stream()
-                .filter(item -> mFilter != FILTER_HIDDEN || mHidden.contains(item.component()))
-                .filter(item -> mFilter != FILTER_VISIBLE || !mHidden.contains(item.component()))
-                .filter(item -> mQuery.isEmpty() || item.matches(mQuery))
-                .collect(Collectors.toList());
+        List<TargetItem> filtered = mTargets.stream().filter(item -> mFilter != FILTER_HIDDEN || mHidden.contains(item.component())).filter(item -> mFilter != FILTER_VISIBLE || !mHidden.contains(item.component())).filter(item -> mQuery.isEmpty() || item.matches(mQuery)).collect(Collectors.toList());
         mAdapter.submit(filtered);
         updateEmptyState(filtered.isEmpty());
     }
@@ -209,12 +188,10 @@ public class ShareFilterActivity extends AppCompatActivity {
         if (!show) {
             return;
         }
-        int textRes = !mQuery.isEmpty()
-                ? R.string.share_filter_no_results
-                : switch (mFilter) {
-                    case FILTER_HIDDEN -> R.string.share_filter_empty_hidden;
-                    default -> R.string.share_filter_empty;
-                };
+        int textRes = !mQuery.isEmpty() ? R.string.share_filter_no_results : switch (mFilter) {
+            case FILTER_HIDDEN -> R.string.share_filter_empty_hidden;
+            default -> R.string.share_filter_empty;
+        };
         mBinding.emptyText.setText(textRes);
     }
 
@@ -235,36 +212,27 @@ public class ShareFilterActivity extends AppCompatActivity {
             return;
         }
         Set<String> hidden = new HashSet<>(mHidden);
-        Prefs.get().edit()
-                .putStringSet(getString(R.string.key_system_share_filter_activities), hidden)
-                .apply();
+        Prefs.get().edit().putStringSet(getString(R.string.key_system_share_filter_activities), hidden).apply();
         ShareFilterStore.persist(hidden);
-    }
-
-    private void confirmRestoreAll() {
-        new MaterialAlertDialogBuilder(this)
-                .setTitle(R.string.share_filter_restore_all)
-                .setMessage(R.string.share_filter_restore_all_confirm)
-                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
-                    mHidden.clear();
-                    persistHidden();
-                    applyFilter();
-                })
-                .setNegativeButton(android.R.string.cancel, null)
-                .show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(Menu.NONE, MENU_RESTORE_ALL, Menu.NONE, R.string.share_filter_restore_all)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(Menu.NONE, MENU_RESTORE_ALL, Menu.NONE, R.string.share_filter_restore_all).setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == MENU_RESTORE_ALL) {
-            confirmRestoreAll();
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.share_filter_restore_all)
+                    .setMessage(R.string.share_filter_restore_all_confirm)
+                    .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                        mHidden.clear();
+                        persistHidden();
+                        applyFilter();
+                    }).setNegativeButton(android.R.string.cancel, null).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -298,10 +266,7 @@ public class ShareFilterActivity extends AppCompatActivity {
         }
 
         boolean matches(String query) {
-            return contains(appLabel, query)
-                    || contains(activityLabel, query)
-                    || packageName.toLowerCase(Locale.ROOT).contains(query)
-                    || activityName.toLowerCase(Locale.ROOT).contains(query);
+            return contains(appLabel, query) || contains(activityLabel, query) || packageName.toLowerCase(Locale.ROOT).contains(query) || activityName.toLowerCase(Locale.ROOT).contains(query);
         }
 
         private static boolean contains(CharSequence value, String query) {
@@ -323,8 +288,7 @@ public class ShareFilterActivity extends AppCompatActivity {
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            ItemShareFilterBinding binding = ItemShareFilterBinding.inflate(
-                    LayoutInflater.from(parent.getContext()), parent, false);
+            ItemShareFilterBinding binding = ItemShareFilterBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
             return new ViewHolder(binding);
         }
 
@@ -337,8 +301,7 @@ public class ShareFilterActivity extends AppCompatActivity {
 
             holder.binding.checkbox.setOnCheckedChangeListener(null);
             holder.binding.checkbox.setChecked(mHidden.contains(item.component()));
-            holder.binding.checkbox.setOnCheckedChangeListener(
-                    (button, checked) -> setHidden(item, checked));
+            holder.binding.checkbox.setOnCheckedChangeListener((button, checked) -> setHidden(item, checked));
 
             holder.itemView.setOnClickListener(v -> holder.binding.checkbox.toggle());
         }
@@ -348,7 +311,7 @@ public class ShareFilterActivity extends AppCompatActivity {
             return mItems.size();
         }
 
-        final class ViewHolder extends RecyclerView.ViewHolder {
+        static final class ViewHolder extends RecyclerView.ViewHolder {
 
             final ItemShareFilterBinding binding;
 

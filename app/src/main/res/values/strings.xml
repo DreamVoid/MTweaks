@@ -73,6 +73,7 @@
     <string name="pref_debug_debuggable_summary">相当于在 AndroidManifest.xml 中设置 debuggable\n作用域：系统框架</string>
 
     <!-- Text -->
+    <string name="show_crash_info">Show crash info</string>
 
     <!-- Adb Wireless -->
 </resources>

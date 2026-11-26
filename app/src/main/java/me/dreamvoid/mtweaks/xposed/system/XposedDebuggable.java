@@ -2,7 +2,6 @@ package me.dreamvoid.mtweaks.xposed.system;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageParser;
-
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.ClassNames;
 import me.dreamvoid.mtweaks.prefs.PackageNames;

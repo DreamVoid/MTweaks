@@ -2,16 +2,16 @@ package me.dreamvoid.mtweaks.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.ParcelFileDescriptor;
+import io.github.libxposed.api.XposedInterface;
+import me.dreamvoid.mtweaks.utils.Logger;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
-
-import io.github.libxposed.api.XposedInterface;
-import me.dreamvoid.mtweaks.utils.Logger;
 
 /**
  * Preference access for both the module app process and hooked processes.
@@ -42,10 +42,8 @@ public final class Prefs {
 
     public static void attachModuleProcess(Context context) {
         Context storage = context.createDeviceProtectedStorageContext();
-        sPrefs = storage.getSharedPreferences(
-                context.getPackageName() + "_preferences", Context.MODE_PRIVATE);
-        sAppContext = context.getApplicationContext() != null
-                ? context.getApplicationContext() : context;
+        sPrefs = storage.getSharedPreferences(context.getPackageName() + "_preferences", Context.MODE_PRIVATE);
+        sAppContext = context.getApplicationContext() != null ? context.getApplicationContext() : context;
         sXposed = null;
         sRemote = false;
         sWarned = false;
@@ -108,7 +106,12 @@ public final class Prefs {
             while ((read = in.read(buffer)) != -1) {
                 out.write(buffer, 0, read);
             }
-            return new String(out.toByteArray(), StandardCharsets.UTF_8);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                return out.toString(StandardCharsets.UTF_8);
+            } else {
+                //noinspection StringOperationCanBeSimplified
+                return new String(out.toByteArray(), StandardCharsets.UTF_8);
+            }
         } catch (Throwable e) {
             Logger.w("readRemoteFile(" + name + ") failed: " + e);
             return null;

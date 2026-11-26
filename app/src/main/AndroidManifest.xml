@@ -38,7 +38,7 @@
     </queries>
 
     <application
-            android:name=".MyApplication"
+            android:name=".MTweaks"
             android:allowBackup="true"
             android:description="@string/app_summary"
             android:icon="@mipmap/ic_launcher"
@@ -48,7 +48,7 @@
 
         <!-- Xposed 管理器入口，隐藏桌面图标后仍可从这里打开；singleTask 保证与桌面别名复用同一实例 -->
         <activity
-                android:name=".SettingsActivity"
+                android:name=".activities.SettingsActivity"
                 android:exported="true"
                 android:launchMode="singleTask"
                 android:theme="@style/AppTheme">
@@ -61,12 +61,12 @@
 
         <!-- 桌面图标入口，可单独启用/禁用 -->
         <activity-alias
-                android:name=".LauncherAlias"
+                android:name=".Launcher"
                 android:enabled="true"
                 android:exported="true"
                 android:icon="@mipmap/ic_launcher"
                 android:label="@string/app_name"
-                android:targetActivity=".SettingsActivity">
+                android:targetActivity=".activities.SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -76,17 +76,17 @@
         <activity android:name=".activities.ShareFilterActivity"/>
 
         <activity
-                android:name="me.dreamvoid.mtweaks.activities.WLANTrustAgentActivity"
+                android:name="me.dreamvoid.mtweaks.activities.WlanTrustAgentActivity"
                 android:excludeFromRecents="true"
                 android:exported="false"
                 android:label="@string/pref_trust_agent_wifi"
                 android:launchMode="singleInstance"
                 android:permission="android.permission.READ_SEARCH_INDEXABLES"
-                android:taskAffinity="me.dreamvoid.mtweaks.activities.WLANTrustAgentActivity"
+                android:taskAffinity="me.dreamvoid.mtweaks.activities.WlanTrustAgentActivity"
                 android:theme="@style/AppThemeModern"/>
 
         <service
-                android:name="me.dreamvoid.mtweaks.services.WifiTrustAgent"
+                android:name="me.dreamvoid.mtweaks.services.WlanTrustAgent"
                 android:directBootAware="true"
                 android:exported="true"
                 android:label="@string/pref_trust_agent_wifi"
@@ -98,7 +98,7 @@
 
             <meta-data
                     android:name="android.service.trust.trustagent"
-                    android:resource="@xml/trust_agent_wifi"/>
+                    android:resource="@xml/trust_agent_wlan"/>
         </service>
 
     </application>

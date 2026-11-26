@@ -6,15 +6,14 @@ import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
 import me.dreamvoid.mtweaks.utils.Logger;
 import me.dreamvoid.mtweaks.utils.Utils;
 import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
 import me.dreamvoid.mtweaks.xposed.core.Hooks;
 import me.dreamvoid.mtweaks.xposed.core.Reflect;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * Created by lilingfeng on 2017/8/15.

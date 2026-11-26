@@ -4,15 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.StringBuilderPrinter;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.ClassNames;
+import me.dreamvoid.mtweaks.R;
 import me.dreamvoid.mtweaks.utils.Logger;
 import me.dreamvoid.mtweaks.utils.ViewUtils;
 import me.dreamvoid.mtweaks.xposed.core.Reflect;
@@ -74,7 +69,7 @@ public class XposedAppCrashInfo extends XposedCommon {
             FrameLayout frame = dialog.findViewById(android.R.id.custom);
             final LinearLayout linearLayout = ViewUtils.findViewByType(frame, LinearLayout.class);
             final Button button = new Button(dialog.getContext());
-            button.setText("Show crash info");
+            button.setText(R.string.show_crash_info);
             button.setOnClickListener(v -> {
                 showCrashInfo(dialog, linearLayout);
                 linearLayout.removeView(button);

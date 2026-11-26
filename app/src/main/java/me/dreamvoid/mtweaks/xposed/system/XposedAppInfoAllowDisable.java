@@ -34,10 +34,14 @@ public class XposedAppInfoAllowDisable extends XposedAppInfo {
     private static final String MATERIAL_ICON_BUTTON_KT = "androidx.compose.material3.IconButtonKt";
     private static final String MARK_RISKY = "mtweaks_risky_disable";
 
-    /** Packages whose disable button had to be force enabled by the module. */
+    /**
+     * Packages whose disable button had to be force enabled by the module.
+     */
     private static final Set<String> FORCED_PACKAGES = ConcurrentHashMap.newKeySet();
 
-    /** Set while the marked button is being rendered, so its colors can be replaced. */
+    /**
+     * Set while the marked button is being rendered, so its colors can be replaced.
+     */
     private static final ThreadLocal<Boolean> RENDERING_RISKY = new ThreadLocal<>();
 
     /**

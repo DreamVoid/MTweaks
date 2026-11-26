@@ -21,7 +21,7 @@ import java.util.function.Consumer;
 /**
  * Trust agent that keeps the device unlocked while connected to a trusted Wi-Fi network.
  */
-public class WifiTrustAgent extends TrustAgentService implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class WlanTrustAgent extends TrustAgentService implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final CharSequence TRUST_MESSAGE = "MTweaks wifi trust";
 
@@ -31,7 +31,7 @@ public class WifiTrustAgent extends TrustAgentService implements SharedPreferenc
     @Override
     public void onCreate() {
         super.onCreate();
-        Logger.d("WifiTrustAgent onCreate");
+        Logger.d("WLANTrustAgent onCreate");
         Prefs.attachModuleProcess(this);
         setTrustAgentActive(true);
 
@@ -52,7 +52,7 @@ public class WifiTrustAgent extends TrustAgentService implements SharedPreferenc
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Logger.d("WifiTrustAgent onDestroy");
+        Logger.d("WLANTrustAgent onDestroy");
         try {
             if (mReceiver != null) {
                 unregisterReceiver(mReceiver);

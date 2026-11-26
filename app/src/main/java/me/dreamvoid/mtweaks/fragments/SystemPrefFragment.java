@@ -1,10 +1,10 @@
-package li.lingfeng.ltweaks.fragments;
+package me.dreamvoid.mtweaks.fragments;
 
 import android.content.Intent;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
-
+import li.lingfeng.ltweaks.fragments.BasePrefFragment;
 import li.lingfeng.ltweaks.lib.PreferenceClick;
 import me.dreamvoid.mtweaks.R;
 import me.dreamvoid.mtweaks.activities.ShareFilterActivity;

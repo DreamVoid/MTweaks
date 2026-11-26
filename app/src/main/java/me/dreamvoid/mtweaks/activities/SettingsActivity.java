@@ -1,4 +1,4 @@
-package me.dreamvoid.mtweaks;
+package me.dreamvoid.mtweaks.activities;
 
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
@@ -13,13 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import me.dreamvoid.mtweaks.R;
 import me.dreamvoid.mtweaks.fragments.MainFragment;
 import me.dreamvoid.mtweaks.utils.UiUtils;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private static final String STATE_TITLE = "title";
-    private static final String LAUNCHER_ALIAS = "me.dreamvoid.mtweaks.LauncherAlias";
+    private static final String LAUNCHER_ALIAS = "me.dreamvoid.mtweaks.Launcher";
 
     private CharSequence mRootTitle;
 

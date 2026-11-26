@@ -1,5 +1,6 @@
-package li.lingfeng.ltweaks.fragments;
+package me.dreamvoid.mtweaks.fragments;
 
+import li.lingfeng.ltweaks.fragments.BasePrefFragment;
 import me.dreamvoid.mtweaks.R;
 
 /**

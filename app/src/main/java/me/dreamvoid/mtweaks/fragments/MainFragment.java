@@ -5,11 +5,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import li.lingfeng.ltweaks.fragments.CommunicationPrefFragment;
-import li.lingfeng.ltweaks.fragments.GooglePrefFragment;
-import li.lingfeng.ltweaks.fragments.SystemPrefFragment;
 import me.dreamvoid.mtweaks.R;
-import me.dreamvoid.mtweaks.SettingsActivity;
+import me.dreamvoid.mtweaks.activities.SettingsActivity;
 
 /**
  * Landing screen: a plain list of feature groups, same visual language as system settings.

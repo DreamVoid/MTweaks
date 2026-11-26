@@ -5,7 +5,7 @@ import android.app.Application;
 import me.dreamvoid.mtweaks.prefs.Prefs;
 import me.dreamvoid.mtweaks.prefs.PrefsSync;
 
-public class MyApplication extends Application {
+public class MTweaks extends Application {
 
     private static Application instance;
 
@@ -18,6 +18,6 @@ public class MyApplication extends Application {
         super.onCreate();
         instance = this;
         Prefs.attachModuleProcess(this);
-        PrefsSync.start(this);
+        PrefsSync.start();
     }
 }

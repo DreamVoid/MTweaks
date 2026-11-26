@@ -11,33 +11,27 @@ import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
-
+import me.dreamvoid.mtweaks.R;
+import me.dreamvoid.mtweaks.prefs.Prefs;
+import me.dreamvoid.mtweaks.services.WlanTrustAgent;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.List;
-
-import me.dreamvoid.mtweaks.R;
-import me.dreamvoid.mtweaks.prefs.Prefs;
-import me.dreamvoid.mtweaks.services.WifiTrustAgent;
 
 /**
  * Opens the system advanced security page with the matching trust agent entry highlighted.
  */
 public final class TrustAgentUtils {
 
-    private static final String ACTION_MORE_SECURITY_PRIVACY_SETTINGS =
-            "com.android.settings.MORE_SECURITY_PRIVACY_SETTINGS";
-    private static final String ACTION_SECURITY_ADVANCED_SETTINGS =
-            "com.android.settings.security.SECURITY_ADVANCED_SETTINGS";
+    private static final String ACTION_MORE_SECURITY_PRIVACY_SETTINGS = "com.android.settings.MORE_SECURITY_PRIVACY_SETTINGS";
+    private static final String ACTION_SECURITY_ADVANCED_SETTINGS = "com.android.settings.security.SECURITY_ADVANCED_SETTINGS";
     private static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
     private static final String EXTRA_FRAGMENT_ARG_KEY = ":settings:fragment_args_key";
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
     private static final String KEY_TRUST_AGENT_PREFIX = "trust_agent";
     private static final String ANDROID_NS = "http://schemas.android.com/apk/res/android";
-    private static final String PERMISSION_PROVIDE_TRUST_AGENT =
-            "android.permission.PROVIDE_TRUST_AGENT";
-    private static final String TRUST_AGENT_SERVICE_INTERFACE =
-            "android.service.trust.TrustAgentService";
+    private static final String PERMISSION_PROVIDE_TRUST_AGENT = "android.permission.PROVIDE_TRUST_AGENT";
+    private static final String TRUST_AGENT_SERVICE_INTERFACE = "android.service.trust.TrustAgentService";
     private static final String TRUST_AGENT_META_DATA = "android.service.trust.trustagent";
 
     private TrustAgentUtils() {
@@ -59,14 +53,10 @@ public final class TrustAgentUtils {
         String key = buildHighlightKey(context);
         Bundle args = new Bundle();
         args.putString(EXTRA_FRAGMENT_ARG_KEY, key);
-        if (startActivity(context, new Intent(ACTION_MORE_SECURITY_PRIVACY_SETTINGS)
-                .putExtra(EXTRA_FRAGMENT_ARG_KEY, key)
-                .putExtra(EXTRA_SHOW_FRAGMENT_ARGS, args))) {
+        if (startActivity(context, new Intent(ACTION_MORE_SECURITY_PRIVACY_SETTINGS).putExtra(EXTRA_FRAGMENT_ARG_KEY, key).putExtra(EXTRA_SHOW_FRAGMENT_ARGS, args))) {
             return true;
         }
-        if (startActivity(context, new Intent(ACTION_SECURITY_ADVANCED_SETTINGS)
-                .putExtra(EXTRA_FRAGMENT_ARG_KEY, key)
-                .putExtra(EXTRA_SHOW_FRAGMENT_ARGS, args))) {
+        if (startActivity(context, new Intent(ACTION_SECURITY_ADVANCED_SETTINGS).putExtra(EXTRA_FRAGMENT_ARG_KEY, key).putExtra(EXTRA_SHOW_FRAGMENT_ARGS, args))) {
             return true;
         }
         return startActivity(context, new Intent(Settings.ACTION_SECURITY_SETTINGS));
@@ -86,9 +76,7 @@ public final class TrustAgentUtils {
             return KEY_MANAGE_TRUST_AGENTS;
         }
         Integer index = findSettingsEntryIndex(context);
-        return index != null
-                ? KEY_TRUST_AGENT_PREFIX + index
-                : KEY_MANAGE_TRUST_AGENTS;
+        return index != null ? KEY_TRUST_AGENT_PREFIX + index : KEY_MANAGE_TRUST_AGENTS;
     }
 
     /**
@@ -97,15 +85,13 @@ public final class TrustAgentUtils {
      */
     private static Integer findSettingsEntryIndex(Context context) {
         PackageManager pm = context.getPackageManager();
-        ComponentName own = new ComponentName(context, WifiTrustAgent.class);
-        List<ResolveInfo> services = pm.queryIntentServices(
-                new Intent(TRUST_AGENT_SERVICE_INTERFACE), PackageManager.GET_META_DATA);
+        ComponentName own = new ComponentName(context, WlanTrustAgent.class);
+        List<ResolveInfo> services = pm.queryIntentServices(new Intent(TRUST_AGENT_SERVICE_INTERFACE), PackageManager.GET_META_DATA);
         int index = 0;
         for (ResolveInfo info : services) {
             ServiceInfo serviceInfo = info.serviceInfo;
             if (serviceInfo == null
-                    || pm.checkPermission(PERMISSION_PROVIDE_TRUST_AGENT, serviceInfo.packageName)
-                    != PackageManager.PERMISSION_GRANTED
+                    || pm.checkPermission(PERMISSION_PROVIDE_TRUST_AGENT, serviceInfo.packageName) != PackageManager.PERMISSION_GRANTED
                     || !hasSettingsActivity(pm, serviceInfo)) {
                 continue;
             }
@@ -126,15 +112,13 @@ public final class TrustAgentUtils {
                 return false;
             }
             int type;
-            while ((type = parser.next()) != XmlPullParser.END_DOCUMENT
-                    && type != XmlPullParser.START_TAG) {
+            while ((type = parser.next()) != XmlPullParser.END_DOCUMENT && type != XmlPullParser.START_TAG) {
                 // Skip until the trust-agent root tag.
             }
             if (!"trust-agent".equals(parser.getName())) {
                 return false;
             }
-            return !TextUtils.isEmpty(parser.getAttributeValue(ANDROID_NS, "title"))
-                    && !TextUtils.isEmpty(parser.getAttributeValue(ANDROID_NS, "settingsActivity"));
+            return !TextUtils.isEmpty(parser.getAttributeValue(ANDROID_NS, "title")) && !TextUtils.isEmpty(parser.getAttributeValue(ANDROID_NS, "settingsActivity"));
         } catch (Exception e) {
             return false;
         }

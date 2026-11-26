@@ -2,20 +2,19 @@ package me.dreamvoid.mtweaks.xposed.system;
 
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-
-import java.util.List;
-
 import io.github.libxposed.api.XposedInterface.HookHandle;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import me.dreamvoid.mtweaks.prefs.PackageNames;
 import me.dreamvoid.mtweaks.utils.Logger;
 import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
 
+import java.util.List;
+
 /**
  * Makes the Settings app show this module in "Trust agents" and accept it.
  */
 @XposedLoad(packages = PackageNames.ANDROID_SETTINGS, prefs = {})
-public class XposedTrustAgentWifiSettings extends FeatureModule {
+public class XposedTrustAgentWlanSettings extends FeatureModule {
 
     private static final String PERMISSION = "android.permission.PROVIDE_TRUST_AGENT";
 

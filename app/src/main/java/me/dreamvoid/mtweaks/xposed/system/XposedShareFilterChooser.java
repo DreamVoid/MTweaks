@@ -3,10 +3,6 @@ package me.dreamvoid.mtweaks.xposed.system;
 import android.content.ComponentName;
 import android.os.SystemClock;
 import android.service.chooser.ChooserTarget;
-
-import java.util.List;
-import java.util.Set;
-
 import io.github.libxposed.api.XposedInterface.Chain;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import me.dreamvoid.mtweaks.prefs.PackageNames;
@@ -14,6 +10,9 @@ import me.dreamvoid.mtweaks.prefs.ShareFilterStore;
 import me.dreamvoid.mtweaks.utils.Logger;
 import me.dreamvoid.mtweaks.xposed.core.FeatureModule;
 import me.dreamvoid.mtweaks.xposed.core.Reflect;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * 在系统分享面板进程内移除被隐藏的分享目标。

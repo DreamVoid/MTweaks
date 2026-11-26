@@ -1,6 +1,5 @@
 package me.dreamvoid.mtweaks.prefs;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.ParcelFileDescriptor;
 import io.github.libxposed.service.XposedService;
@@ -19,15 +18,14 @@ import java.util.Set;
 public final class PrefsSync {
 
     private static final Object LOCK = new Object();
-    private static final SharedPreferences.OnSharedPreferenceChangeListener LISTENER =
-            (sharedPreferences, key) -> push(key, sharedPreferences);
+    private static final SharedPreferences.OnSharedPreferenceChangeListener LISTENER = (sharedPreferences, key) -> push(key, sharedPreferences);
     private static XposedService sService;
     private static boolean sStarted;
 
     private PrefsSync() {
     }
 
-    public static void start(Context context) {
+    public static void start() {
         synchronized (LOCK) {
             if (sStarted) {
                 return;
@@ -98,8 +96,7 @@ public final class PrefsSync {
             service.deleteRemoteFile(name);
         } catch (Throwable ignored) {
         }
-        try (ParcelFileDescriptor fd = service.openRemoteFile(name);
-             FileOutputStream out = new FileOutputStream(fd.getFileDescriptor())) {
+        try (ParcelFileDescriptor fd = service.openRemoteFile(name); FileOutputStream out = new FileOutputStream(fd.getFileDescriptor())) {
             out.write(content.getBytes(StandardCharsets.UTF_8));
             out.flush();
             return true;

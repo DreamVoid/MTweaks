@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ResolveInfo;
 import android.os.Binder;
+import io.github.libxposed.api.XposedInterface.Chain;
 import li.lingfeng.ltweaks.lib.XposedLoad;
 import li.lingfeng.ltweaks.prefs.IntentActions;
 import me.dreamvoid.mtweaks.prefs.PackageNames;
@@ -21,8 +22,6 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
-import io.github.libxposed.api.XposedInterface.Chain;
 
 /**
  * 从分享意图查询结果中移除被隐藏的分享入口。
