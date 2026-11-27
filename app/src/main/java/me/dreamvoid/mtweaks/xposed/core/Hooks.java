@@ -1,15 +1,15 @@
 package me.dreamvoid.mtweaks.xposed.core;
 
+import io.github.libxposed.api.XposedInterface;
+import io.github.libxposed.api.XposedInterface.HookHandle;
+import io.github.libxposed.api.XposedInterface.Hooker;
+import me.dreamvoid.mtweaks.utils.Logger;
+
 import java.lang.reflect.Executable;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
-
-import io.github.libxposed.api.XposedInterface;
-import io.github.libxposed.api.XposedInterface.HookHandle;
-import io.github.libxposed.api.XposedInterface.Hooker;
-import me.dreamvoid.mtweaks.utils.Logger;
 
 /**
  * Thin helpers around the libxposed API 102 hook API.
@@ -27,6 +27,15 @@ public final class Hooks {
     }
 
     public static List<HookHandle> hookAllMethods(Class<?> cls, String methodName, Hooker hooker) {
+        return hookAllMethods(cls, methodName, hooker, false);
+    }
+
+    public static List<HookHandle> hookAllMethodsIncludingNative(Class<?> cls, String methodName, Hooker hooker) {
+        return hookAllMethods(cls, methodName, hooker, true);
+    }
+
+    private static List<HookHandle> hookAllMethods(Class<?> cls, String methodName, Hooker hooker,
+                                                   boolean includeNative) {
         List<HookHandle> handles = new ArrayList<>();
         for (Method method : cls.getDeclaredMethods()) {
             if (!method.getName().equals(methodName)) {
@@ -35,7 +44,7 @@ public final class Hooks {
             if (Modifier.isAbstract(method.getModifiers())) {
                 continue;
             }
-            if (Modifier.isNative(method.getModifiers())) {
+            if (!includeNative && Modifier.isNative(method.getModifiers())) {
                 continue;
             }
             try {

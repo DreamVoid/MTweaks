@@ -76,6 +76,14 @@
     <string name="pref_display_refuse_forced_brightness">拒绝强制亮度</string>
     <string name="pref_display_refuse_forced_brightness_summary">阻止应用设定强制性的临时的屏幕亮度\n仅 Android 10+\n作用域：系统框架</string>
 
+    <string name="pref_category_screen_capture">屏幕捕获</string>
+    <string name="pref_capture_force_screen_capture">强制启用屏幕捕获</string>
+    <string name="pref_capture_force_screen_capture_summary">允许截图和录屏捕获设置了 FLAG_SECURE 的界面\n仅 Android 12+\n作用域：系统框架、系统界面</string>
+    <string name="pref_capture_disable_screenshot_detection">禁用截图检测</string>
+    <string name="pref_capture_disable_screenshot_detection_summary">阻止应用获知自身被截图\n仅 Android 14+\n作用域：系统框架</string>
+    <string name="pref_capture_disable_screen_recording_detection">禁用录屏检测</string>
+    <string name="pref_capture_disable_screen_recording_detection_summary">阻止应用获知自身被录屏\n仅 Android 15+\n作用域：系统框架</string>
+
     <string name="pref_category_trust_agent">信任的环境</string>
     <string name="pref_trust_agent_wifi">可信 WLAN</string>
     <string name="pref_trust_agent_wifi_summary">连接到可信的 WLAN 网络时，让设备保持解锁状态\n同时使用 SSID 和 BSSID 来确定 WLAN 是否可信\n你需要到 \"设置 -> 安全 -> 信任的代理\" 启用此代理\n请手动给予始终可用的位置权限，否则 SSID 和 BSSID 都无法获得\n作用域：系统框架、设置</string>

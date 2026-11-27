@@ -18,6 +18,25 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/pref_category_screen_capture">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_capture_force_screen_capture"
+            android:title="@string/pref_capture_force_screen_capture"
+            android:summary="@string/pref_capture_force_screen_capture_summary" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_capture_disable_screenshot_detection"
+            android:title="@string/pref_capture_disable_screenshot_detection"
+            android:summary="@string/pref_capture_disable_screenshot_detection_summary" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_capture_disable_screen_recording_detection"
+            android:title="@string/pref_capture_disable_screen_recording_detection"
+            android:summary="@string/pref_capture_disable_screen_recording_detection_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/pref_category_trust_agent">
         <Preference
             android:key="@string/key_trust_agent_wifi_aps"

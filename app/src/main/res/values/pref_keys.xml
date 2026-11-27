@@ -24,6 +24,10 @@
 
     <string name="key_display_refuse_forced_brightness">key_display_refuse_forced_brightness</string>
 
+    <string name="key_capture_force_screen_capture">key_capture_force_screen_capture</string>
+    <string name="key_capture_disable_screenshot_detection">key_capture_disable_screenshot_detection</string>
+    <string name="key_capture_disable_screen_recording_detection">key_capture_disable_screen_recording_detection</string>
+
     <string name="key_trust_agent_wifi_aps">key_trust_agent_wlan</string>
     <string name="key_trust_agent_active">key_trust_agent_active</string>
 

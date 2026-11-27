@@ -1,5 +1,6 @@
 system
 com.android.settings
+com.android.systemui
 com.google.android.apps.nexuslauncher
 com.android.intentresolver
 com.google.android.apps.pixel.health
