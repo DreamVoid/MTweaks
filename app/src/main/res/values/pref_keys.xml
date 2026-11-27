@@ -23,6 +23,7 @@
     <string name="key_system_share_filter_activities">key_system_share_filter_activities</string>
 
     <string name="key_display_refuse_forced_brightness">key_display_refuse_forced_brightness</string>
+    <string name="key_system_advanced_power_menu">key_system_advanced_power_menu</string>
 
     <string name="key_capture_force_screen_capture">key_capture_force_screen_capture</string>
     <string name="key_capture_disable_screenshot_detection">key_capture_disable_screenshot_detection</string>

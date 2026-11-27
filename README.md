@@ -21,8 +21,10 @@
   - 在应用崩溃的时候显示调试信息
   - 设置所有应用为可调试
   - 拒绝强制亮度
+  - 高级电源菜单
 
 部分功能来自以下代码，并进行了修复和改进：
 - [L Tweaks](https://github.com/bluesky139/LTweaks)
 - [NexAlloy](https://github.com/NexAlloy/NexAlloy)
 - [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
+- [LineageOS](https://github.com/LineageOS/android_frameworks_base)

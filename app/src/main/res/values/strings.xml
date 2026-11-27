@@ -76,6 +76,10 @@
     <string name="pref_display_refuse_forced_brightness">拒绝强制亮度</string>
     <string name="pref_display_refuse_forced_brightness_summary">阻止应用设定强制性的临时的屏幕亮度\n仅 Android 10+\n作用域：系统框架</string>
 
+    <string name="pref_category_gestures">手势</string>
+    <string name="pref_system_advanced_power_menu">高级电源菜单</string>
+    <string name="pref_system_advanced_power_menu_summary">作用域：系统框架、系统界面</string>
+
     <string name="pref_category_screen_capture">屏幕捕获</string>
     <string name="pref_capture_force_screen_capture">强制启用屏幕捕获</string>
     <string name="pref_capture_force_screen_capture_summary">允许截图和录屏捕获设置了 FLAG_SECURE 的界面\n仅 Android 12+\n作用域：系统框架、系统界面</string>

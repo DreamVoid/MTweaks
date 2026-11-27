@@ -1,16 +1,12 @@
 package me.dreamvoid.mtweaks.xposed.core;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
+import io.github.libxposed.api.XposedInterface;
+
+import java.lang.reflect.*;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.WeakHashMap;
-
-import io.github.libxposed.api.XposedInterface;
 
 /**
  * Reflection helpers replacing the removed {@code XposedHelpers}.
@@ -22,8 +18,7 @@ import io.github.libxposed.api.XposedInterface;
 public final class Reflect {
 
     private static volatile XposedInterface sFramework;
-    private static final Map<Object, Map<String, Object>> sAdditionalFields =
-            Collections.synchronizedMap(new WeakHashMap<>());
+    private static final Map<Object, Map<String, Object>> sAdditionalFields = Collections.synchronizedMap(new WeakHashMap<>());
 
     private static volatile Object sUnsafe;
     private static volatile long sFieldOffsetOffset = -1;
@@ -199,12 +194,46 @@ public final class Reflect {
         try {
             Object unsafe = unsafe();
             field.get(null); // Resolve the field so that ART fills in Field.offset.
-            int offset = (Integer) sUnsafeGetInt.invoke(unsafe, field,
-                    fieldOffsetOffset(unsafe));
+            int offset = (Integer) sUnsafeGetInt.invoke(unsafe, field, fieldOffsetOffset(unsafe));
             if (offset <= 0) {
                 throw new IllegalStateException("No resolved offset for " + field);
             }
             sUnsafePutObject.invoke(unsafe, field.getDeclaringClass(), (long) offset, value);
+        } catch (ReflectiveOperationException e) {
+            throw new InvocationTargetError(e);
+        }
+    }
+
+    public static void setObjectField(Object obj, String name, Object value) {
+        setObjectField(obj, findField(obj.getClass(), name), value);
+    }
+
+    /**
+     * 写入实例字段，必要时用 Unsafe 绕过 Android 16/17 对 final 字段的限制。
+     *
+     * @param obj   目标对象
+     * @param field 目标字段
+     * @param value 新值
+     */
+    public static void setObjectField(Object obj, Field field, Object value) {
+        if (Modifier.isStatic(field.getModifiers())) {
+            throw new IllegalArgumentException(field + " is not an instance field");
+        }
+        field.setAccessible(true);
+        try {
+            field.set(obj, value);
+            return;
+        } catch (IllegalAccessException | IllegalArgumentException ignored) {
+            // Android 16+/17 rejects writes to final instance fields, fall through to Unsafe.
+        }
+        try {
+            Object unsafe = unsafe();
+            field.get(obj); // Resolve the field so that ART fills in Field.offset.
+            int offset = (Integer) sUnsafeGetInt.invoke(unsafe, field, fieldOffsetOffset(unsafe));
+            if (offset <= 0) {
+                throw new IllegalStateException("No resolved offset for " + field);
+            }
+            sUnsafePutObject.invoke(unsafe, obj, (long) offset, value);
         } catch (ReflectiveOperationException e) {
             throw new InvocationTargetError(e);
         }

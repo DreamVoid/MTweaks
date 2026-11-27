@@ -18,6 +18,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/pref_category_gestures">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_system_advanced_power_menu"
+            android:title="@string/pref_system_advanced_power_menu"
+            android:summary="@string/pref_system_advanced_power_menu_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/pref_category_screen_capture">
         <SwitchPreference
             android:defaultValue="false"
